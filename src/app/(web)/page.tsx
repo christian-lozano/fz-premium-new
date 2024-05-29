@@ -10,7 +10,7 @@ import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid";
 import PromoImage from "@/components/promo-image/promo-image";
 import MainTab from "@/components/tabs-home-genero/main-tab";
 import VideoHome from "@/components/video/video";
-
+import CarouselProductSimilares from "@/components/carousel-product/carousel-product-similares";
 export const metadata: Metadata = {
   title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
@@ -235,7 +235,10 @@ export default async function Page({ searchParams }: Props) {
       preciomanual,
       "slug":slug.current
   }`);
-
+  const produtTest = await client.fetch<SanitySlider[]>(
+    groq`*[_type == "product" && count(tallas[talla == "7"])>0]`
+  );
+  // console.log(produtTest);
   //filtro y cantidad
   const productosHombre = await productosGenero("hombre", "8");
   const productosMujer = await productosGenero("mujer", "8");
@@ -314,45 +317,48 @@ export default async function Page({ searchParams }: Props) {
           <div className="text-center text-3xl xl:text-4xl uppercase">
             Categoria Destacada
           </div>
-          <div className="grid grid-cols-2 justify-items-center gap-4 xl:grid-cols-6">
+
+          <CarouselProductSimilares>
             <PromoImageGrid
               urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/def4074c1b5cfaf8317c95ab9405575f9bc94389-420x640.jpg"
-              titulo={"samba especial Gazelle"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={""}
+              subtitulo={""}
               url={"/tienda?coleccion=samba"}
             />
+
             <PromoImageGrid
               urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/6116786d1ea4f8d900bdddd3aee0ace7efb031ab-420x640.jpg"
-              titulo={"samba especial GAZELLE"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={""}
+              subtitulo={""}
               url={"/tienda?coleccion=superstar"}
             />
             <PromoImageGrid
               urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/d7f1f560cecada98d6c195e55c083a19ac1ac4d0-420x640.jpg"
-              titulo={"samba especial GAZELLE"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={""}
+              subtitulo={""}
               url={"/tienda?coleccion=forum"}
             />
 
             <PromoImageGrid
               urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/12358e578ba6bb168c457f6fe266a51311986ef4-420x640.jpg"
-              titulo={"samba especial GAZELLE"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={""}
+              subtitulo={""}
               url={"/tienda?coleccion=stansmith"}
             />
             <PromoImageGrid
               urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/bc16f1f1b866b4ba40b691fadf050396ff31edf1-420x640.jpg"
-              titulo={"samba especial GAZELLE"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={""}
+              subtitulo={""}
               url={"/tienda?coleccion=gazelle"}
             />
             <PromoImageGrid
               urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/3e2ce05e043c21006791b518f7ea67f7ada6618c-420x640.jpg"
-              titulo={"samba especial GAZELLE"}
-              subtitulo={"Un original, miles de historias que partieron de él."}
+              titulo={""}
+              subtitulo={""}
               url={"/tienda?coleccion=campus"}
             />
-          </div>
+          </CarouselProductSimilares>
+          <div className="grid grid-cols-2 justify-items-center gap-4 xl:grid-cols-6"></div>
         </div>
 
         {/* los mas vendidos */}
@@ -374,7 +380,7 @@ export default async function Page({ searchParams }: Props) {
           urlMob={
             "https://img.adidas.com.hk/resources/2024/4/ADICOLOR/1/614x777.jpg"
           }
-          titulo={"samba especial GAZELLE"}
+          titulo={"samba SPEZIAL GAZELLE"}
           subtitulo={"Un original, miles de historias que partieron de él."}
           url={"/tienda"}
           bottom={false}

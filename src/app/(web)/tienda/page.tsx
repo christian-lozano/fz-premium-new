@@ -18,6 +18,7 @@ interface Props {
     date?: string;
     priceecommerce?: string;
     price?: string;
+    talla?: string;
     coleccion?: string;
     color?: string;
     category?: string;
@@ -66,8 +67,10 @@ export default async function Page({ searchParams }: Props) {
       category,
       size,
       search,
+
       genero,
       coleccion,
+      talla,
       marca,
       tipo,
     } = searchParams;
@@ -78,10 +81,11 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `${priceOrder}${dateOrder}`;
 
-    const productFilter = `_type == "product" && categories match "originals" `;
+    const productFilter = `_type == "product" && categories match "originals"`;
     const colorFilter = color ? `&& color match "${color}"` : "";
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : "";
     const marcaFilter = marca ? `&& marca match "${marca}"` : "";
+    const tallaFilter = talla ? `&& count(tallas[talla == "${talla}"])>0` : "";
 
     const categoryFilter = category ? `&& "${category}" match categories` : "";
     const sizeFilter = size ? `&& tallas match "tallas"` : "";
@@ -93,7 +97,7 @@ export default async function Page({ searchParams }: Props) {
       ? `&& name match "${search}" || sku match "${search}" || genero match "${search}"|| marca match "${search}"|| tipo match "${search}"|| category match "${search}"|| color match "${search}" || coleccion match "${search}" `
       : "";
 
-    const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${coleccionFilter}]`;
+    const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${coleccionFilter}${tallaFilter}]`;
 
     // await seedSanityData()
 
@@ -152,7 +156,7 @@ export default async function Page({ searchParams }: Props) {
             </h2>
             <div
               className={cn(
-                "grid grid-cols-1 gap-x-8 gap-y-10",
+                " grid-cols-1 gap-x-8 gap-y-10 hidden",
                 products.length > 0
                   ? "lg:grid-cols-[1fr_3fr]"
                   : "lg:grid-cols-[1fr_3fr]"

@@ -80,7 +80,9 @@ export default async function Page({ searchParams }: Props) {
     const colorFilter = color ? `&& color match "${color}"` : "";
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : "";
     const marcaFilter = marca ? `&& marca match "${marca}"` : "";
-    const coleccionFilter = coleccion ? `&& coleccion match "${coleccion}"` : "";
+    const coleccionFilter = coleccion
+      ? `&& coleccion match "${coleccion}"`
+      : "";
 
     const categoryFilter = category ? `&& "${category}" match categories` : "";
     const sizeFilter = size ? `&& tallas match "tallas"` : "";
@@ -148,7 +150,7 @@ export default async function Page({ searchParams }: Props) {
             </h2>
             <div
               className={cn(
-                "grid grid-cols-1 gap-x-8 gap-y-10",
+                "hidden grid-cols-1 gap-x-8 gap-y-10",
                 products.length > 0
                   ? "lg:grid-cols-[1fr_3fr]"
                   : "lg:grid-cols-[1fr_3fr]"

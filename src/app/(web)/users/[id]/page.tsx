@@ -101,13 +101,15 @@ const UserDetails = (props: { params: { id: string } }) => {
       <div className="grid md:grid-cols-12 gap-10">
         <div className="   hidden md:block md:col-span-4 lg:col-span-3 shadow-lg h-fit sticky top-36  border-[4px] border-white  rounded-lg px-6 py-4">
           <div className="md:w-[143px] w-28 h-28 md:h-[143px] mx-auto mb-5 rounded-full overflow-hidden">
-            <Image
-              src={userData.image}
-              alt={userData.name}
-              width={143}
-              height={143}
-              className="img scale-animation rounded-full"
-            />
+            {userData.image && (
+              <Image
+                src={userData.image}
+                alt={userData.name}
+                width={143}
+                height={143}
+                className="img scale-animation rounded-full"
+              />
+            )}
           </div>
           <div className="font-normal py-4 text-left">
             <h6 className="text-xl font-bold pb-3">Acerca de</h6>

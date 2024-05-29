@@ -1095,14 +1095,14 @@ let options = [
     disabled: false,
     to: "outlet",
   },
-  {
-    id: 25,
-    title: "Ubicanos",
-    icon: "",
-    hideBorder: false,
-    disabled: false,
-    to: "#",
-  },
+  // {
+  //   id: 25,
+  //   title: "Ubicanos",
+  //   icon: "",
+  //   hideBorder: false,
+  //   disabled: false,
+  //   to: "#",
+  // },
 ];
 
 export default options;

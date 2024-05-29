@@ -22,7 +22,7 @@ export default function Cabecera({ dataCabeceraTab, handler }) {
               className={`me-2 ${
                 indice === i &&
                 "border-b border-gray-200  dark:border-gray-200 "
-              } p-4 `}
+              } xl:p-4 mx-1 `}
               role="presentation"
             >
               <button

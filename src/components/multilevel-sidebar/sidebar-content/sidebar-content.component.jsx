@@ -1,8 +1,12 @@
-import React, { Fragment } from "react"
-import Link from "next/link"
-import classNames from "classnames"
+import React, { Fragment } from "react";
+import Link from "next/link";
+import classNames from "classnames";
 
-import "../stile-sidebar-menu.css"
+import "../stile-sidebar-menu.css";
+import { User } from "lucide-react";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { FaUserCircle } from "react-icons/fa";
 
 const SidebarContent = (props) => {
   const {
@@ -12,8 +16,8 @@ const SidebarContent = (props) => {
     children,
     handleTabClick,
     onToggle,
-  } = props
-
+  } = props;
+  const { data: session } = useSession();
   return (
     <div {...sidebarProps}>
       <div className="sidebar-main-content sidebar-parent h-full bg-white text-lg font-semibold dark:bg-black">
@@ -61,7 +65,7 @@ const SidebarContent = (props) => {
                   )}
                   {children && children(list)}
                 </Fragment>
-              )
+              );
             })}
 
             {/* <a href={"https://www.fritzsportoutlet.pe/"}>
@@ -73,12 +77,44 @@ const SidebarContent = (props) => {
             </a> */}
           </ul>
         </div>
+        {/* session */}
+        <div className="flex w-full justify-center  absolute bottom-7">
+          <div className="flex">
+            {session?.user ? (
+              <Link href={`/users/${session.user.id}`}>
+                {session.user.image ? (
+                  <div className="flex">
+                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden">
+                      <Image
+                        src={session.user.image}
+                        alt={session.user.name}
+                        width={30}
+                        height={30}
+                        className="scale-animation img"
+                      />
+                    </div>
+                    <div className="ml-2">{session.user.name}</div>
+                  </div>
+                ) : (
+                  <FaUserCircle size={22} className="cursor-pointer" />
+                )}
+              </Link>
+            ) : (
+              <Link href="/auth">
+                <div className="flex">
+                  <User className="h-6 w-6" />
+                  <div className="ml-2">Mi Cuenta</div>
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SidebarContent
+export default SidebarContent;
 
 const AngleRight = (props) => (
   <svg
@@ -108,7 +144,7 @@ const AngleRight = (props) => (
       </g>
     </g>
   </svg>
-)
+);
 
 const AngleLeft = (props) => (
   <svg
@@ -149,4 +185,4 @@ const AngleLeft = (props) => (
     <g></g>
     <g></g>
   </svg>
-)
+);

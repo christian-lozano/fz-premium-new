@@ -108,10 +108,10 @@ export default function ProductAddToCart({ product }) {
             </Button>
           ))}
       </div>
-      <GiaDeTallasMain
+      {/* <GiaDeTallasMain
         gender={product.genero}
         product_type={product.tipo}
-      ></GiaDeTallasMain>
+      ></GiaDeTallasMain> */}
       <form className="mt-6">
         <div className="mt-4 flex">
           {stock ? (

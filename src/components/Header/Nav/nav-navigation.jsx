@@ -330,11 +330,11 @@ const dataHeader = {
       ],
     },
 
-    {
-      id: "Ntiendas",
-      titulo: "Ubicanos",
-      url: "#",
-    },
+    // {
+    //   id: "Ntiendas",
+    //   titulo: "Ubicanos",
+    //   url: "#",
+    // },
 
     {
       id: "outlet",

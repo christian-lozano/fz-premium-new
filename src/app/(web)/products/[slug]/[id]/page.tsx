@@ -1,19 +1,18 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+// import { Metadata } from "next";
+
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
-import { metadataPage } from "@/config/generateMetadata";
+// import { metadataPage } from "@/config/generateMetadata";
 import { SanityProduct, SanitySlider } from "@/config/inventory";
 import { precioProduct } from "@/config/precio-product";
 import { AccordionDetails } from "@/components/acordion-details/acordion-details";
 import { BreadcrumbsDefault } from "@/components/bread-crumbs/bread-crumbs";
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados";
-import { ProductGallery } from "@/components/product-gallery";
+
 import { ProductGalleryDesk } from "@/components/product-gallery-desk";
 import { ProductInfo } from "@/components/product-info";
-import PushIntereses from "@/components/push-intereses/push-intereses";
-import RoomReview from "@/components/RoomReview/RoomReview";
+
 
 interface Props {
   params: {
@@ -21,12 +20,13 @@ interface Props {
     id: string;
   };
 }
-export const generateMetadata = async ({
-  params,
-}: Props): Promise<Metadata> => {
-  let meta = await metadataPage({ params });
-  return meta;
-};
+
+// export const generateMetadata = async ({
+//   params,
+// }: Props): Promise<Metadata> => {
+//   let meta = await metadataPage({ params });
+//   return meta;
+// };
 
 export default async function Page({ params }: Props) {
   const product =
@@ -52,9 +52,9 @@ export default async function Page({ params }: Props) {
     "slug":slug.current
   }`);
 
-  if (!product) {
-    return notFound();
-  }
+  // if (!product) {
+  //   return notFound();
+  // }
   const productosGenero = async () => {
     const order = `| order(_id) [0...10]`;
 
@@ -88,10 +88,7 @@ export default async function Page({ params }: Props) {
 
   const products = await productosGenero();
 
-  const user = await client.fetch<SanitySlider[]>(groq`*[_type == "user"] {
-    intereses,
-    _id
-  }`);
+
 
   return (
     <>
@@ -101,10 +98,10 @@ export default async function Page({ params }: Props) {
           {/* <PushIntereses users={user} product={product}></PushIntereses> */}
           <div className=" w-full xl:flex 2xl:pb-20">
             {/* precio y nombre */}
-            <div className=" sticky top-20 z-10 border-b-[1px]  border-blue-gray-300 bg-white text-black dark:bg-black dark:text-white xl:hidden">
-              <div className=" xl:block">
+            <div className=" sticky top-20  z-10 border-b-[1px]  border-blue-gray-300 bg-white text-black dark:bg-black dark:text-white xl:hidden">
+              {/* <div className=" xl:block">
                 <BreadcrumbsDefault product={product} />
-              </div>
+              </div> */}
               <div className=" flex w-full items-center justify-between  px-4 py-2 ">
                 <h1 className="text-lg font-bold uppercase tracking-tight 2xl:text-3xl">
                   {product.name} - {product.genero}
@@ -126,9 +123,9 @@ export default async function Page({ params }: Props) {
             </div>
             {/* Product gallery */}
             <div>
-              <div className="hidden border-b-[1px] border-blue-gray-300 text-black dark:text-white  xl:block  xl:border-none xl:border-transparent">
+              {/* <div className="hidden border-b-[1px] border-blue-gray-300 text-black dark:text-white  xl:block  xl:border-none xl:border-transparent">
                 <BreadcrumbsDefault product={product} />
-              </div>
+              </div> */}
               <ProductGalleryDesk product={product} />
               <AccordionDetails product={product} />
             </div>

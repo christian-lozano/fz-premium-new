@@ -62,7 +62,7 @@ export default function NavTop({
 
       <div className="xl:flex xl:w-full  xl:justify-center  ">
         <div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center xl:space-x-1">
             {/* dark mode */}
             <ThemeToggle />
             {/* icono carrito */}
@@ -157,13 +157,13 @@ export default function NavTop({
               onToggle={handleSidebarToggle}
             />
 
-            {process.env.NODE_ENV === "development" && (
+            {/* {process.env.NODE_ENV === "development" && (
               <Link href={"/studio"}>
                 <Button size={"sm"} variant={"ghost"}>
                   <Edit className="h-5 w-5" />
                 </Button>
               </Link>
-            )}
+            )} */}
           </div>
         </div>
       </div>

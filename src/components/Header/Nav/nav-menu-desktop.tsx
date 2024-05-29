@@ -47,14 +47,13 @@ export default function NavMenuDesktop({
                           <div className=" focus:text-brand-900 sm:focus:shadow-outline  inline-flex  items-center  justify-between rounded-md px-2 transition-all duration-500 focus:outline-none">
                             <span
                               className={`laptop:text-lg shrink-0 uppercase tracking-widest  xl:text-sm ${
-                                index === 6 &&
                                 el.titulo === "SALE" &&
-                                "text-red-500 hover:border-b-2 hover:border-red-500"
+                                "text-red-500 hover:border-b-2 border-red-500 hover:border-red-500"
                               } ${
                                 el.titulo === "TIENDA" && " font-extrabold "
                               } ${
                                 activeHoverNavDesktop === index &&
-                                index !== 6 &&
+                                el.titulo === "SALE" &&
                                 `border-b-2 border-white`
                               }  2xl:text-base `}
                             >

@@ -1,15 +1,15 @@
-import React from "react"
-import Link from "next/link"
+import React from "react";
+import Link from "next/link";
 
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
 
 interface Props {
-  urlDesk: string
-  urlMob: string
-  titulo: string
-  subtitulo: string
-  url: string
-  bottom: Boolean
+  urlDesk: string;
+  urlMob: string;
+  titulo: string;
+  subtitulo: string;
+  url: string;
+  bottom: Boolean;
 }
 export default function PromoImageSec({
   urlDesk,
@@ -32,9 +32,11 @@ export default function PromoImageSec({
         className="block  w-[654px] md:w-full xl:hidden "
       />
       {bottom ? (
-        <div className="mt-2">
+        <div className="mt-2 flex xl:block flex-col items-center">
           <h3 className="font-extrabold uppercase xl:text-2xl">{titulo}</h3>
-          <p className="mt-1">{subtitulo}</p>
+          <p className="mt-1 text-center xl:text-start text-sm xl:text-normal">
+            {subtitulo}
+          </p>
           <Link href={url}>
             <Button className="mt-5 rounded-none uppercase">
               Comprar Ahora
@@ -54,5 +56,5 @@ export default function PromoImageSec({
         </div>
       )}
     </div>
-  )
+  );
 }

@@ -1,58 +1,58 @@
-import React, { Fragment, useEffect, useState } from "react"
-import classNames from "classnames"
-import { ArrowLeft } from "lucide-react"
-import PropTypes from "prop-types"
+import React, { Fragment, useEffect, useState } from "react";
+import classNames from "classnames";
+import { ArrowLeft } from "lucide-react";
+import PropTypes from "prop-types";
 
-import SidebarContent from "./sidebar-content/sidebar-content.component"
+import SidebarContent from "./sidebar-content/sidebar-content.component";
 
 export default function MultilevelSidebar(props) {
   const { open, wrapperClassName, headerClassName, header, options, onToggle } =
-    props
-  const [activeTab, setActiveTab] = useState([])
+    props;
+  const [activeTab, setActiveTab] = useState([]);
 
   const handleBackdropClick = () => {
-    const { onToggle, onClose, persist } = props
+    const { onToggle, onClose, persist } = props;
 
-    onToggle(false)
-    onClose && onClose()
+    onToggle(false);
+    onClose && onClose();
     if (!persist) {
       setTimeout(() => {
-        setActiveTab([])
-      }, 501)
+        setActiveTab([]);
+      }, 501);
     }
-  }
+  };
 
   const handleTabClick = (tabData) => {
     if (!!tabData.disabled) {
-      return
+      return;
     }
-    const { onItemClick } = props
+    const { onItemClick } = props;
 
     if (tabData.children) {
-      let data = [...activeTab]
-      data.push(tabData.id)
-      setActiveTab(data)
+      let data = [...activeTab];
+      data.push(tabData.id);
+      setActiveTab(data);
     }
-    onItemClick && onItemClick(tabData)
-  }
+    onItemClick && onItemClick(tabData);
+  };
 
   const handleBackClick = (tabData) => {
-    const { onBackClick } = props
+    const { onBackClick } = props;
 
     if (tabData) {
-      let data = [...activeTab]
-      let index = data.findIndex((id) => id === tabData.id)
-      data.splice(index, 1)
-      setActiveTab(data)
+      let data = [...activeTab];
+      let index = data.findIndex((id) => id === tabData.id);
+      data.splice(index, 1);
+      setActiveTab(data);
     } else {
-      setActiveTab([])
+      setActiveTab([]);
     }
-    onBackClick && onBackClick()
-  }
+    onBackClick && onBackClick();
+  };
   const getParentHeight = () => {
-    let parent = document.querySelector("#sidebar-parent")
-    return parent ? parent.scrollHeight : "100vh"
-  }
+    let parent = document.querySelector("#sidebar-parent");
+    return parent ? parent.scrollHeight : "100vh";
+  };
 
   const renderSecondChildren = (parent, list) => {
     return (
@@ -67,7 +67,10 @@ export default function MultilevelSidebar(props) {
         }}
         headerContent={
           <Fragment>
-            <div className="first-back-btn flex" onClick={() => handleBackClick()}>
+            <div
+              className="first-back-btn flex"
+              onClick={() => handleBackClick()}
+            >
               <AngleLeft />
               <span>{parent.title}</span>
             </div>
@@ -83,11 +86,11 @@ export default function MultilevelSidebar(props) {
         options={list.children}
         handleTabClick={handleTabClick}
       />
-    )
-  }
+    );
+  };
 
   const renderFirstChildren = (list) => {
-    const { wrapperClassName } = props
+    const { wrapperClassName } = props;
 
     return (
       <SidebarContent
@@ -111,8 +114,8 @@ export default function MultilevelSidebar(props) {
       >
         {(data) => data.children && renderSecondChildren(list, data)}
       </SidebarContent>
-    )
-  }
+    );
+  };
 
   return (
     <div id="react-sidebar" className="slidebar">
@@ -154,9 +157,9 @@ export default function MultilevelSidebar(props) {
         {(list) => list.children && renderFirstChildren(list)}
       </SidebarContent>
     </div>
-  )
+  );
 }
 
-MultilevelSidebar
+MultilevelSidebar;
 
-const AngleLeft = (props) => <ArrowLeft />
+const AngleLeft = (props) => <ArrowLeft />;
