@@ -314,7 +314,7 @@ export default async function Page({ searchParams }: Props) {
         {/* <Carousel dataSlider={slider[0]} /> */}
 
         <div className="mt-20 ">
-          <div className="text-center text-3xl xl:text-4xl uppercase">
+          <div className="text-center text-xl xl:text-4xl uppercase">
             Categoria Destacada
           </div>
 
@@ -363,7 +363,7 @@ export default async function Page({ searchParams }: Props) {
 
         {/* los mas vendidos */}
         <div className="mt-10">
-          <div className="text-center text-3xl uppercase xl:text-4xl">
+          <div className="text-center text-xl uppercase xl:text-4xl">
             New Arrivals
           </div>
           <CarouselProductRelacionados
@@ -389,7 +389,7 @@ export default async function Page({ searchParams }: Props) {
         {/* <HombreMujer bannerGenero={bannerGenero[0]} /> */}
         {/* <MainFiltroGenero dataSemifiltroHome={categoriaSlider[0]} /> */}
         <main className=" xl:px-6">
-          <div className="text-center text-3xl uppercase xl:text-4xl">
+          <div className="text-center text-xl uppercase xl:text-4xl">
             Icons
           </div>
           <MainTab
@@ -413,7 +413,7 @@ export default async function Page({ searchParams }: Props) {
 
           {/* los mas vendidos */}
           <div className="">
-            <div className="text-center text-3xl xl:text-4xl">
+            <div className="text-center text-xl xl:text-4xl">
               LOS MAS VENDIDOS
             </div>
             <CarouselProductRelacionados products={productosAll} />

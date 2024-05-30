@@ -19,8 +19,8 @@ export function ThemeToggle() {
   const { data: session } = useSession();
   return (
     <>
-      <ul className=" items-center ml-5 xl:flex hidden ">
-        <li className="mr-2 ml-5">
+      <ul className=" items-center xl:ml-5 flex">
+        <li className="mr-2 ml-5  xl:block hidden">
           {session?.user ? (
             <Link href={`/users/${session.user.id}`}>
               {session.user.image ? (

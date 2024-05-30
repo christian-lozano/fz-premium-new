@@ -77,7 +77,7 @@ export default function NavTop({
             </Link>
             {/* icono Buscador */}
             <Button
-              className="xl:hidden"
+              className="xl:hidden p-1"
               onClick={() => setActiveSearch(!search)}
               size="sm"
               variant="ghost"
@@ -86,7 +86,7 @@ export default function NavTop({
               <span className="sr-only">Buscar</span>
             </Button>
             <Button
-              className="hidden xl:block"
+              className="hidden xl:block p-1"
               onClick={() => setActiveSearchDesk(!activeSearchDesk)}
               size="sm"
               variant="ghost"
@@ -97,7 +97,7 @@ export default function NavTop({
             {/* <LoveFollowNavigation></LoveFollowNavigation> */}
 
             {/* burger menu */}
-            <button className="xl:hidden " onClick={() => setOpen(!open)}>
+            <button className="xl:hidden p-1 " onClick={() => setOpen(!open)}>
               {open ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -16,13 +16,13 @@ let options = [
             id: 9,
             title: "Ver Todas las Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre&category=zapatilla",
+            to: "/tienda?tipo=calzado&genero=hombre&tipo=zapatilla",
           },
           {
             id: 9,
             title: "Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre&category=zapatilla",
+            to: "/tienda?tipo=calzado&genero=hombre&tipo=zapatilla",
           },
           {
             id: 9,
@@ -73,13 +73,13 @@ let options = [
             id: 3,
             title: "Ver Todas las Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer&category=zapatilla",
+            to: "/tienda?tipo=calzado&genero=mujer&tipo=zapatilla",
           },
           {
             id: 3,
             title: "Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer&category=zapatilla",
+            to: "/tienda?tipo=calzado&genero=mujer&tipo=zapatilla",
           },
           {
             id: 3,

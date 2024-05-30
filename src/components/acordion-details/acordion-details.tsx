@@ -37,10 +37,10 @@ export function AccordionDetails({ product }: Props) {
     <>
       <div className="mb-16 flex flex-col justify-center">
         <div className="flex max-w-5xl flex-col ">
-          <div className="p-10 text-lg text-black dark:text-white">
+          <div className="px-10 text-lg text-black dark:text-white">
             Descripción
           </div>
-          <div className="p-10 text-black dark:text-white">
+          <div className="px-10 text-black dark:text-white">
             <div className="flex flex-col items-center justify-around gap-5 xl:flex-row">
               <div>
                 <div className="mb-5 font-bold 2xl:text-3xl ">
@@ -58,7 +58,7 @@ export function AccordionDetails({ product }: Props) {
           <div className="p-10 text-lg text-black dark:text-white">
             Detalles
           </div>
-          <div className="p-10 text-black dark:text-white">
+          <div className="px-10 text-black dark:text-white">
             <div className="grid grid-flow-row gap-y-2 xl:grid-cols-2 xl:gap-4 xl:text-base">
               <li>Ajuste clásico</li>
               <li>Sistema de amarre de pasadores</li>

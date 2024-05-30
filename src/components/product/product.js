@@ -19,7 +19,9 @@ export default function Product({
   const [stock, setStock] = useState();
 
   const [hoverImage, setHoverImage] = useState(
-    urlForImage(products.images[0].asset._ref).url()
+    products.images
+      ? urlForImage(products.images[0]?.asset._ref).url()
+      : "http://via.placeholder.com/640x360"
   );
 
   useEffect(() => {
@@ -31,7 +33,11 @@ export default function Product({
   }, []);
 
   useEffect(() => {
-    setHoverImage(urlForImage(products.images[0].asset._ref).url());
+    setHoverImage(
+      products.images
+        ? urlForImage(products.images[0]?.asset._ref).url()
+        : "http://via.placeholder.com/640x360"
+    );
   }, [products.sku]);
 
   const [data, setData] = useState(null);

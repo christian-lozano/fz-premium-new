@@ -23,7 +23,7 @@
 
 #react-sidebar .sidebar-main {
   width: 285px;
-  height: 100vh;
+  height: 100%;
 
   z-index: 1012;
   position: fixed;

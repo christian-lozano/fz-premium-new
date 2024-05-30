@@ -88,6 +88,7 @@ export default async function Page({ searchParams }: Props) {
     const tallaFilter = talla ? `&& count(tallas[talla == "${talla}"])>0` : "";
 
     const categoryFilter = category ? `&& "${category}" match categories` : "";
+
     const sizeFilter = size ? `&& tallas match "tallas"` : "";
     const generoFilter = genero ? `&& genero match "${genero}"` : "";
     const coleccionFilter = coleccion
@@ -98,6 +99,7 @@ export default async function Page({ searchParams }: Props) {
       : "";
 
     const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${coleccionFilter}${tallaFilter}]`;
+    console.log(filter);
 
     // await seedSanityData()
 
@@ -163,7 +165,7 @@ export default async function Page({ searchParams }: Props) {
               )}
             >
               <div className="hidden lg:block">
-                {/* Product filters */}
+                {/*Product filters */}
 
                 <ProductFilters />
               </div>

@@ -13,7 +13,6 @@ import CarouselProductRelacionados from "@/components/carousel-product/carousel-
 import { ProductGalleryDesk } from "@/components/product-gallery-desk";
 import { ProductInfo } from "@/components/product-info";
 
-
 interface Props {
   params: {
     slug: string;
@@ -88,8 +87,6 @@ export default async function Page({ params }: Props) {
 
   const products = await productosGenero();
 
-
-
   return (
     <>
       <main className=" mb-0 xl:pt-16  ">
@@ -136,7 +133,7 @@ export default async function Page({ params }: Props) {
         </div>
       </main>
       {/* <RoomReview roomId={product._id}></RoomReview> */}
-      <div>
+      <div className="mt-10">
         <h5 className="text-center text-2xl font-extrabold">
           Productos Relacionados
         </h5>

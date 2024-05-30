@@ -19,17 +19,17 @@ const dataHeader = {
             {
               id: "1",
               title: "Ver Todas las Zapatillas",
-              url: "tienda?genero=mujer&category=zapatilla",
+              url: "tienda?genero=mujer&tipo=calzado",
             },
-            {
-              id: "3",
-              title: "Terrex",
-              url: "tienda?genero=mujer&category=terrex",
-            },
+            // {
+            //   id: "3",
+            //   title: "Terrex",
+            //   url: "tienda?genero=mujer&category=terrex",
+            // },
             {
               id: "5",
-              title: "Urbano",
-              url: "tienda?genero=mujer&category=urbano",
+              title: "Originals",
+              url: "tienda?genero=mujer&category=originals",
             },
             {
               id: "6",
@@ -113,18 +113,18 @@ const dataHeader = {
             {
               id: "1",
               title: "Ver Todas las Zapatillas",
-              url: "tienda?tipo=calzado&genero=hombre&category=zapatilla",
+              url: "tienda?genero=hombre&tipo=calzado",
             },
             {
               id: "3",
-              title: "Terrex",
-              url: "tienda?tipo=calzado&genero=hombre&category=terrex",
+              title: "Originals",
+              url: "tienda?genero=hombre&category=originals",
             },
-            {
-              id: "5",
-              title: "Urbano",
-              url: "tienda?tipo=calzado&genero=hombre&category=urbano",
-            },
+            // {
+            //   id: "5",
+            //   title: "Urbano",
+            //   url: "tienda?tipo=calzado&genero=hombre&category=urbano",
+            // },
             {
               id: "6",
               title: "Sandalias",
@@ -263,32 +263,69 @@ const dataHeader = {
             },
             {
               id: "3",
-              title: "Adidas Superstart",
+              title: " Superstart",
               url: "tienda?coleccion=superstar",
             },
             {
               id: "5",
-              title: "Adidas Forum",
+              title: " Forum",
               url: "tienda?coleccion=forum",
             },
             {
               id: "6",
-              title: "Adidas Stan Smith",
+              title: " Stan Smith",
               url: "tienda?coleccion=stansmith",
             },
             {
               id: "6",
-              title: "Adidas Samba",
+              title: " Samba",
               url: "tienda?coleccion=samba",
             },
             {
               id: "6",
-              title: "Adidas Gazelle",
+              title: " Gazelle",
               url: "tienda?coleccion=gazelle",
             },
             {
               id: "6",
-              title: "Adidas Campus",
+              title: " Campus",
+              url: "tienda?coleccion=campus",
+            },
+          ],
+          categoria: [
+            {
+              id: "1",
+              title: "Nike",
+              url: "tienda?marca=adidas",
+            },
+            {
+              id: "3",
+              title: "Air Force 1",
+              url: "tienda?coleccion=airforceone",
+            },
+            {
+              id: "5",
+              title: "Jordan",
+              url: "tienda?coleccion=jordan",
+            },
+            {
+              id: "6",
+              title: "Dunk",
+              url: "tienda?coleccion=stansmith",
+            },
+            {
+              id: "6",
+              title: " Samba",
+              url: "tienda?coleccion=samba",
+            },
+            {
+              id: "6",
+              title: " Gazelle",
+              url: "tienda?coleccion=gazelle",
+            },
+            {
+              id: "6",
+              title: " Campus",
               url: "tienda?coleccion=campus",
             },
           ],

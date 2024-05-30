@@ -492,3 +492,8 @@ form.sticky.top-20 div:nth-child(6) div div {
   align-items: end;
   justify-items: stretch;
 }
+
+::selection {
+  color: #000;
+  background-color: var(--theme-color);
+}
