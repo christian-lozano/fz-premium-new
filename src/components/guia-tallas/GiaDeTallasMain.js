@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Dialog } from "@material-tailwind/react"
+import { useEffect, useState } from "react";
+import { Dialog } from "@material-tailwind/react";
 
-import GiaDeTallasZapatillas from "./GiaDeTallasZapatillas"
+import GiaDeTallasZapatillas from "./GiaDeTallasZapatillas";
 
 export default function GiaDeTallasMain({ gender, product_type }) {
-
   // guía de tallas Zapatillas
   let dataGiaTallasMujerZapatillas = {
     title: "GUÍA DE TALLAS zapatillas MUJERES",
@@ -135,7 +134,7 @@ export default function GiaDeTallasMain({ gender, product_type }) {
         FILA: "",
       },
     ],
-  }
+  };
 
   let dataGiaTallasHombreZapatillas = {
     title: "GUÍA DE TALLAS zapatillas Hombre",
@@ -176,7 +175,7 @@ export default function GiaDeTallasMain({ gender, product_type }) {
       },
       { TITLE: "13", ADIDAS: "48", REEBOK: "47", NIKE: "47", CAT: "46" },
     ],
-  }
+  };
   let dataGiaTallasNinosZapatillas = {
     title: "GUÍA DE TALLAS zapatillas niños",
 
@@ -337,36 +336,36 @@ export default function GiaDeTallasMain({ gender, product_type }) {
         CAT: "38.5",
       },
     ],
-  }
+  };
   // guía de tallas Ropa
 
-  const [guiaTallasZapatillas, setGuiaTallasZapatillas] = useState()
-  const [verGiaTallas, setVerGiaTallas] = useState(false)
+  const [guiaTallasZapatillas, setGuiaTallasZapatillas] = useState();
+  const [verGiaTallas, setVerGiaTallas] = useState(false);
   useEffect(() => {
     if (product_type === "calzado") {
       switch (gender) {
         case "hombre":
-          setGuiaTallasZapatillas(dataGiaTallasHombreZapatillas)
-          break
+          setGuiaTallasZapatillas(dataGiaTallasHombreZapatillas);
+          break;
         case "mujer":
-          setGuiaTallasZapatillas(dataGiaTallasMujerZapatillas)
-          break
+          setGuiaTallasZapatillas(dataGiaTallasMujerZapatillas);
+          break;
         case "niños":
-          setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas)
-          break
+          setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas);
+          break;
         case "niño":
-          setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas)
-          break
+          setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas);
+          break;
         case "niña":
-          setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas)
-          break
+          setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas);
+          break;
       }
     }
-  }, [gender, product_type])
+  }, [gender, product_type]);
 
   return (
-    <div>
-      {product_type === "calzado" && gender !== "unisex" && (
+    <div className="xl:w-[40vw]  w-[90vw]">
+      {/* {product_type === "calzado" && gender !== "unisex" && (
         <button
           onClick={() => setVerGiaTallas(!verGiaTallas)}
           className="mt-3 border-b-[1px] dark:fill-white  "
@@ -400,20 +399,11 @@ export default function GiaDeTallasMain({ gender, product_type }) {
           </svg>
           Ver Guía de Tallas
         </button>
+      )} */}
+
+      {product_type === "calzado" && gender !== "unisex" && (
+        <GiaDeTallasZapatillas dataTallasZapatillas={guiaTallasZapatillas} />
       )}
-      <Dialog
-        size="xl"
-        open={verGiaTallas}
-        handler={() => setVerGiaTallas(!verGiaTallas)}
-        className=" shadow-none"
-        nonce={undefined}
-        onResize={undefined}
-        onResizeCapture={undefined}
-      >
-        {product_type === "calzado" && gender !== "unisex" && (
-          <GiaDeTallasZapatillas dataTallasZapatillas={guiaTallasZapatillas} />
-        )}
-      </Dialog>
     </div>
-  )
+  );
 }

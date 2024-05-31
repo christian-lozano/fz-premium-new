@@ -1,83 +1,91 @@
-"use client"
-import { Card, Typography } from "@material-tailwind/react";
+"use client";
 
-
- 
- 
-export default function GiaDeTallasZapatillas({dataTallasZapatillas}) {
+export default function GiaDeTallasZapatillas({ dataTallasZapatillas }) {
   return (
-    <Card className="laptop:h-[100vh] xl:h-[100vh] w-full overflow-y-scroll 2xl:p-8 py-3 px-3" >
-
-      <div className="xl:text-3xl text-black font-extrabold text-center uppercase mb-5">{dataTallasZapatillas.title}</div>
-      <table className="w-full min-w-max table-auto text-left h-full">
+    <div className=" 2xl:p-3 py-3 px-5 xl:w-full ">
+      {/* <div className="xl:text-xl lg:text-lg  font-extrabold text-center text-white uppercase mb-5">
+        {dataTallasZapatillas?.title}
+      </div> */}
+      <table className="w-full  table-auto text-left text-white ">
         <thead>
           <tr className="sticky top-0 mb-10">
-            {dataTallasZapatillas.TABLE_HEAD.map((head) => (
-              <th key={head} className="border-b border-blue-gray-100 bg-black 2xl:p-4 p-1">
-                <Typography
-         
-            
-                  className="font-extrabold text-white uppercase 2xl:text-base text-sm leading-none opacity-70 text-center"
-                >
+            {dataTallasZapatillas?.TABLE_HEAD.map((head) => (
+              <th
+                key={head}
+                className="border-b border-blue-gray-100 bg-black 2xl:p-2 p-1"
+              >
+                <div className="font-extrabold text-white uppercase 2xl:text-base text-sm leading-none opacity-70 text-center">
                   {head}
-                </Typography>
+                </div>
               </th>
             ))}
           </tr>
         </thead>
-        <tbody >
-          {dataTallasZapatillas.TABLE_ROWS.map(({TITLE,ADIDAS, REEBOK,NIKE, CAT,FILA}, index) => (
-            <tr key={index} className="even:bg-blue-gray-50/50">
-            <td className="">
-                <Typography variant="small" color="blue-gray" className="font-normal hover:bg-blue-gray-100 2xl:px-5 2xl:py-5 flex justify-center 2xl:text-base text-sm h-full text-center">
-                  {TITLE}
-                </Typography>
-              </td>
-              <td className="">
-
-                <Typography variant="small" color="blue-gray" className="font-normal hover:bg-blue-gray-100 2xl:px-5 2xl:py-5 flex justify-center 2xl:text-base text-sm h-full text-center">
-                  {ADIDAS}
-                </Typography>
-              </td>
-              <td className="">
-
-                <Typography variant="small" color="blue-gray" className="font-normal hover:bg-blue-gray-100 2xl:px-5 2xl:py-5 flex justify-center 2xl:text-base text-sm h-full text-center">
-                {REEBOK}
-
-                </Typography>
-              </td>
-              <td className="">
-
-                <Typography variant="small" color="blue-gray" className="font-normal hover:bg-blue-gray-100 2xl:px-5 2xl:py-5 flex justify-center 2xl:text-base text-sm h-full text-center">
-                {NIKE}
-
-                </Typography>
-              </td>
-              <td className="">
-
-                <Typography variant="small" color="blue-gray" className="font-normal hover:bg-blue-gray-100 2xl:px-5 2xl:py-5 flex justify-center 2xl:text-base text-sm h-full text-center">
-                {CAT}
-
-                </Typography>
-              </td>
-              {
-                FILA && (
-              <td className="">
-
-                <Typography variant="small" color="blue-gray" className="font-normal hover:bg-blue-gray-100 2xl:px-5 2xl:py-5 flex justify-center 2xl:text-base text-sm h-full text-center">
-                {FILA}
-
-                </Typography>
-              </td>
-
-                )
-              }
-          
-     
-            </tr>
-          ))}
+        <tbody>
+          {dataTallasZapatillas?.TABLE_ROWS.map(
+            ({ TITLE, ADIDAS, REEBOK, NIKE, CAT, FILA }, index) => (
+              <tr key={index} className="">
+                <td className="">
+                  <div
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal hover:bg-blue-gray-800 border-[1px]  2xl:px-1 2xl:py-1 flex justify-center 2xl:text-xs text-sm h-full text-center"
+                  >
+                    {TITLE}
+                  </div>
+                </td>
+                <td className="">
+                  <div
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal hover:bg-blue-gray-800 border-[1px]  2xl:px-1 2xl:py-1 flex justify-center 2xl:text-xs text-sm h-full text-center"
+                  >
+                    {ADIDAS}
+                  </div>
+                </td>
+                <td className="">
+                  <div
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal hover:bg-blue-gray-800 border-[1px]  2xl:px-1 2xl:py-1 flex justify-center 2xl:text-xs text-sm h-full text-center"
+                  >
+                    {REEBOK}
+                  </div>
+                </td>
+                <td className="">
+                  <div
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal hover:bg-blue-gray-800 border-[1px]  2xl:px-1 2xl:py-1 flex justify-center 2xl:text-xs text-sm h-full text-center"
+                  >
+                    {NIKE}
+                  </div>
+                </td>
+                <td className="">
+                  <div
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal hover:bg-blue-gray-800 border-[1px]  2xl:px-1 2xl:py-1 flex justify-center 2xl:text-xs text-sm h-full text-center"
+                  >
+                    {CAT}
+                  </div>
+                </td>
+                {FILA && (
+                  <td className="">
+                    <div
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal hover:bg-blue-gray-800 border-[1px]  2xl:px-1 2xl:py-1 flex justify-center 2xl:text-xs text-sm h-full text-center"
+                    >
+                      {FILA}
+                    </div>
+                  </td>
+                )}
+              </tr>
+            )
+          )}
         </tbody>
       </table>
-    </Card>
+    </div>
   );
 }

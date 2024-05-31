@@ -45,7 +45,7 @@ export function ProductSort() {
       <Sheet>
         <SheetContent className="w-[300px]">
           <SheetHeader>
-            <SheetTitle>Categorías</SheetTitle>
+            <SheetTitle>Filtros</SheetTitle>
             <SheetDescription>
               Limite su búsqueda de productos utilizando las opciones
               siguientes.

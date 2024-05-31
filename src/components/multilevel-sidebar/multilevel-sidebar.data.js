@@ -14,15 +14,15 @@ let options = [
         children: [
           {
             id: 9,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre&tipo=zapatilla",
+            to: "/tienda?tipo=calzado&genero=hombre&tipo=calzado",
           },
           {
             id: 9,
             title: "Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre&tipo=zapatilla",
+            to: "/tienda?tipo=calzado&genero=hombre&tipo=calzado",
           },
           {
             id: 9,
@@ -43,12 +43,12 @@ let options = [
           //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Chimpunes",
           // },
-          // {
-          //   id: 9,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20chimpunes"
-          // }
+          {
+            id: 9,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=hombre&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -61,7 +61,6 @@ let options = [
           //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20basquet"
           // }
-          ,
         ],
       },
       {
@@ -71,15 +70,15 @@ let options = [
         children: [
           {
             id: 3,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer&tipo=zapatilla",
+            to: "/tienda?tipo=calzado&genero=mujer&tipo=calzado",
           },
           {
             id: 3,
             title: "Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer&tipo=zapatilla",
+            to: "/tienda?tipo=calzado&genero=mujer&tipo=calzado",
           },
           {
             id: 3,
@@ -102,12 +101,12 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20chimpunes"
 
           // }
-          // {
-          //   id: 3,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"//mujer/calzado/origins?p=1"
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=mujer&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -128,7 +127,6 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20basquet"
 
           // }
-          ,
         ],
       },
       {
@@ -138,7 +136,7 @@ let options = [
         children: [
           {
             id: 1,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?tipo=calzado&genero=niños",
           },
@@ -174,7 +172,7 @@ let options = [
         children: [
           {
             id: 3,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
@@ -205,13 +203,12 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20chimpunes"
 
           // }
-          // {
-          //   id: 3,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20comodo"
-
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=mujer&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -232,7 +229,6 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20basquet"
 
           // }
-          ,
           ,
         ],
       },
@@ -386,7 +382,7 @@ let options = [
         children: [
           {
             id: 9,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
@@ -419,12 +415,12 @@ let options = [
 
           // },
           // ,
-          // {
-          //   id: 9,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20running"
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=niños&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -568,7 +564,7 @@ let options = [
         children: [
           {
             id: 3,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
@@ -601,13 +597,12 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20chimpunes"
 
           // }
-          // {
-          //   id: 3,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20"
-
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=niños&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -624,7 +619,6 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20comodo"
 
           // }
-          ,
           ,
         ],
       },
@@ -777,7 +771,7 @@ let options = [
         children: [
           {
             id: 9,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },

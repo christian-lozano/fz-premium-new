@@ -29,7 +29,7 @@ const CarouselProductRelacionados = ({
   nuevo = false,
   generoSku = true,
 }) => {
-  const productos = products.filter((el) => el.razonsocial !== "fritzduran");
+  const productos = products.filter((el) => el.razonsocial !== "fritzduran" );
   return (
     <div className="parent ">
       {/* los mas vendidos */}

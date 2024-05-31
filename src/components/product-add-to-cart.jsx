@@ -8,6 +8,7 @@ import { useToast } from "@/components/ui/use-toast";
 import GiaDeTallasMain from "@/components/guia-tallas/GiaDeTallasMain";
 
 import { Button } from "./ui/button";
+import ModalDesk from "./modal/Modal";
 
 export default function ProductAddToCart({ product }) {
   const { toast } = useToast();
@@ -108,10 +109,11 @@ export default function ProductAddToCart({ product }) {
             </Button>
           ))}
       </div>
-      {/* <GiaDeTallasMain
-        gender={product.genero}
-        product_type={product.tipo}
-      ></GiaDeTallasMain> */}
+
+      <ModalDesk>
+        <GiaDeTallasMain gender={product.genero} product_type={product.tipo} />
+      </ModalDesk>
+
       <form className="mt-6">
         <div className="mt-4 flex">
           {stock ? (

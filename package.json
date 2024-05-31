@@ -45,6 +45,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-photo-view": "^1.2.4",
     "react-responsive-carousel": "^3.2.23",
+    "react-transition-group": "^4.4.5",
     "react-use-cart": "^1.13.0",
     "sanity": "^3.17.0",
     "stripe": "^13.10.0",

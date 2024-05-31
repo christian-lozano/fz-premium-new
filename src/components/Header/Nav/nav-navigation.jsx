@@ -199,7 +199,7 @@ const dataHeader = {
             {
               id: "35",
               title: "Calzado Niño",
-              url: "tienda?tipo=calzado&genero=niño",
+              url: "tienda?tipo=calzado&genero=niños",
             },
             {
               id: "36",
@@ -245,7 +245,7 @@ const dataHeader = {
     {
       id: "colections",
       titulo: "Colecciones",
-      url: "#",
+      url: "tienda",
       infoNav: [
         // { label: "Adidas Superstart", value: "superstar" },
         // { label: "Adidas Forum", value: "forum" },
@@ -292,6 +292,8 @@ const dataHeader = {
               url: "tienda?coleccion=campus",
             },
           ],
+        },
+        {
           categoria: [
             {
               id: "1",
@@ -420,7 +422,7 @@ export function NavNavigation({
           <NavSearch />
         </NavTop>
       </div>
-      <div className="hidden xl:block">
+      <div className="hidden xl:flex">
         <NavTop
           setActiveSearchDesk={setActiveSearchDesk}
           activeSearchDesk={activeSearchDesk}

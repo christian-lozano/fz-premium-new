@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { Key, useEffect, useState } from "react"
-import Link from "next/link"
-import { client } from "@/sanity/lib/client"
-import { urlForImage } from "@/sanity/lib/image"
-import { groq } from "next-sanity"
-import { Image } from "sanity"
+import { Key, useEffect, useState } from "react";
+import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+import { urlForImage } from "@/sanity/lib/image";
+import { groq } from "next-sanity";
+import { Image } from "sanity";
 
-import { SanityProduct } from "@/config/inventory"
-import { precioProduct } from "@/config/precio-product"
+import { SanityProduct } from "@/config/inventory";
+import { precioProduct } from "@/config/precio-product";
 
-import { BreadcrumbsDefault } from "./bread-crumbs/bread-crumbs"
-import ProductAddToCart from "./product-add-to-cart"
+import { BreadcrumbsDefault } from "./bread-crumbs/bread-crumbs";
+import ProductAddToCart from "./product-add-to-cart";
 
 interface Props {
-  product: SanityProduct
+  product: SanityProduct;
 }
 
 export function ProductInfo({ product }: Props) {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   // const [hoverImage, setHoverImage] = useState(
   //   urlForImage(product.images[0].asset._ref).url()
   // )
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productFilter = `_type == "product" && name match "${product.name}*" && sku != "${product.sku}" && genero match "${product.genero}"`
+    const productFilter = `_type == "product" && name match "${product.name}*" && sku != "${product.sku}" && genero match "${product.genero}"`;
 
-    const filter = `*[${productFilter}]`
+    const filter = `*[${productFilter}]`;
     client
       .fetch(
         groq`${filter} {
@@ -50,10 +50,10 @@ export function ProductInfo({ product }: Props) {
     }`
       )
       .then((data) => {
-        setData(data)
-        setLoading(false)
-      })
-  }, [])
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
   return (
     <div className=" h-full w-full  px-5     lg:mt-0  lg:px-2 xl:mt-0 xl:px-3 2xl:sticky 2xl:top-44  2xl:mt-0 2xl:max-w-lg 2xl:px-5">
       <div className=" w-full ">
@@ -87,14 +87,14 @@ export function ProductInfo({ product }: Props) {
               {product.description}
             </div>
           </div> */}
-          <div className="mt-5 font-bold">Colores:</div>
+          {data.length > 0 && <div className="mt-5 font-bold">Colores:</div>}
           <div className="mt-2 flex gap-1">
             {data?.map(
               (el: {
-                id: Key | null | undefined
-                slug: any
-                sku: any
-                images: { asset: { _ref: Image } }[]
+                id: Key | null | undefined;
+                slug: any;
+                sku: any;
+                images: { asset: { _ref: Image } }[];
               }) => (
                 <Link key={el.id} href={`/products/${el.slug}/${el.sku}`}>
                   <img
@@ -118,5 +118,5 @@ export function ProductInfo({ product }: Props) {
         <ProductAddToCart product={product} />
       </div>
     </div>
-  )
+  );
 }

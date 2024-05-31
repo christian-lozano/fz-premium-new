@@ -44,7 +44,7 @@ export function ProductGrid({ products, generoSku, outlet = false }: Props) {
           />
         ))}
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-5">
         {loadMore < products?.length ? (
           <button
             type="button"
@@ -59,7 +59,7 @@ export function ProductGrid({ products, generoSku, outlet = false }: Props) {
         ) : (
           <button
             type="button"
-            className="cursor-not-allowed rounded-lg bg-[var(--color-naranja)] px-2 py-3 text-sm text-[#FFF] opacity-50 md:text-base"
+            className="cursor-not-allowed rounded-lg dark:bg-[var(--color-naranja)] bg-black px-2 py-3 text-sm text-[#FFF] opacity-50 md:text-base"
             onClick={showMoreArticles}
             disabled
           >

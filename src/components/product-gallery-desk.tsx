@@ -26,17 +26,24 @@ export function ProductGalleryDesk({ product }: Props) {
     setLoadMore(loadMore - cantidad);
     ToTop();
   };
-
+  const [activeViewImg, setActiveViewImg] = useState(false);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       {/* Image Grid */}
       <div className=" h-full w-full ">
         <ul className="grid   justify-start gap-[2px] sm:grid-cols-2 lg:col-span-3 2xl:grid-cols-2">
           {product.images?.slice(0, loadMore).map((image, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              className={`${
+                activeViewImg ? "cursor-crosshair" : "cursor-default"
+              }`}
+            >
               <PhotoProvider>
                 <PhotoView src={urlForImage(image).url()}>
                   <img
+                    onMouseEnter={() => setActiveViewImg(true)}
+                    onMouseLeave={() => setActiveViewImg(false)}
                     className="h-full w-full "
                     src={urlForImage(image).url()}
                     alt=""

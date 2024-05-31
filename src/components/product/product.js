@@ -76,7 +76,7 @@ export default function Product({
 
   return (
     <>
-      <div className=" flex h-full flex-col justify-around  p-1 ">
+      <div className=" flex h-full flex-col justify-around   border-[1px] p-2 border-blue-gray-300  dark:border-none ">
         <div className="aspect-h-1 aspect-w-1  overflow-hidden  rounded-lg    group-hover:opacity-75 ">
           <Link
             key={products.id}

@@ -6,12 +6,20 @@ import { groq } from "next-sanity";
 // import { metadataPage } from "@/config/generateMetadata";
 import { SanityProduct, SanitySlider } from "@/config/inventory";
 import { precioProduct } from "@/config/precio-product";
-import { AccordionDetails } from "@/components/acordion-details/acordion-details";
-import { BreadcrumbsDefault } from "@/components/bread-crumbs/bread-crumbs";
+
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados";
 
 import { ProductGalleryDesk } from "@/components/product-gallery-desk";
 import { ProductInfo } from "@/components/product-info";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { AccordionDescription } from "@/components/acordion-details/acordion-description";
+import { AccordionDetails } from "@/components/acordion-details/acordion-details";
+import ModalDesk from "@/components/modal/Modal";
 
 interface Props {
   params: {
@@ -60,7 +68,7 @@ export default async function Page({ params }: Props) {
     const productFilter = `_type == "product"`;
 
     const generoFilterHombre = `${product.genero}`
-      ? `&& genero match "${product.genero}"&& marca match "${product.marca}" && categories match "originals"`
+      ? `&& genero match "${product.genero}"&& marca match "${product.marca}" && categories match "originals" && sku != "${product.sku}"`
       : "";
     const filter = `*[${productFilter}${generoFilterHombre}]`;
 
@@ -89,7 +97,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <main className=" mb-0 xl:pt-16  ">
+      <main className=" mb-0 xl:pt-16  z-[1]">
         <div className="">
           {/* Product */}
           {/* <PushIntereses users={user} product={product}></PushIntereses> */}
@@ -124,7 +132,47 @@ export default async function Page({ params }: Props) {
                 <BreadcrumbsDefault product={product} />
               </div> */}
               <ProductGalleryDesk product={product} />
-              <AccordionDetails product={product} />
+
+              {/* acordion */}
+
+              <Accordion type="single" collapsible className="my-10">
+                <AccordionItem value={`item-}`}>
+                  <AccordionTrigger>
+                    <span className="w-full ">
+                      <span className="ml-1 text-xs xl:text-base  font-extrabold uppercase text-black dark:text-gray-400">
+                        Descripción
+                      </span>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className=" space-y-4  ">
+                      <div
+                        className={`flex items-center justify-center space-x-2 py-10`}
+                      >
+                        <AccordionDescription product={product} />
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value={`items-}`}>
+                  <AccordionTrigger>
+                    <span className="w-full">
+                      <span className="ml-1 text-xs xl:text-base  font-extrabold uppercase text-black dark:text-gray-400">
+                        Detalles
+                      </span>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className=" space-y-4  ">
+                      <div
+                        className={`flex items-center justify-center space-x-2 py-10 `}
+                      >
+                        <AccordionDetails product={product} />
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
 
             {/* Product info */}
@@ -132,11 +180,13 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </main>
+
       {/* <RoomReview roomId={product._id}></RoomReview> */}
       <div className="mt-10">
         <h5 className="text-center text-2xl font-extrabold">
           Productos Relacionados
         </h5>
+
         <CarouselProductRelacionados products={products} />
       </div>
     </>
