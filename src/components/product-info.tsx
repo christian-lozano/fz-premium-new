@@ -25,7 +25,7 @@ export function ProductInfo({ product }: Props) {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productFilter = `_type == "product" && name match "${product.name}*" && sku != "${product.sku}" && genero match "${product.genero}"`;
+    const productFilter = `_type == "product" && categories match "originals" && name match "${product.name}*" && sku != "${product.sku}" && genero match "${product.genero}"`;
 
     const filter = `*[${productFilter}]`;
     client

@@ -100,19 +100,21 @@ const CarouselProductSimilares = ({ children }) => {
   };
   return (
     <>
-      <div className="flex w-full justify-center mt-5 gap-x-8 ">
-        <Button
-          onClick={() => handlerCategoria("adidas")}
-          className="uppercase rounded-none"
-        >
-          Adidas
-        </Button>
-        <Button
-          onClick={() => handlerCategoria("nike")}
-          className="uppercase rounded-none"
-        >
-          Nike
-        </Button>
+      <div className="flex justify-center px-2">
+        <div className="grid w-full grid-flow-col container mt-5 gap-x-8 ">
+          <Button
+            onClick={() => handlerCategoria("adidas")}
+            className="uppercase rounded-md"
+          >
+            Adidas
+          </Button>
+          <Button
+            onClick={() => handlerCategoria("nike")}
+            className="uppercase rounded-md"
+          >
+            Nike
+          </Button>
+        </div>
       </div>
 
       <div className="parent ">

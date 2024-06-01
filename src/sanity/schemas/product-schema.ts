@@ -72,7 +72,7 @@ export const product = defineType({
       type: "string",
       options: {
         list: [
-          { title: "Adidas Superstart", value: "superstar" },
+          { title: "Adidas Superstar", value: "superstar" },
           { title: "Adidas Forum", value: "forum" },
           { title: "Adidas Stan Smith", value: "stansmith" },
           { title: "Adidas Samba", value: "samba" },
@@ -82,6 +82,7 @@ export const product = defineType({
           { title: "Nike Air Force 1", value: "airforce1" },
           { title: "Nike Air Max 90", value: "airforcemax90" },
           { title: "Nike Air Jordan", value: "airjordan" },
+          { title: "Nike Dunk", value: "dunk" },
         ], // <-- predefined values
       },
     },

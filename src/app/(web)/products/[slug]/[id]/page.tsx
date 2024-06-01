@@ -67,8 +67,8 @@ export default async function Page({ params }: Props) {
 
     const productFilter = `_type == "product"`;
 
-    const generoFilterHombre = `${product.genero}`
-      ? `&& genero match "${product.genero}"&& marca match "${product.marca}" && categories match "originals" && sku != "${product.sku}"`
+    const generoFilterHombre = `${product?.genero}`
+      ? `&& genero match "${product?.genero}"&& marca match "${product?.marca}" && categories match "originals" && sku != "${product?.sku}"`
       : "";
     const filter = `*[${productFilter}${generoFilterHombre}]`;
 
@@ -109,18 +109,18 @@ export default async function Page({ params }: Props) {
               </div> */}
               <div className=" flex w-full items-center justify-between  px-4 py-2 ">
                 <h1 className="text-lg font-bold uppercase tracking-tight 2xl:text-3xl">
-                  {product.name} - {product.genero}
+                  {product?.name} - {product?.genero}
                 </h1>
                 <div className="flex">
                   <p className=" mr-2 font-semibold  tracking-tight text-[#767677] line-through 2xl:text-3xl">
-                    S/{product.priceecommerce}
+                    S/{product?.priceecommerce}
                   </p>
                   <p className="tracking-tight 2xl:text-3xl ">
                     S/
                     {precioProduct(
-                      product.descuento,
-                      product.priceecommerce,
-                      product.preciomanual
+                      product?.descuento,
+                      product?.priceecommerce,
+                      product?.preciomanual
                     )}
                   </p>
                 </div>

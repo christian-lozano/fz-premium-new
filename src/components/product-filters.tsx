@@ -24,16 +24,17 @@ const filters = [
     id: "coleccion",
     name: "Colección",
     options: [
-      { label: "Adidas Superstart", value: "superstar" },
+      { label: "Adidas Superstar", value: "superstar" },
       { label: "Adidas Forum", value: "forum" },
       { label: "Adidas Stan Smith", value: "stansmith" },
       { label: "Adidas Samba", value: "samba" },
       { label: "Adidas Gazelle", value: "gazelle" },
       { label: "Adidas Campus", value: "campus" },
-      // { label: "Nike Air Max Excee", value: "airmaxexcee" },
-      // { label: "Nike Air Force 1", value: "airforce1" },
-      // { label: "Nike Air Max 90", value: "airforcemax90" },
-      // { label: "Nike Air Jordan", value: "airjordan" },
+      { label: "Nike Air Max Excee", value: "airmaxexcee" },
+      { label: "Nike Air Force 1", value: "airforce1" },
+      { label: "Nike Air Max 90", value: "airforcemax90" },
+      { label: "Nike Air Jordan", value: "airjordan" },
+      { label: "Nike Dunk", value: "airjordan" },
     ],
   },
 
@@ -259,7 +260,7 @@ export function ProductFilters() {
 
       {filters.map((section, i) => (
         <Accordion key={i} type="single" collapsible>
-          <AccordionItem value={`item-${i}`} >
+          <AccordionItem value={`item-${i}`}>
             <AccordionTrigger>
               <span>
                 {section.name}

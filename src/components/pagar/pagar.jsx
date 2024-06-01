@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
-import { Radio, Typography } from "@material-tailwind/react";
 import { useCart } from "react-use-cart";
 
 import { CartItemsEmpty } from "../cart-items-empty";
@@ -109,58 +108,78 @@ export default function PaginaPagar() {
           <p className="mt-8 text-lg font-medium">Métodos de envío</p>
           <form className="mt-5 ">
             <div className="relative ">
-              <div className="flex flex-col ">
-                <Radio
-                  value="envio"
-                  checked={tipoEntrega === "envio"}
-                  onChange={(e) => setTipoEntrega(e.target.value)}
-                  name="description"
-                  color="blue"
-                  label={
-                    <div>
-                      <Typography color="white" className="font-medium">
-                        ENVÍO A DESTINO
-                      </Typography>
-                      <Typography
-                        variant="small"
-                        color="white"
-                        className="text-sm font-normal"
-                      >
-                        plazo máximo en 3 dias
-                      </Typography>
-                    </div>
-                  }
-                  containerProps={{
-                    className: "-mt-5",
-                  }}
-                />
+              <div className="flex flex-col gap-y-2 ">
+                {/* envio */}
+                <label>
+                  <input
+                    checked={tipoEntrega === "envio"}
+                    onChange={(e) => setTipoEntrega(e.target.value)}
+                    type="radio"
+                    value="envio"
+                    class="peer hidden"
+                    name="framework"
+                  />
 
-                <Radio
-                  checked={tipoEntrega === "recojo"}
-                  value="recojo"
-                  onChange={(e) => setTipoEntrega(e.target.value)}
-                  color="blue"
-                  name="description"
-                  defaultChecked
-                  label={
-                    <div>
-                      <Typography color="white" className=" font-medium">
-                        RECOJO EN TIENDA
-                      </Typography>
-                      <Typography
-                        variant="small"
-                        color="white"
-                        className="text-sm font-normal"
-                      >
+                  <div class="flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  group peer-checked:border-blue-gray-100">
+                    <h2 class="font-medium text-gray-700">
+                      {" "}
+                      ENVÍO A DESTINO
+                      <br />
+                      <span>plazo máximo en 3 dias</span>
+                    </h2>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-9 h-9 text-blue-600 invisible group-[.peer:checked+&]:visible"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+                {/* recojo en tienda */}
+                <label>
+                  <input
+                    checked={tipoEntrega === "recojo"}
+                    onChange={(e) => setTipoEntrega(e.target.value)}
+                    type="radio"
+                    value="recojo"
+                    class="peer hidden"
+                    name="framework"
+                  />
+
+                  <div class="flex items-center justify-between px-4 py-2 border-2 rounded-lg cursor-pointer text-sm  group peer-checked:border-blue-gray-100">
+                    <h2 class="font-medium text-gray-700">
+                      {" "}
+                      RECOJO EN TIENDA
+                      <br />
+                      <span>
                         Recojo en tienda Fz Premium, Av. Miguel Grau 231, Lima
                         15001
-                      </Typography>
-                    </div>
-                  }
-                  containerProps={{
-                    className: "-mt-5",
-                  }}
-                />
+                      </span>
+                    </h2>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-9 h-9 text-blue-600 invisible group-[.peer:checked+&]:visible"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                </label>
               </div>
             </div>
           </form>

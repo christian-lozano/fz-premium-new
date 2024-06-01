@@ -970,6 +970,347 @@ let options = [
       // },
     ],
   },
+  {
+    id: 32,
+    title: "Colecciones",
+    icon: "",
+    hideBorder: true,
+    disabled: false,
+    to: "/shop",
+    children: [
+      {
+        id: 37,
+        title: "Adidas",
+        icon: "",
+        children: [
+          {
+            id: 9,
+            title: "Ver Todo",
+            icon: "",
+            to: "tienda?marca=adidas&category=originals",
+          },
+          {
+            id: 9,
+            title: "Superstar",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=superstar",
+          },
+          {
+            id: 9,
+            title: "Forum",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=forum",
+          },
+          {
+            id: 9,
+            title: "Stan Smith",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=stansmith",
+          },
+          {
+            id: 9,
+            title: "Samba",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=samba",
+          },
+          {
+            id: 9,
+            title: "Gazelle",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=gazelle",
+          },
+          {
+            id: 9,
+            title: "Campus",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=campus",
+          },
+          // {
+          //   id: 9,
+          //   title: "Sandalias",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20sandalias"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Running",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20running"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Chimpunes",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20chimpunes"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Originals",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20"
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado Comodo",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20comodo"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado de Plataforma",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20plataforma"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Básquet",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20basquet"
+
+          // }
+        ],
+      },
+      {
+        id: 38,
+        title: "Nike",
+        icon: "",
+        children: [
+          {
+            id: 9,
+            title: "Ver Todo",
+            icon: "",
+            to: "/tienda?marca=nike&category=originals",
+          },
+          {
+            id: 9,
+            title: "Air Force 1",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airforce1",
+          },
+          {
+            id: 9,
+            title: "Air Max Excee",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airmaxexcee",
+          },
+          {
+            id: 9,
+            title: "Air Max 90",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airforcemax90",
+          },
+          {
+            id: 9,
+            title: "Air Jordan",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airjordan",
+          },
+          {
+            id: 9,
+            title: "Dunk",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=dunk",
+          },
+          // {
+          //   id: 9,
+          //   title: "Sandalias",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20sandalias"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Running",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20running"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Chimpunes",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20chimpunes"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Originals",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20"
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado Comodo",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20comodo"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado de Plataforma",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20plataforma"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Básquet",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20basquet"
+
+          // }
+        ],
+      },
+      // {
+      //   id: 37,
+      //   title: "Ropa",
+      //   icon: "",
+      //   children: [
+      //     {
+      //       id: 3,
+      //       title: "Ver Toda la Ropa",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20ropa"
+
+      //     },
+      //     {
+      //       id: 3,
+      //       title: "Polos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20polos"
+
+      //     },
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Poleras",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20poleras"
+
+      //     },
+      //     {
+      //       id: 3,
+      //       title: "Licras",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20licras"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Casacas",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20casacas"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Pantalones",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Camisetas de Futbol",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20camisetas%20futbol"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 9,
+      //       title: "Shorts",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Buzos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
+
+      //     }
+      //   ]
+      // },
+      // {
+      //   id: 36,
+      //   title: "Accesorios",
+      //   icon: "",
+      //   children: [
+      //     {
+      //       id: 1,
+      //       title: "Bolsos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20accesorios"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Mochilas",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20mochilas"
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Guantes",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20guantes"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Gorras",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20gorras"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Medias",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20medias"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Tomatodos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20tomatodos"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Bolsos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20bolsos"
+
+      //     },
+      //   ]
+      // },
+    ],
+  },
   // {
   //   id: 50,
   //   title: "OUTLET",

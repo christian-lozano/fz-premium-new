@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { client } from "@/sanity/lib/client"
-import { urlForImage } from "@/sanity/lib/image"
-import { groq } from "next-sanity"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+import { urlForImage } from "@/sanity/lib/image";
+import { groq } from "next-sanity";
 
 export default function ProductSimilares({ products, relacionados }) {
   const [hoverImage, setHoverImage] = useState(
     urlForImage(products.images[0].asset._ref).url()
-  )
-  const [data, setData] = useState(null)
-  const [isLoading, setLoading] = useState(true)
+  );
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    const productFilter = `_type == "product" && name match "${products.name}*" && sku != "${products.sku}"`
+    const productFilter = `_type == "product" && name match "${products.name}*" && categories match "originals"  && sku != "${products.sku}"`;
 
-    const filter = `*[${productFilter}]`
+    const filter = `*[${productFilter}]`;
     client
       .fetch(
         groq`${filter} {
@@ -38,15 +38,15 @@ export default function ProductSimilares({ products, relacionados }) {
     }`
       )
       .then((data) => {
-        setData(data)
-        setLoading(false)
-      })
-  }, [])
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
   return (
     <>
       {relacionados && (
         <div className="mt-2 flex gap-1">
-          {data?.map((el) => (
+          {/* {data?.map((el) => (
             <Link key={el.id} href={`/products/${el.slug}/${el.sku}`}>
               <img
                 onMouseEnter={() =>
@@ -64,9 +64,9 @@ export default function ProductSimilares({ products, relacionados }) {
                 alt=""
               />
             </Link>
-          ))}
+          ))} */}
         </div>
       )}
     </>
-  )
+  );
 }

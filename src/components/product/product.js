@@ -44,7 +44,7 @@ export default function Product({
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productFilter = `_type == "product" && name match "${products.name}*" && sku != "${products.sku}" && genero == "${products.genero}"`;
+    const productFilter = `_type == "product" && categories match "originals" && name match "${products.name}*" && sku != "${products.sku}" && genero == "${products.genero}"`;
 
     const filter = `*[${productFilter}]`;
     client
