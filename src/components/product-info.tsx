@@ -53,7 +53,7 @@ export function ProductInfo({ product }: Props) {
         setData(data);
         setLoading(false);
       });
-  }, []);
+  }, [product.sku]);
   return (
     <div className=" h-full w-full  px-5     lg:mt-0  lg:px-2 xl:mt-0 xl:px-3 2xl:sticky 2xl:top-44  2xl:mt-0 2xl:max-w-lg 2xl:px-5">
       <div className=" w-full ">

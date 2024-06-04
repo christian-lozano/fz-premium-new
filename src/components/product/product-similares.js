@@ -41,7 +41,7 @@ export default function ProductSimilares({ products, relacionados }) {
         setData(data);
         setLoading(false);
       });
-  }, []);
+  }, [products.sku]);
   return (
     <>
       {relacionados && (

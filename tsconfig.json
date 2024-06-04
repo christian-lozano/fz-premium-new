@@ -28,7 +28,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/pedidos-tabs-user/pedidos-tabs-user.js"
+    "src/components/pedidos-tabs-user/pedidos-tabs-user.js",
+    "src/components/love-follow/items-follow.js",
+    "src/components/love-follow/love-follow-navigation.js",
+    "src/components/love-follow/love-follow.js"
   ],
   "exclude": ["node_modules"]
 }

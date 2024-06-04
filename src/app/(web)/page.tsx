@@ -389,9 +389,7 @@ export default async function Page({ searchParams }: Props) {
         {/* <HombreMujer bannerGenero={bannerGenero[0]} /> */}
         {/* <MainFiltroGenero dataSemifiltroHome={categoriaSlider[0]} /> */}
         <main className=" xl:px-6">
-          <div className="text-center text-xl uppercase xl:text-4xl">
-            Icons
-          </div>
+          <div className="text-center text-xl uppercase xl:text-4xl">Icons</div>
           <MainTab
             dataCabeceraTab={dataCabeceraTab}
             dataProductTab={dataProductTab}
@@ -428,7 +426,7 @@ export default async function Page({ searchParams }: Props) {
               }
               titulo={"ADIDAS ORIGINALS X BAD BUNNY"}
               subtitulo={
-                "Los zapatos Last Campus están inspirados en el estilo western favorito de Benito y su Most Wanted Tour"
+                "Las zapatillas Last Campus están inspirados en el estilo western favorito de Benito y su Most Wanted Tour"
               }
               url={"/products/bad-bunny-adidas-campus-olive/ID7950"}
               bottom={true}

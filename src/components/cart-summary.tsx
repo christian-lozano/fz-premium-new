@@ -1,27 +1,26 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-import { useCart } from "react-use-cart"
+import { useCart } from "react-use-cart";
 
-
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function CartSummary() {
   function onCheckout() {}
-  const { cartTotal } = useCart()
+  const { cartTotal } = useCart();
 
-  const [clientState, setClientState] = useState(false)
+  const [clientState, setClientState] = useState(false);
   useEffect(() => {
-    setClientState(true)
-  }, [])
+    setClientState(true);
+  }, []);
   return (
     <>
       {clientState && (
         <section
           aria-labelledby="summary-heading"
-          className="sticky bottom-0 mt-16 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md dark:border-gray-900 dark:bg-black sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8 xl:top-0"
+          className="sticky bottom-0 mt-16 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md dark:border-gray-900 dark:bg-black sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8 xl:top-36"
         >
           <h2 id="summary-heading" className="text-lg font-medium">
             Resumen de Pedido
@@ -57,5 +56,5 @@ export function CartSummary() {
         </section>
       )}
     </>
-  )
+  );
 }

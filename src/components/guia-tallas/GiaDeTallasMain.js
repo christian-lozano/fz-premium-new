@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Dialog } from "@material-tailwind/react";
+
 
 import GiaDeTallasZapatillas from "./GiaDeTallasZapatillas";
 

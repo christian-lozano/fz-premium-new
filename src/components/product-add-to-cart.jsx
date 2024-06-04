@@ -9,6 +9,7 @@ import GiaDeTallasMain from "@/components/guia-tallas/GiaDeTallasMain";
 
 import { Button } from "./ui/button";
 import ModalDesk from "./modal/Modal";
+import LoveFollow from "./love-follow/love-follow";
 
 export default function ProductAddToCart({ product }) {
   const { toast } = useToast();
@@ -114,8 +115,11 @@ export default function ProductAddToCart({ product }) {
         <GiaDeTallasMain gender={product.genero} product_type={product.tipo} />
       </ModalDesk>
 
-      <form className="mt-6">
-        <div className="mt-4 flex">
+      <form
+        className="mt-6 flex items-center"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <div className="mt-4 w-full">
           {stock ? (
             <div className="flex w-full flex-col items-center">
               <Link href={"/tienda"} className="w-full">
@@ -139,7 +143,7 @@ export default function ProductAddToCart({ product }) {
             </Button>
           )}
         </div>
-        {/* <LoveFollow product={product}></LoveFollow> */}
+        <LoveFollow view={false} product={product} />
       </form>
     </div>
   );

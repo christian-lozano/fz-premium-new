@@ -19,7 +19,7 @@ const Slide = (props) => {
       )}
       {!props.slide.activebuttontitle && (
         <div className="slidecont ">
-          <div className="slidetitles">
+          <div className="slidetitles text-white">
             <div className="">
               Un ícono del running de los 70 que cautiva el <br /> street style
               en todo el mundo.

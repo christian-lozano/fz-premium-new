@@ -502,3 +502,7 @@ form.sticky.top-20 div:nth-child(6) div div {
   opacity: 0;
   background-color: rgba(255, 255, 255, 0.685);
 }
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}

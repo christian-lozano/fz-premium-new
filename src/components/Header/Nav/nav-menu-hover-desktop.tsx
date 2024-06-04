@@ -20,11 +20,11 @@ export default function NavMenuHoverDesktop({
       id="navMenuDesktop"
       className={`absolute  ${
         andler && hoverMenu ? "flex" : "hidden"
-      }  z-50 w-[100vw]  flex-col  items-center justify-center border-t-2  bg-white  dark:bg-background xl:top-[110px]   2xl:top-[110px] `}
+      }  z-50 w-[100vw]  flex-col  items-center   border-b-[1px] border-t-0 border-blue-gray-300 dark:border-transparent justify-center   bg-white  dark:bg-background xl:top-[110px]   2xl:top-[110px] `}
       onMouseEnter={() => setAndler(true)}
       onMouseLeave={() => setAndler(false)}
     >
-      <div className="container grid w-full   grid-flow-col">
+      <div className="container grid w-full     grid-flow-col">
         {hoverMenu &&
           hoverMenu.map((menulist, index) => (
             <div key={index} className="p-5 ">

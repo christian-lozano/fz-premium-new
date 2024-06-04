@@ -11,3 +11,6 @@ header.sticky.top-0.z-40.w-full.items-center.justify-around.border-b.border-slat
   padding: 0;
   box-sizing: border-box;
 }
+input {
+  color-scheme: black;
+}

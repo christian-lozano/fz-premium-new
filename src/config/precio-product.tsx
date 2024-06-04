@@ -1,19 +1,19 @@
 export const precioProduct = (
-  descuento: number | string,
-  precioEcommerce: number,
-  precioManual: number | undefined
+  descuento: number | string | undefined,
+  precioEcommerce: number | string | undefined,
+  precioManual: number | string | undefined
 ) => {
   let resultado: Number;
   if (precioManual) {
-    if (precioManual < 20) {
+    if (Number(precioManual) < 20) {
       resultado = 999;
     } else {
-      resultado = precioManual;
+      resultado = Number(precioManual);
     }
   } else {
     const precio = precioEcommerce;
 
-    if (precio < 20 || null) {
+    if (Number(precio) < 20 || null) {
       resultado = 999;
     } else {
       const operation = (Number(descuento) / 100) * Number(precio);

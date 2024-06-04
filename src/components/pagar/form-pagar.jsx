@@ -7,10 +7,8 @@ import departamentos from "@/json/departamentos.json";
 import distritos from "@/json/distritos.json";
 import provincias from "@/json/provincias.json";
 import { urlForImage } from "@/sanity/lib/image";
-import { Option, Select, Spinner } from "@material-tailwind/react";
 import { useCart } from "react-use-cart";
 
-import { Input } from "../ui/input";
 import { useSession } from "next-auth/react";
 
 const formData = {
@@ -64,14 +62,23 @@ const formData = {
 
 function Loading({ disableLoadAddProduct = true }) {
   return (
-    <Spinner
-      // color="black"
-      className={` absolute left-7 top-3  h-7 w-7  ${
+    // <Spinner
+    //   // color="black"
+    //   className={` absolute left-7 top-3  h-7 w-7  ${
+    //     !disableLoadAddProduct ? "hidden" : "block"
+    //   }`}
+    //   onResize={undefined}
+    //   onResizeCapture={undefined}
+    // />
+    <div
+      className={` absolute left-7 top-3  h-7 w-7  animate-spin inline-block  border-[3px] border-current border-t-transparent text-gray-800 rounded-full dark:text-white ${
         !disableLoadAddProduct ? "hidden" : "block"
       }`}
-      onResize={undefined}
-      onResizeCapture={undefined}
-    />
+      role="status"
+      aria-label="loading"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
   );
 }
 export default function FormPagar({ tipoEntrega }) {
@@ -228,8 +235,8 @@ export default function FormPagar({ tipoEntrega }) {
       // alert(data.msg)
       // }
       if (res.status === 401) {
-        alert("Ingresa un Email Valido");
-        setLoading(true);
+        alert("Ingrese los datos correctamente");
+        setLoading(false);
 
         // setLoadingMercadoPago(false)
 
@@ -250,7 +257,7 @@ export default function FormPagar({ tipoEntrega }) {
       allValues.documento.length >= 1 &&
       allValues.telefono.length >= 1 &&
       allValues.comprobante.length >= 2 &&
-      allValues.direccion.length >= 3 &&
+      allValues.direccion.length >= 5 &&
       allValues.departamento.length >= 2 &&
       allValues.provincia.length >= 2 &&
       allValues.distrito.length >= 1 &&
@@ -278,7 +285,7 @@ export default function FormPagar({ tipoEntrega }) {
     setDepartamento(data);
     setAllValues({
       ...allValues,
-      departamento: departamentos.find((el) => el.id_ubigeo === id)
+      departamento: departamentos?.find((el) => el.id_ubigeo === id)
         .nombre_ubigeo,
     });
   };
@@ -292,13 +299,50 @@ export default function FormPagar({ tipoEntrega }) {
   };
 
   return (
-    <div className="mt-10  px-4 pt-8  lg:mt-0">
+    <div className="mt-10  px-4 pt-8  lg:mt-0 dark:bg-black">
       <p className="text-xl font-medium">{formData.title}</p>
-      <p className="text-gray-400">{formData.subtitle}</p>
+      <p className="">{formData.subtitle}</p>
       <div>
-        <div className=" grid xl:grid-cols-2 xl:gap-4">
+        <div className=" grid xl:grid-cols-2 xl:gap-4 mt-5">
           {formData.inputs.map((el, i) => (
-            <div key={i}>
+            <div key={i} className="flex flex-col gap-y-2">
+              <div class="relative h-10 w-full min-w-[200px]">
+                <input
+                  name={el.name}
+                  // placeholder={el.placeholder}
+                  autocomplete="off"
+                  onChange={(e) => changeHandler(e)}
+                  className={`peer h-full w-full rounded-[7px] border ${
+                    allValues[`${el.name}`].length === 0
+                      ? "focus:border-red-300 placeholder-shown:border-red-300 placeholder-shown:border-t-red-300 border-red-300  "
+                      : "focus:border-green-300 placeholder-shown:border-green-300 placeholder-shown:border-t-green-300 border-green-300   text-black dark:text-blue-gray-100 "
+                  } border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border  focus:border-2  focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`}
+                  placeholder=" "
+                />
+                <label
+                  className={`before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight ${
+                    allValues[`${el.name}`].length === 0
+                      ? "text-red-300 before:border-red-300  after:border-red-300 peer-placeholder-shown:text-red-300 peer-focus:text-red-300 peer-focus:before:border-red-300 peer-focus:after:border-red-300"
+                      : "text-green-300    peer-placeholder-shown:text-green-300 peer-focus:text-green-300 before:border-green-300 after:border-green-300 peer-focus:before:border-green-300 peer-focus:after:border-green-300"
+                  }  transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l   before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r  after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight  peer-focus:before:border-t-2 peer-focus:before:border-l-2  peer-focus:after:border-t-2 peer-focus:after:border-r-2  peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent`}
+                >
+                  {el.label === "Información Adicional text-sm"
+                    ? el.label
+                    : el.label}
+                </label>
+              </div>
+              <span className="validationFormRed ml-1 text-sm">
+                {allValues[`${el.name}`].length === 0 &&
+                  `${
+                    el.name === "adicional"
+                      ? ""
+                      : `la propiedad ${el.name} es necesaria`
+                  }`}
+              </span>
+            </div>
+          ))}
+        </div>
+        {/* <div key={i}>
               <label
                 htmlFor="card-no"
                 className="mb-2 mt-4 block text-sm font-medium"
@@ -309,7 +353,7 @@ export default function FormPagar({ tipoEntrega }) {
               </label>
               <div className="flex justify-between">
                 <div className="relative w-full shrink-0 px-1 xl:px-5">
-                  <Input
+                  <input
                     type={el.tipo}
                     name={el.name}
                     placeholder={el.placeholder}
@@ -325,9 +369,7 @@ export default function FormPagar({ tipoEntrega }) {
                   </span>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            </div> */}
 
         {/* boleta factura */}
         <div className="flex justify-center pt-5">
@@ -358,7 +400,7 @@ export default function FormPagar({ tipoEntrega }) {
                 </span>
               </label>
               <label
-                className="mt-px cursor-pointer select-none font-light text-gray-700"
+                className="mt-px cursor-pointer select-none font-light "
                 htmlFor="react"
               >
                 Boleta
@@ -390,7 +432,7 @@ export default function FormPagar({ tipoEntrega }) {
                 </span>
               </label>
               <label
-                className="mt-px cursor-pointer select-none font-light text-gray-700"
+                className="mt-px cursor-pointer select-none font-light "
                 htmlFor="react"
               >
                 Factura
@@ -399,7 +441,36 @@ export default function FormPagar({ tipoEntrega }) {
           </div>
         </div>
         {allValues.comprobante === "Factura" && (
-          <>
+          <div className="flex flex-col gap-y-2 mb-2">
+            <div class="relative h-10 w-full min-w-[200px]">
+              <input
+                name="ruc"
+                // placeholder={el.placeholder}
+                onChange={(e) => changeHandler(e)}
+                className={`peer h-full w-full rounded-[7px] border ${
+                  allValues.ruc === "null" || allValues.ruc.length === 0
+                    ? "focus:border-red-300 placeholder-shown:border-red-300 placeholder-shown:border-t-red-300 border-red-300  "
+                    : "focus:border-green-300 placeholder-shown:border-green-300 placeholder-shown:border-t-green-300 border-green-300  text-green-300 "
+                } border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border  focus:border-2  focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`}
+                placeholder=" "
+              />
+              <label
+                className={`before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight ${
+                  allValues.ruc === "null" || allValues.ruc.length === 0
+                    ? "text-red-300 before:border-red-300  after:border-red-300 peer-placeholder-shown:text-red-300 peer-focus:text-red-300 peer-focus:before:border-red-300 peer-focus:after:border-red-300"
+                    : "text-green-300    peer-placeholder-shown:text-green-300 peer-focus:text-green-300 before:border-green-300 after:border-green-300 peer-focus:before:border-green-300 peer-focus:after:border-green-300"
+                }  transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l   before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r  after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight  peer-focus:before:border-t-2 peer-focus:before:border-l-2  peer-focus:after:border-t-2 peer-focus:after:border-r-2  peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent`}
+              >
+                RUC
+              </label>
+            </div>
+            <span className="validationFormRed ml-1 text-sm">
+              {allValues.ruc === "null" ||
+                (allValues.ruc.length === 0 && `la propiedad Ruc es necesaria`)}
+            </span>
+          </div>
+        )}
+        {/* <>
             <label
               htmlFor="billing-address"
               className="mb-2 mt-4 block text-sm font-medium"
@@ -408,7 +479,7 @@ export default function FormPagar({ tipoEntrega }) {
             </label>
             <div className="mb-3 flex flex-col sm:flex-row ">
               <div className="relative w-full shrink-0 sm:w-full">
-                <Input
+                <input
                   type="text"
                   name="ruc"
                   placeholder="RUC"
@@ -421,93 +492,131 @@ export default function FormPagar({ tipoEntrega }) {
                 </span>
               </div>
             </div>
-          </>
-        )}
+          </> */}
         {/* Departamentos */}
         <div className="flex flex-col sm:flex-row">
           <label
             htmlFor="card-holder"
-            className="mb-2 mt-4 block w-full text-sm  font-medium "
+            className="mb-2  block w-full text-sm  font-medium "
           >
-            <Select
-              onChange={(e) => handlerDepartamento(provincias[e], e)}
-              nonce={undefined}
+            <div
+              for="countries"
+              class="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-gray-400"
+            >
+              Departamento
+            </div>
+
+            <select
+              onChange={(e) =>
+                handlerDepartamento(provincias[e.target.value], e.target.value)
+              }
               name="departamento"
               label="Departamento"
-              className={`border  ${allValues.provincia.length === 0 && " "}`}
+              className={`border  ${
+                allValues.departamento.length === 0
+                  ? " bg-transparent border-red-300  focus:ring-red-300 focus:border-red-300 dark:focus:ring-red-300 dark:focus:border-red-300 dark:placeholder-red-300 dark:text-red-300  text-red-300 dark:bg-black  dark:border-red-300 "
+                  : "bg-transparent border-green-300  focus:ring-green-300 focus:border-green-300 dark:focus:ring-green-300 dark:focus:border-green-300 dark:placeholder-green-300 dark:text-green-300  text-green-300 dark:bg-black dark:border-green-300"
+              }  border   text-sm rounded-lg   block w-full p-2.5  bg-transparent  `}
               onResize={undefined}
               onResizeCapture={undefined}
             >
-              {departamentos.map((el) => (
-                <Option key={el.id_ubigeo} value={el.id_ubigeo}>
+              {departamentos?.map((el) => (
+                <option key={el.id_ubigeo} value={el.id_ubigeo}>
                   {el.nombre_ubigeo}
-                </Option>
+                </option>
               ))}
-            </Select>
+            </select>
 
             <span className="validationFormRed ml-1 text-sm">
-              {allValues.provincia.length === 0 &&
+              {allValues.departamento.length === 0 &&
                 `la propiedad Departamento es necesaria`}
             </span>
           </label>
         </div>
 
         {/* Provincias */}
-        <div className="flex flex-col sm:flex-row">
-          <label
-            htmlFor="card-holder"
-            className="mb-2 mt-4 block w-full text-sm  font-medium "
-          >
-            <Select
-              onChange={(e) => handlerProvincia(distritos[e], e)}
-              nonce={undefined}
-              name="provincia"
-              label="Provincia"
-              className={`border  ${allValues.provincia.length === 0 && " "}`}
-              onResize={undefined}
-              onResizeCapture={undefined}
+        {allValues.departamento && (
+          <div className="flex flex-col sm:flex-row">
+            <label
+              htmlFor="card-holder"
+              className="mb-2  block w-full text-sm  font-medium "
             >
-              {departamento.map((el) => (
-                <Option key={el.id_ubigeo} value={el.id_ubigeo}>
-                  {el.nombre_ubigeo}
-                </Option>
-              ))}
-            </Select>
+              <div
+                for="countries"
+                class="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-gray-400"
+              >
+                Provincia
+              </div>
+              <select
+                onChange={(e) =>
+                  handlerProvincia(distritos[e.target.value], e.target.value)
+                }
+                name="provincia"
+                label="Provincia"
+                className={`border  ${
+                  allValues.provincia.length === 0
+                    ? " bg-transparent border-red-300  focus:ring-red-300 focus:border-red-300 dark:focus:ring-red-300 dark:focus:border-red-300 dark:placeholder-red-300 dark:text-red-300  text-red-300 dark:bg-black  dark:border-red-300"
+                    : "bg-transparent border-green-300  focus:ring-green-300 focus:border-green-300 dark:focus:ring-green-300 dark:focus:border-green-300 dark:placeholder-green-300 dark:text-green-300  text-green-300 dark:bg-black dark:border-green-300"
+                }  border   text-sm rounded-lg   block w-full p-2.5  bg-transparent  `}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              >
+                {departamento?.map((el) => (
+                  <option key={el.id_ubigeo} value={el.id_ubigeo}>
+                    {el.nombre_ubigeo}
+                  </option>
+                ))}
+              </select>
 
-            <span className="validationFormRed ml-1 text-sm">
-              {allValues.provincia.length === 0 &&
-                `la propiedad Provincia es necesaria`}
-            </span>
-          </label>
-        </div>
+              <span className="validationFormRed ml-1 text-sm">
+                {allValues.provincia.length === 0 &&
+                  `la propiedad Provincia es necesaria`}
+              </span>
+            </label>
+          </div>
+        )}
         {/* Distritos */}
-        <div className="flex flex-col sm:flex-row">
-          <label
-            htmlFor="card-holder"
-            className="mb-2 mt-4 block w-full text-sm  font-medium "
-          >
-            <Select
-              onChange={(e) => setAllValues({ ...allValues, distrito: e })}
-              nonce={undefined}
-              name="distrito"
-              label="Distrito"
-              className={`border  ${allValues.provincia.length === 0 && " "}`}
-              onResize={undefined}
-              onResizeCapture={undefined}
+        {allValues.provincia && (
+          <div className="flex flex-col sm:flex-row">
+            <label
+              htmlFor="card-holder"
+              className="mb-2 block w-full text-sm  font-medium "
             >
-              {provincia.map((el) => (
-                <Option key={el.id_ubigeo} value={el.nombre_ubigeo}>
-                  {el.nombre_ubigeo}
-                </Option>
-              ))}
-            </Select>
+              <div
+                for="countries"
+                class="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-gray-400"
+              >
+                Distrito
+              </div>
+              <select
+                onChange={(e) =>
+                  setAllValues({ ...allValues, distrito: e.target.value })
+                }
+                nonce={undefined}
+                name="distrito"
+                label="Distrito"
+                className={`border  ${
+                  allValues.distrito.length === 0
+                    ? " bg-transparent border-red-300  focus:ring-red-300 focus:border-red-300 dark:focus:ring-red-300 dark:focus:border-red-300 dark:placeholder-red-300 dark:text-red-300  text-red-300 dark:bg-black   dark:border-red-300"
+                    : "bg-transparent border-green-300  focus:ring-green-300 focus:border-green-300 dark:focus:ring-green-300 dark:focus:border-green-300 dark:placeholder-green-300 dark:text-green-300  text-green-300 dark:bg-black dark:border-green-300"
+                }  border   text-sm rounded-lg   block w-full p-2.5  bg-transparent  `}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              >
+                {provincia.map((el) => (
+                  <option key={el.id_ubigeo} value={el.nombre_ubigeo}>
+                    {el.nombre_ubigeo}
+                  </option>
+                ))}
+              </select>
 
-            <span className="validationFormRed ml-1 text-sm">
-              {allValues.distrito.length === 0 &&
-                `la propiedad Distrito es necesaria`}
-            </span>
-          </label>
-        </div>
+              <span className="validationFormRed ml-1 text-sm">
+                {allValues.distrito.length === 0 &&
+                  `la propiedad Distrito es necesaria`}
+              </span>
+            </label>
+          </div>
+        )}
 
         {/* <!-- Total --> */}
         {domLoaded && (
@@ -532,13 +641,13 @@ export default function FormPagar({ tipoEntrega }) {
         )}
       </div>
 
-      <div className="my-3 hidden text-center text-xs text-gray-400 xl:block">
+      <div className="my-3  text-center text-[10px]  xl:block">
         Tus datos personales se utilizarán para procesar tu pedido, mejorar tu
         experiencia en esta web y otros propósitos descritos en nuestra
         <Link
           href="/pyp"
           target="_blank"
-          className="mr-1 text-gray-400 underline focus:outline-none "
+          className="mr-1 font-bold underline focus:outline-none "
         >
           <i className="mdi mdi-beer-outline mr-1 "></i>
           política de privacidad
@@ -547,14 +656,14 @@ export default function FormPagar({ tipoEntrega }) {
         <Link
           href="/tyc"
           target="_blank"
-          className="mr-1 text-gray-400 underline focus:outline-none "
+          className="mr-1  font-bold underline focus:outline-none "
         >
           <i className="mdi mdi-beer-outline mr-1 "></i>términos y condiciones.
         </Link>
       </div>
 
-      <div className=" laptop:mt-0 z-10  mt-3 flex items-center justify-center xl:flex">
-        <div className="inline-flex items-center">
+      <div className=" laptop:mt-0 z-10  mt-3  flex items-center justify-center xl:flex">
+        <div className="inline-flex items-center ">
           <label
             className="relative flex cursor-pointer items-center rounded-full p-3"
             htmlFor="checkbox-8"
@@ -564,14 +673,14 @@ export default function FormPagar({ tipoEntrega }) {
               // checked={checkoutPago}
               type="checkbox"
               className={`before:content[''] ${
-                !allValues.checkTerminos && "border-red-500"
-              }  peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border  transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black checked:bg-black checked:before:bg-black hover:before:opacity-10`}
+                !allValues.checkTerminos ? "border-red-300" : "border-green-300"
+              }  peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border  transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-300 checked:bg-transparent checked:before:bg-black hover:before:opacity-10`}
               id="checkbox-8"
               onChange={(e) =>
                 setAllValues({ ...allValues, checkTerminos: e.target.checked })
               }
             />
-            <div className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 bg-red-200  opacity-0 transition-opacity peer-checked:opacity-100">
+            <div className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-green-300 border-green-300 opacity-0 transition-opacity peer-checked:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-3.5 w-3.5"
@@ -589,15 +698,28 @@ export default function FormPagar({ tipoEntrega }) {
             </div>
           </label>
         </div>
-        <span className="text-sm text-gray-400  "> Acepto los</span>{" "}
-        <Link
-          href="/tyc"
-          target="_blank"
-          className="mr-1 text-sm text-gray-400 underline  focus:outline-none "
-          rel="noreferrer"
-        >
-          <i className="mdi mdi-beer-outline mr-1 "></i>Términos & Condiciones.
-        </Link>
+        <div className="">
+          <span className="text-sm  "> Acepto los</span>
+
+          <Link
+            href="/tyc"
+            target="_blank"
+            className="ml-1 text-sm font-bold underline w-full focus:outline-none "
+            rel="noreferrer"
+          >
+            Términos & Condiciones.
+          </Link>
+          <span className="text-sm  "> y</span>
+
+          <Link
+            href="/pyp"
+            target="_blank"
+            className="ml-1 text-sm font-bold underline w-full focus:outline-none "
+            rel="noreferrer"
+          >
+            Políticas de Privacidad
+          </Link>
+        </div>
       </div>
       {/* ---- */}
 
@@ -606,13 +728,15 @@ export default function FormPagar({ tipoEntrega }) {
           disabled={!validate}
           onClick={handlesubmit}
           className={`mb-8 mt-4 w-full  cursor-pointer rounded-md ${
-            !validate ? "bg-gray-500 text-red-500 " : " bg-white text-black"
+            !validate
+              ? "bg-gray-500 text-red-500 "
+              : " bg-black dark:bg-white  text-white dark:text-black "
           } b px-6 py-3  font-medium `}
         >
           {items.length === 0
             ? "No tienes Productos en el Carrito"
             : " Realizar pedido"}
-          <Loading disableLoadAddProduct={loading} />
+          <Loading disableLoadAddProduct={!loading} />
         </button>
       )}
     </div>

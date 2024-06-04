@@ -11,7 +11,7 @@ const dataHeader = {
     {
       id: "mujer",
       titulo: "Mujer",
-      url: "/tienda?genero=mujer",
+      url: "tienda?genero=mujer",
 
       infoNav: [
         {
@@ -106,7 +106,7 @@ const dataHeader = {
     {
       id: "Hombre",
       titulo: "Hombre",
-      url: "/tienda?genero=hombre",
+      url: "tienda?genero=hombre",
       infoNav: [
         {
           categoria: [
@@ -192,7 +192,7 @@ const dataHeader = {
     {
       id: "ninos",
       titulo: "Niños",
-      url: "/tienda?genero=niños",
+      url: "tienda?genero=niños",
       infoNav: [
         {
           categoria: [
@@ -245,7 +245,7 @@ const dataHeader = {
     {
       id: "colections",
       titulo: "Colecciones",
-      url: "/tienda?category=originals",
+      url: "tienda?category=originals",
       infoNav: [
         // { label: "Adidas Superstar", value: "superstar" },
         // { label: "Adidas Forum", value: "forum" },

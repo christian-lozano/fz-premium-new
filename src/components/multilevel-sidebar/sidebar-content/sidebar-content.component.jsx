@@ -3,7 +3,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import "../stile-sidebar-menu.css";
-import { User } from "lucide-react";
+import { Heart, User } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { FaUserCircle } from "react-icons/fa";
@@ -81,31 +81,49 @@ const SidebarContent = (props) => {
         <div className="flex w-full justify-center  absolute bottom-7">
           <div className="flex">
             {session?.user ? (
-              <Link href={`/users/${session.user.id}`}>
-                {session.user.image ? (
-                  <div className="flex">
-                    <div className="w-[30px] h-[30px] rounded-full overflow-hidden">
-                      <Image
-                        src={session.user.image}
-                        alt={session.user.name}
-                        width={30}
-                        height={30}
-                        className="scale-animation img"
-                      />
+              <div className="flex flex-col items-center justify-center gap-y-6">
+                <Link href={`/users/${session.user.id}`}>
+                  {session.user.image ? (
+                    <div className="flex">
+                      <div className="w-[30px] h-[30px] rounded-full overflow-hidden">
+                        <Image
+                          src={session.user.image}
+                          alt={session.user.name}
+                          width={30}
+                          height={30}
+                          className="scale-animation img"
+                        />
+                      </div>
+                      <div className="ml-2">{session.user.name}</div>
                     </div>
-                    <div className="ml-2">{session.user.name}</div>
+                  ) : (
+                    <FaUserCircle size={22} className="cursor-pointer" />
+                  )}
+                </Link>
+                <Link href="/follows">
+                  <div className="flex items-center">
+                    <Heart className={`w-5 h-5 xl:h-auto xl:w-auto `} />
+
+                    <div className="ml-2">Favoritos</div>
                   </div>
-                ) : (
-                  <FaUserCircle size={22} className="cursor-pointer" />
-                )}
-              </Link>
+                </Link>
+              </div>
             ) : (
-              <Link href="/auth">
-                <div className="flex">
-                  <User className="h-6 w-6" />
-                  <div className="ml-2">Mi Cuenta</div>
-                </div>
-              </Link>
+              <div className="flex flex-col items-center justify-center gap-y-6">
+                <Link href="/auth">
+                  <div className="flex items-center">
+                    <Heart className={`w-5 h-5 xl:h-auto xl:w-auto `} />
+
+                    <div className="ml-2">Favoritos</div>
+                  </div>
+                </Link>
+                <Link href="/follows">
+                  <div className="flex">
+                    <User className="h-6 w-6" />
+                    <div className="ml-2">Mi Cuenta</div>
+                  </div>
+                </Link>
+              </div>
             )}
           </div>
         </div>

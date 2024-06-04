@@ -2,7 +2,7 @@
 
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Link from "next/link";
-import { Edit, Search, ShoppingBag, X } from "lucide-react";
+import { Edit, Heart, Search, ShoppingBag, X } from "lucide-react";
 import { useCart } from "react-use-cart";
 
 import { Button } from "@/components/ui/button";
@@ -65,6 +65,13 @@ export default function NavTop({
           <div className="flex items-center xl:space-x-1">
             {/* dark mode */}
             <ThemeToggle />
+            <div className="hidden xl:block">
+              <Link href={"/follows"}>
+                <Button className=" z-10 hover:bg-blue-gray-600 p-0 bg-transparent  xl:px-2 px-1 py-[1px]">
+                  <Heart className="w-5 h-5 xl:h-5 xl:w-5 text-black dark:text-white" />
+                </Button>
+              </Link>
+            </div>
             {/* icono carrito */}
             <Link href="/carrito">
               <Button size="sm" variant="ghost">

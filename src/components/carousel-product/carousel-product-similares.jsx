@@ -81,15 +81,18 @@ const CarouselProductSimilares = ({ children }) => {
       },
     ],
   };
-
+  console.log(marcaCategoriaDestacada);
   const [dataCategoria, setDataCategoria] = useState(dataCategorias.adidas);
   const handlerCategoria = (marca) => {
     switch (marca) {
       case "adidas":
+        setMarcaCategoriaDestacada(marca);
         setDataCategoria(dataCategorias.adidas);
         break;
 
       case "nike":
+        setMarcaCategoriaDestacada(marca);
+
         setDataCategoria(dataCategorias.nike);
 
         break;
@@ -104,13 +107,21 @@ const CarouselProductSimilares = ({ children }) => {
         <div className="grid w-full grid-flow-col container mt-5 gap-x-8 ">
           <Button
             onClick={() => handlerCategoria("adidas")}
-            className="uppercase rounded-md"
+            className={`uppercase p-0 rounded-md hover:text-white dark:hover:text-black ${
+              marcaCategoriaDestacada === "adidas"
+                ? "bg-black dark:bg-white "
+                : " bg-transparent border-[1px] border-black dark:border-white text-black dark:text-white"
+            }`}
           >
             Adidas
           </Button>
           <Button
             onClick={() => handlerCategoria("nike")}
-            className="uppercase rounded-md"
+            className={`uppercase p-0 rounded-md hover:text-white dark:hover:text-black  ${
+              marcaCategoriaDestacada === "nike"
+                ? "bg-black dark:bg-white "
+                : " bg-transparent border-[1px] border-black dark:border-white text-black dark:text-white"
+            }`}
           >
             Nike
           </Button>

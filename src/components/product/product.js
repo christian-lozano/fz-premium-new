@@ -7,6 +7,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import { groq } from "next-sanity";
 
 import { precioProduct } from "@/config/precio-product";
+import LoveFollow from "../love-follow/love-follow";
 
 // import LoveFollow from "../love-follow/love-follow";
 
@@ -72,7 +73,7 @@ export default function Product({
         setData(data);
         setLoading(false);
       });
-  }, []);
+  }, [products.sku]);
 
   return (
     <>
@@ -103,7 +104,7 @@ export default function Product({
               />
             )}
           </Link>
-          {/* <LoveFollow product={products} /> */}
+          <LoveFollow product={products} />
           {products.descuento && (
             <div className="absolute right-0 top-4 z-10 ">
               <div className=" mt-1 text-xs text-white ">

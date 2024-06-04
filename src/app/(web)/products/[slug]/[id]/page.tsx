@@ -108,7 +108,7 @@ export default async function Page({ params }: Props) {
                 <BreadcrumbsDefault product={product} />
               </div> */}
               <div className=" flex w-full items-center justify-between  px-4 py-2 ">
-                <h1 className="text-lg font-bold uppercase tracking-tight 2xl:text-3xl">
+                <h1 className="text-sm sm:text-lg font-bold uppercase tracking-tight 2xl:text-3xl">
                   {product?.name} - {product?.genero}
                 </h1>
                 <div className="flex">
