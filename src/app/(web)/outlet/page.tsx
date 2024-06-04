@@ -126,7 +126,7 @@ export default async function Page({ searchParams }: Props) {
 
   return (
     <div>
-      <div className="sticky top-[80px] z-20 h-full w-full  xl:top-[101px]">
+      <div className="sticky top-[80px] z-20 h-full w-full  xl:top-[101px] border-b-[1px] border-blue-gray-700/20">
         <div className=" flex  w-full items-center justify-between bg-white  px-6 py-4   dark:bg-background">
           <h1 className="text-xl font-bold tracking-tight sm:text-xl">
             {/* {products.length}

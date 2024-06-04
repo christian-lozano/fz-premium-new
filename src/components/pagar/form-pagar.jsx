@@ -253,11 +253,11 @@ export default function FormPagar({ tipoEntrega }) {
     if (
       allValues.nombre.length >= 1 &&
       allValues.apellido.length >= 1 &&
-      allValues.email.length >= 5 &&
+      allValues.email.length >= 4 &&
       allValues.documento.length >= 1 &&
       allValues.telefono.length >= 1 &&
       allValues.comprobante.length >= 2 &&
-      allValues.direccion.length >= 5 &&
+      allValues.direccion.length >= 4 &&
       allValues.departamento.length >= 2 &&
       allValues.provincia.length >= 2 &&
       allValues.distrito.length >= 1 &&
@@ -313,7 +313,7 @@ export default function FormPagar({ tipoEntrega }) {
                   autocomplete="off"
                   onChange={(e) => changeHandler(e)}
                   className={`peer h-full w-full rounded-[7px] border ${
-                    allValues[`${el.name}`].length === 0
+                    allValues[`${el.name}`].length < 4
                       ? "focus:border-red-300 placeholder-shown:border-red-300 placeholder-shown:border-t-red-300 border-red-300  "
                       : "focus:border-green-300 placeholder-shown:border-green-300 placeholder-shown:border-t-green-300 border-green-300   text-black dark:text-blue-gray-100 "
                   } border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border  focus:border-2  focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`}
@@ -321,7 +321,7 @@ export default function FormPagar({ tipoEntrega }) {
                 />
                 <label
                   className={`before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight ${
-                    allValues[`${el.name}`].length === 0
+                    allValues[`${el.name}`].length < 4
                       ? "text-red-300 before:border-red-300  after:border-red-300 peer-placeholder-shown:text-red-300 peer-focus:text-red-300 peer-focus:before:border-red-300 peer-focus:after:border-red-300"
                       : "text-green-300    peer-placeholder-shown:text-green-300 peer-focus:text-green-300 before:border-green-300 after:border-green-300 peer-focus:before:border-green-300 peer-focus:after:border-green-300"
                   }  transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l   before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r  after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight  peer-focus:before:border-t-2 peer-focus:before:border-l-2  peer-focus:after:border-t-2 peer-focus:after:border-r-2  peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent`}
@@ -332,7 +332,7 @@ export default function FormPagar({ tipoEntrega }) {
                 </label>
               </div>
               <span className="validationFormRed ml-1 text-sm">
-                {allValues[`${el.name}`].length === 0 &&
+                {allValues[`${el.name}`].length < 4 &&
                   `${
                     el.name === "adicional"
                       ? ""
@@ -360,7 +360,7 @@ export default function FormPagar({ tipoEntrega }) {
                     onChange={(e) => changeHandler(e)}
                   />
                   <span className="validationFormRed ml-1 text-sm">
-                    {allValues[`${el.name}`].length === 0 &&
+                    {allValues[`${el.name}`].length < 4 &&
                       `${
                         el.name === "adicional"
                           ? ""
@@ -513,7 +513,7 @@ export default function FormPagar({ tipoEntrega }) {
               name="departamento"
               label="Departamento"
               className={`border  ${
-                allValues.departamento.length === 0
+                allValues.departamento.length < 4
                   ? " bg-transparent border-red-300  focus:ring-red-300 focus:border-red-300 dark:focus:ring-red-300 dark:focus:border-red-300 dark:placeholder-red-300 dark:text-red-300  text-red-300 dark:bg-black  dark:border-red-300 "
                   : "bg-transparent border-green-300  focus:ring-green-300 focus:border-green-300 dark:focus:ring-green-300 dark:focus:border-green-300 dark:placeholder-green-300 dark:text-green-300  text-green-300 dark:bg-black dark:border-green-300"
               }  border   text-sm rounded-lg   block w-full p-2.5  bg-transparent  `}
@@ -528,7 +528,7 @@ export default function FormPagar({ tipoEntrega }) {
             </select>
 
             <span className="validationFormRed ml-1 text-sm">
-              {allValues.departamento.length === 0 &&
+              {allValues.departamento.length < 4 &&
                 `la propiedad Departamento es necesaria`}
             </span>
           </label>
@@ -554,7 +554,7 @@ export default function FormPagar({ tipoEntrega }) {
                 name="provincia"
                 label="Provincia"
                 className={`border  ${
-                  allValues.provincia.length === 0
+                  allValues.provincia.length < 4
                     ? " bg-transparent border-red-300  focus:ring-red-300 focus:border-red-300 dark:focus:ring-red-300 dark:focus:border-red-300 dark:placeholder-red-300 dark:text-red-300  text-red-300 dark:bg-black  dark:border-red-300"
                     : "bg-transparent border-green-300  focus:ring-green-300 focus:border-green-300 dark:focus:ring-green-300 dark:focus:border-green-300 dark:placeholder-green-300 dark:text-green-300  text-green-300 dark:bg-black dark:border-green-300"
                 }  border   text-sm rounded-lg   block w-full p-2.5  bg-transparent  `}
@@ -569,7 +569,7 @@ export default function FormPagar({ tipoEntrega }) {
               </select>
 
               <span className="validationFormRed ml-1 text-sm">
-                {allValues.provincia.length === 0 &&
+                {allValues.provincia.length < 4 &&
                   `la propiedad Provincia es necesaria`}
               </span>
             </label>
@@ -596,7 +596,7 @@ export default function FormPagar({ tipoEntrega }) {
                 name="distrito"
                 label="Distrito"
                 className={`border  ${
-                  allValues.distrito.length === 0
+                  allValues.distrito.length < 4
                     ? " bg-transparent border-red-300  focus:ring-red-300 focus:border-red-300 dark:focus:ring-red-300 dark:focus:border-red-300 dark:placeholder-red-300 dark:text-red-300  text-red-300 dark:bg-black   dark:border-red-300"
                     : "bg-transparent border-green-300  focus:ring-green-300 focus:border-green-300 dark:focus:ring-green-300 dark:focus:border-green-300 dark:placeholder-green-300 dark:text-green-300  text-green-300 dark:bg-black dark:border-green-300"
                 }  border   text-sm rounded-lg   block w-full p-2.5  bg-transparent  `}
@@ -611,7 +611,7 @@ export default function FormPagar({ tipoEntrega }) {
               </select>
 
               <span className="validationFormRed ml-1 text-sm">
-                {allValues.distrito.length === 0 &&
+                {allValues.distrito.length < 4 &&
                   `la propiedad Distrito es necesaria`}
               </span>
             </label>
@@ -727,13 +727,13 @@ export default function FormPagar({ tipoEntrega }) {
         <button
           disabled={!validate}
           onClick={handlesubmit}
-          className={`mb-8 mt-4 w-full  cursor-pointer rounded-md ${
+          className={`mb-8 mt-4 w-full  cursor-pointer rounded-none upe ${
             !validate
               ? "bg-gray-500 text-red-500 "
               : " bg-black dark:bg-white  text-white dark:text-black "
           } b px-6 py-3  font-medium `}
         >
-          {items.length === 0
+          {items.length < 4
             ? "No tienes Productos en el Carrito"
             : " Realizar pedido"}
           <Loading disableLoadAddProduct={loading} />

@@ -19,15 +19,14 @@ export default function Cabecera({ dataCabeceraTab, handler }) {
           {dataCabeceraTab.map((el, i) => (
             <li
               key={i}
-              className={`me-2 ${
-                indice === i &&
-                "border-b border-gray-200  dark:border-gray-200 "
+              className={`ml-2 ${
+                indice === i && "border-b border-black  dark:border-gray-200 "
               } xl:p-4 mx-1 `}
               role="presentation"
             >
               <button
                 onClick={() => handleClick(el.titulo, i)}
-                className={`inline-block font-extrabold uppercase xl:text-lg`}
+                className={`inline-block uppercase xl:text-base`}
                 id="profile-tab"
                 data-tabs-target="#profile"
                 type="button"

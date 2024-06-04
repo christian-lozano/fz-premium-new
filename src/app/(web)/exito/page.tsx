@@ -130,7 +130,7 @@ export default function Page() {
                     key={el.sku}
                     className="flex h-[700px] w-[500px] flex-col  justify-center p-1"
                   >
-                    <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg    group-hover:opacity-75 ">
+                    <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-md    group-hover:opacity-75 ">
                       {el.picture_url && (
                         <img
                           width={500}

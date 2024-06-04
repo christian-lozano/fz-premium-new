@@ -183,7 +183,7 @@ export default async function Page({ params }: Props) {
 
       {/* <RoomReview roomId={product._id}></RoomReview> */}
       <div className="mt-10">
-        <h5 className="text-center text-2xl font-extrabold">
+        <h5 className="text-center text-2xl uppercase">
           Productos Relacionados
         </h5>
 

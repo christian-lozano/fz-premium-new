@@ -32,6 +32,6 @@
     "src/components/love-follow/items-follow.js",
     "src/components/love-follow/love-follow-navigation.js",
     "src/components/love-follow/love-follow.js"
-  ],
+, "src/components/Footer/Footer.jsx"  ],
   "exclude": ["node_modules"]
 }

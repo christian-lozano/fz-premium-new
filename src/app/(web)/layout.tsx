@@ -78,7 +78,9 @@ whatsapp
               {/* <Header /> */}
               <SiteHeader />
               {children}
-              <Footer />
+              <div className="fill-black">
+                <Footer />
+              </div>
             </main>
           </ThemeProvider>
         </NextAuthProvider>

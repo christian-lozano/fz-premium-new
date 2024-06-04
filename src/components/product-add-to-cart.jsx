@@ -137,7 +137,7 @@ export default function ProductAddToCart({ product }) {
               disabled={activeAddProduct}
               onClick={addToCart}
               type="button"
-              className=" w-full bg-black py-6 text-base font-medium focus:outline-none focus:ring-2 dark:bg-white "
+              className=" w-full rounded-none uppercase bg-black py-6 text-base font-medium focus:outline-none focus:ring-2 dark:bg-white "
             >
               {activeAddProduct ? "Seleccione una talla" : "Agregar Al Carrito"}
             </Button>

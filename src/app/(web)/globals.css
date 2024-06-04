@@ -123,9 +123,7 @@ a {
 .capitalize {
   text-transform: capitalize;
 }
-.graytext {
-  color: var(--gray-text);
-}
+
 p,
 h1,
 h2,

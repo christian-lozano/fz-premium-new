@@ -107,7 +107,7 @@ const CarouselProductSimilares = ({ children }) => {
         <div className="grid w-full grid-flow-col container mt-5 gap-x-8 ">
           <Button
             onClick={() => handlerCategoria("adidas")}
-            className={`uppercase p-0 rounded-md hover:text-white dark:hover:text-black ${
+            className={`uppercase p-0  hover:text-white rounded-none dark:hover:text-black ${
               marcaCategoriaDestacada === "adidas"
                 ? "bg-black dark:bg-white "
                 : " bg-transparent border-[1px] border-black dark:border-white text-black dark:text-white"
@@ -117,7 +117,7 @@ const CarouselProductSimilares = ({ children }) => {
           </Button>
           <Button
             onClick={() => handlerCategoria("nike")}
-            className={`uppercase p-0 rounded-md hover:text-white dark:hover:text-black  ${
+            className={`uppercase p-0  hover:text-white rounded-none dark:hover:text-black  ${
               marcaCategoriaDestacada === "nike"
                 ? "bg-black dark:bg-white "
                 : " bg-transparent border-[1px] border-black dark:border-white text-black dark:text-white"

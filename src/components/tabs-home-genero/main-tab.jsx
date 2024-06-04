@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from "react";
+import Link from "next/link";
 
-import { Button } from "../ui/button"
-import Cabecera from "./cabecera"
-import { ProductGridTab } from "./product-grid-tab"
+import { Button } from "../ui/button";
+import Cabecera from "./cabecera";
+import { ProductGridTab } from "./product-grid-tab";
 
 export default function MainTab({ dataCabeceraTab, dataProductTab }) {
-  const [dataTab, setDataTab] = useState(dataProductTab.productosAll)
-  const [genero, setGenero] = useState("tienda")
+  const [dataTab, setDataTab] = useState(dataProductTab.productosAll);
+  const [genero, setGenero] = useState("tienda");
   const handler = (value) => {
     switch (value) {
       case "Hombre":
-        setDataTab(dataProductTab.productosHombre)
-        setGenero("hombre")
-        break
+        setDataTab(dataProductTab.productosHombre);
+        setGenero("hombre");
+        break;
       case "Mujer":
-        setDataTab(dataProductTab.productosMujer)
-        setGenero("mujer")
+        setDataTab(dataProductTab.productosMujer);
+        setGenero("mujer");
 
-        break
+        break;
       case "Niños":
-        setDataTab(dataProductTab.productosNinos)
-        setGenero("niños")
+        setDataTab(dataProductTab.productosNinos);
+        setGenero("niños");
 
-        break
+        break;
       case "All":
-        setDataTab(dataProductTab.productosAll)
-        setGenero("tienda")
-        break
+        setDataTab(dataProductTab.productosAll);
+        setGenero("tienda");
+        break;
     }
-  }
+  };
 
   return (
     <div className="mt-10 flex h-full w-full justify-center">
@@ -42,10 +42,10 @@ export default function MainTab({ dataCabeceraTab, dataProductTab }) {
           <Link
             href={`/tienda${genero === "tienda" ? `` : `?genero=${genero}`}`}
           >
-            <Button className="uppercase">Ver Mas</Button>
+            <Button className="uppercase rounded-none">Ver Mas</Button>
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }

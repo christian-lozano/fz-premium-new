@@ -17,7 +17,7 @@ export default function ProductRelacionados({
         href={`/products/${products.slug}/${products.sku}`}
         className="group z-10 text-sm  border-y-[1px] border-l-[1px]  p-3 border-blue-gray-300  dark:border-none"
       >
-        <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg    group-hover:opacity-75 ">
+        <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-md    group-hover:opacity-75 ">
           {products.images && (
             <img
               width={800}

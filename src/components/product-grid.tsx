@@ -48,18 +48,18 @@ export function ProductGrid({ products, generoSku, outlet = false }: Props) {
         {loadMore < products?.length ? (
           <button
             type="button"
-            className="group relative overflow-hidden rounded-lg bg-white px-2 py-3 text-sm md:text-base"
+            className="group relative overflow-hidden  bg-white px-2 py-3 text-sm md:text-base "
             onClick={showMoreArticles}
           >
-            <div className="duration-[350ms] absolute inset-0  w-3  bg-[var(--color-naranja)] transition-all ease-out group-hover:w-full"></div>
-            <span className="relative text-black group-hover:text-white ">
+            <div className="duration-[350ms] absolute inset-0  w-3  bg-blue-gray-900   transition-all ease-out group-hover:w-full"></div>
+            <span className="relative uppercase text-black group-hover:text-white md:text-sm">
               Ver Mas Productos
             </span>
           </button>
         ) : (
           <button
             type="button"
-            className="cursor-not-allowed rounded-lg dark:bg-[var(--color-naranja)] bg-black px-2 py-3 text-sm text-[#FFF] opacity-50 md:text-base"
+            className="cursor-not-allowed  uppercase dark:bg-white bg-black px-2 py-3 text-sm text-[#FFF] opacity-80 md:text-sm"
             onClick={showMoreArticles}
             disabled
           >

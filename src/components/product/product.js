@@ -78,7 +78,7 @@ export default function Product({
   return (
     <>
       <div className=" flex h-full flex-col justify-around   border-[1px] p-2 border-blue-gray-300  dark:border-none ">
-        <div className="aspect-h-1 aspect-w-1  overflow-hidden  rounded-lg    group-hover:opacity-75 ">
+        <div className="aspect-h-1 aspect-w-1  overflow-hidden  rounded-md    group-hover:opacity-75 ">
           <Link
             key={products.id}
             href={`/products/${products.slug}/${products.sku}`}
@@ -128,8 +128,8 @@ export default function Product({
         {relacionados && (
           <>
             <div className="mt-2 flex gap-1">
-              {data?.map((el) => (
-                <Link key={el.id} href={`/products/${el.slug}/${el.sku}`}>
+              {data?.map((el, i) => (
+                <Link key={i} href={`/products/${el.slug}/${el.sku}`}>
                   <img
                     onMouseEnter={() =>
                       setHoverImage(urlForImage(el.images[0].asset._ref).url())
