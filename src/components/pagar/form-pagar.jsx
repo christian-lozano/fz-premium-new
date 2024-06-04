@@ -303,7 +303,7 @@ export default function FormPagar({ tipoEntrega }) {
       <p className="text-xl font-medium">{formData.title}</p>
       <p className="">{formData.subtitle}</p>
       <div>
-        <div className=" grid xl:grid-cols-2 xl:gap-4 mt-5">
+        <div className=" grid xl:grid-cols-2 xl:gap-4 gap-y-4 mt-5">
           {formData.inputs.map((el, i) => (
             <div key={i} className="flex flex-col gap-y-2">
               <div class="relative h-10 w-full min-w-[200px]">
@@ -736,7 +736,7 @@ export default function FormPagar({ tipoEntrega }) {
           {items.length === 0
             ? "No tienes Productos en el Carrito"
             : " Realizar pedido"}
-          <Loading disableLoadAddProduct={!loading} />
+          <Loading disableLoadAddProduct={loading} />
         </button>
       )}
     </div>

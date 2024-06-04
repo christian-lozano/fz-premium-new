@@ -116,10 +116,10 @@ export default function ProductAddToCart({ product }) {
       </ModalDesk>
 
       <form
-        className="mt-6 flex items-center"
+        className=" flex items-center mt-4 "
         onSubmit={(e) => e.preventDefault()}
       >
-        <div className="mt-4 w-full">
+        <div className="w-full">
           {stock ? (
             <div className="flex w-full flex-col items-center">
               <Link href={"/tienda"} className="w-full">

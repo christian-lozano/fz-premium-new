@@ -131,12 +131,20 @@ export default function LoveFollow({ product, view = true }) {
     <>
       {!session?.user.id ? (
         <div
-          className={` absolute xl:left-5 left-1 xl:top-5 top-1 z-10  bg-transparent `}
+          className={`${
+            view && "absolute  xl:left-5 left-1 xl:top-5 top-1"
+          }  z-10  bg-transparent `}
         >
           <Link href={"/auth"}>
-            <Button className="z-10 hover:bg-transparent focus:bg-transparent">
+            <Button
+              className={`z-10 hover:bg-transparent bg-transparent ${
+                view ? " text-black" : " text-black dark:text-white"
+              }  focus:bg-transparent`}
+            >
               <Heart
-                className={`w-5 h-5 xl:h-auto xl:w-auto bg-transparent `}
+                className={` ${
+                  view && "absolute"
+                } w-5 h-5 xl:h-auto xl:w-auto bg-transparent  focus:bg-transparent `}
               />
             </Button>
           </Link>
@@ -144,15 +152,14 @@ export default function LoveFollow({ product, view = true }) {
       ) : (
         <div
           className={`${
-            view && "absolute"
-          }  xl:left-5 left-1 xl:top-5 top-1 z-10  bg-transparent `}
+            view &&
+            "absolute  xl:left-5 left-1 xl:top-5 top-1 z-10  bg-transparent "
+          } `}
         >
           {loadingFollow ? (
             <Button className="z-10 bg-transparent hover:bg-transparent focus:bg-transparent">
               <Heart
-                className={`${
-                  view ? "w-5 h-5" : "w-7 h-7"
-                } xl:h-auto xl:w-auto bg-transparent `}
+                className={`${view ? "w-5 h-5" : "w-7 h-7"}  bg-transparent `}
               />
             </Button>
           ) : (
@@ -168,7 +175,7 @@ export default function LoveFollow({ product, view = true }) {
               <Heart
                 className={`${
                   view ? "w-5 h-5" : "w-7 h-7"
-                } xl:h-auto xl:w-auto  focus:bg-transparent ${
+                }   focus:bg-transparent ${
                   follows === product.sku
                     ? "text-red-900 fill-red-900"
                     : ` text-black ${!view && "dark:text-white"} `
