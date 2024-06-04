@@ -139,7 +139,7 @@ export default async function Page({ params }: Props) {
                 <AccordionItem value={`item-}`}>
                   <AccordionTrigger>
                     <span className="w-full ">
-                      <span className="ml-1 text-xs xl:text-base  font-extrabold uppercase text-black dark:text-gray-400">
+                      <span className="ml-1 text-xs xl:text-base   uppercase text-black dark:text-gray-400">
                         Descripción
                       </span>
                     </span>
@@ -157,7 +157,7 @@ export default async function Page({ params }: Props) {
                 <AccordionItem value={`items-}`}>
                   <AccordionTrigger>
                     <span className="w-full">
-                      <span className="ml-1 text-xs xl:text-base  font-extrabold uppercase text-black dark:text-gray-400">
+                      <span className="ml-1 text-xs xl:text-base   uppercase text-black dark:text-gray-400">
                         Detalles
                       </span>
                     </span>

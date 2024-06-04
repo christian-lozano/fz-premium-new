@@ -59,7 +59,7 @@ export function ProductGrid({ products, generoSku, outlet = false }: Props) {
         ) : (
           <button
             type="button"
-            className="cursor-not-allowed  uppercase dark:bg-white bg-black px-2 py-3 text-sm text-[#FFF] opacity-80 md:text-sm"
+            className="cursor-not-allowed  uppercase dark:bg-white bg-black px-2 py-3 text-sm text-[#FFF] dark:text-black opacity-80 md:text-sm"
             onClick={showMoreArticles}
             disabled
           >

@@ -727,15 +727,15 @@ export default function FormPagar({ tipoEntrega }) {
         <button
           disabled={!validate}
           onClick={handlesubmit}
-          className={`mb-8 mt-4 w-full  cursor-pointer rounded-none upe ${
+          className={`mb-8 mt-4 w-full  uppercase rounded-none upe ${
             !validate
-              ? "bg-gray-500 text-red-500 "
-              : " bg-black dark:bg-white  text-white dark:text-black "
+              ? " border-[1px] border-red-300 cursor-not-allowed"
+              : " bg-black dark:bg-white  text-white dark:text-black  cursor-pointer"
           } b px-6 py-3  font-medium `}
         >
           {items.length < 4
             ? "No tienes Productos en el Carrito"
-            : " Realizar pedido"}
+            : "Realizar pedido"}
           <Loading disableLoadAddProduct={loading} />
         </button>
       )}

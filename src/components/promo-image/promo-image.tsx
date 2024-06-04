@@ -33,7 +33,7 @@ export default function PromoImageSec({
       />
       {bottom ? (
         <div className="mt-2 flex xl:block flex-col items-center">
-          <h3 className="font-extrabold uppercase xl:text-2xl">{titulo}</h3>
+          <div className=" uppercase xl:text-2xl">{titulo}</div>
           <p className="mt-1 text-center xl:text-start text-sm xl:text-normal">
             {subtitulo}
           </p>
