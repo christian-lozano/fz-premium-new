@@ -11,14 +11,21 @@ interface Props {
   products: SanityProduct[];
   generoSku: boolean;
   outlet: boolean | undefined;
+  descuentos: any;
 }
 
-export function ProductGrid({ products, generoSku, outlet = false }: Props) {
+export function ProductGrid({
+  products,
+  generoSku,
+  outlet = false,
+  descuentos,
+}: Props) {
   const articlesShown = 8;
   const [loadMore, setLoadMore] = useState(articlesShown);
   const showMoreArticles = () => {
     setLoadMore(loadMore + articlesShown);
   };
+
   if (products.length === 0) {
     return (
       <div className="mx-auto grid h-40 w-full place-items-center rounded-md border-2 border-dashed bg-gray-50 py-10 text-center dark:bg-gray-900">
@@ -41,6 +48,7 @@ export function ProductGrid({ products, generoSku, outlet = false }: Props) {
             outlet={outlet}
             products={product}
             generoSku={false}
+            descuentos={descuentos}
           />
         ))}
       </div>

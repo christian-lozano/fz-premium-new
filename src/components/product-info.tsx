@@ -10,14 +10,15 @@ import { Image } from "sanity";
 import { SanityProduct } from "@/config/inventory";
 import { precioProduct } from "@/config/precio-product";
 
-import { BreadcrumbsDefault } from "./bread-crumbs/bread-crumbs";
 import ProductAddToCart from "./product-add-to-cart";
+import { FiltroProducts } from "@/utilits/filtro-products";
 
 interface Props {
   product: SanityProduct;
+  descuentos: any;
 }
 
-export function ProductInfo({ product }: Props) {
+export function ProductInfo({ product, descuentos }: Props) {
   const [data, setData] = useState([]);
   // const [hoverImage, setHoverImage] = useState(
   //   urlForImage(product.images[0].asset._ref).url()
@@ -25,9 +26,9 @@ export function ProductInfo({ product }: Props) {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productFilter = `_type == "product" && categories match "originals" && name match "${product.name}*" && sku != "${product.sku}" && genero match "${product.genero}"`;
+    const productFilter = FiltroProducts(product);
 
-    const filter = `*[${productFilter}]`;
+    const filter = `*[${productFilter}][0..5]`;
     client
       .fetch(
         groq`${filter} {
@@ -53,26 +54,27 @@ export function ProductInfo({ product }: Props) {
         setData(data);
         setLoading(false);
       });
-  }, [product.sku]);
+  }, [product?.sku]);
   return (
     <div className=" h-full w-full  px-5     lg:mt-0  lg:px-2 xl:mt-0 xl:px-3 2xl:sticky 2xl:top-44  2xl:mt-0 2xl:max-w-lg 2xl:px-5">
       <div className=" w-full ">
         <div className="">
           <h1 className="hidden text-3xl font-bold uppercase tracking-tight xl:block">
-            {product.name} - {product.genero}
+            {product?.name} - {product?.genero}
           </h1>
           <div className="mt-3 hidden 2xl:block">
             <h2 className="sr-only">Product information</h2>
             <div className="mb-5 flex">
               <p className=" mr-2 text-3xl font-semibold tracking-tight text-[#767677] line-through">
-                S/{product.priceecommerce}
+                S/{product?.priceecommerce}
               </p>
               <p className="text-3xl tracking-tight ">
                 S/
                 {precioProduct(
                   product.descuento,
                   product.priceecommerce,
-                  product.preciomanual
+                  product.preciomanual,
+                  descuentos
                 )}
               </p>
             </div>
@@ -115,7 +117,7 @@ export function ProductInfo({ product }: Props) {
             )}
           </div>
         </div>
-        <ProductAddToCart product={product} />
+        <ProductAddToCart product={product} descuentos={descuentos} />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export default function PedidosTabsUser() {
         });
     }
   }, []);
-  console.log(dataPedidos);
+
   const [activeStep, setActiveStep] = React.useState(0);
   const [isLastStep, setIsLastStep] = React.useState(false);
   const [isFirstStep, setIsFirstStep] = React.useState(false);
@@ -82,14 +82,14 @@ export default function PedidosTabsUser() {
                     className={`flex items-center w-full ${
                       el.estado === "porentregar" || "porentregar"
                         ? "text-green-400"
-                        : "text-white"
+                        : "text-black dark:text-white"
                     } `}
                   >
                     <div
                       className={`border-[2px] flex justify-center items-center ${
                         el.estado === "porentregar" || "porentregar"
                           ? " border-green-300 fill-green-300 "
-                          : " border-white fill-white"
+                          : " dark:border-white dark:fill-white border-black fill-black"
                       }w-10 h-10 text-center rounded-full`}
                     >
                       <svg
@@ -126,7 +126,7 @@ export default function PedidosTabsUser() {
                           el.estado === "porentregar" ||
                           el.estado === "entregado"
                             ? "text-green-400"
-                            : "text-white "
+                            : "text-black dark:text-white"
                         } `}
                       >
                         <div
@@ -134,7 +134,7 @@ export default function PedidosTabsUser() {
                             el.estado === "porentregar" ||
                             el.estado === "entregado"
                               ? " border-green-300 fill-green-300 "
-                              : "border-white fill-white"
+                              : "dark:border-white dark:fill-white border-black fill-black"
                           } w-10 h-10 text-center rounded-full`}
                         >
                           <svg
@@ -170,7 +170,7 @@ export default function PedidosTabsUser() {
                           className={`border-[2px] flex justify-center items-center ${
                             el.estado === "entregado"
                               ? " border-green-300 fill-green-300 "
-                              : "border-white fill-white"
+                              : "dark:border-white dark:fill-white border-black fill-black"
                           } w-10 h-10 text-center rounded-full`}
                         >
                           <svg
@@ -203,7 +203,7 @@ export default function PedidosTabsUser() {
                       className={`border-[2px] flex justify-center items-center ${
                         el.estado === "entregado"
                           ? " border-green-300 fill-green-300 "
-                          : "border-white fill-white"
+                          : "dark:border-white dark:fill-white border-black fill-black"
                       } w-10 h-10 text-center rounded-full`}
                     >
                       <svg

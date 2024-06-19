@@ -10,7 +10,7 @@ export async function POST(req) {
 
   try {
     const data = await req.json();
-    console.log(data);
+
     // console.log(data)
     // tes
     // let productosCantidad = data.productos.map((el) => {
@@ -53,7 +53,7 @@ export async function POST(req) {
       },
 
       back_urls: {
-        success: `https://www.fzpremium.pe/exito`,
+        success: `http://localhost:3000/exito`,
         failure: `https://www.fzpremium.pe`,
         pending: `https://www.fzpremium.pe`,
       },

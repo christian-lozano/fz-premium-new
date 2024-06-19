@@ -1,11 +1,11 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './src/schemas'
+import { defineConfig } from "sanity";
+import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
+import { schemaTypes } from "./src/schemas";
 
 export default defineConfig({
-  name: 'default',
-  title: 'hotel-management',
+  name: "default",
+  title: "FZ-PREMIUM",
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
@@ -17,4 +17,4 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-})
+});

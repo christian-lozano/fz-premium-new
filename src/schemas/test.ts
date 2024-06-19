@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
-export const product = defineType({
-  name: "product",
-  title: "Products",
+export const test = defineType({
+  name: "test",
+  title: "test",
   type: "document",
   validation: (rule) => rule.required(),
 
@@ -27,27 +27,14 @@ export const product = defineType({
       name: "sku",
       title: "sku",
       type: "string",
-      validation: (Rule) =>
-        Rule.custom((name: any) => {
-          if (name.startsWith(" ") || name.substr(-1) === " ") {
-            return "No trailing space";
-          }
 
-          return true;
-        }),
+      validation: (Rule) => Rule.unique(),
     },
     {
       title: "Description",
       name: "description",
       type: "text",
       validation: (rule) => rule.required(),
-    },
-
-    {
-      title: "Detalles",
-      name: "detalles",
-      type: "array",
-      of: [{ type: "string" }],
     },
 
     {
@@ -92,7 +79,7 @@ export const product = defineType({
           { title: "Puma", value: "puma" },
           { title: "Reebok", value: "reebok" },
           { title: "Cat", value: "cat" },
-          { title: "Fz Premium", value: "fritzsport" },
+          { title: "Fritz Sport", value: "fritzsport" },
           { title: "joma", value: "joma" },
         ], // <-- predefined values
       },
@@ -134,14 +121,6 @@ export const product = defineType({
           { title: "Medias", value: "medias" },
           { title: "Chimpunes", value: "chimpunes" },
           { title: "Plataforma", value: "plataforma" },
-          { title: "Mochilas", value: "mochilas" },
-          { title: "Terrex", value: "terrex" },
-          { title: "Urbano", value: "urbano" },
-          { title: "Casacas", value: "casacas" },
-          { title: "Bolsos", value: "bolsos" },
-          { title: "Medias", value: "medias" },
-          { title: "Chimpunes", value: "chimpunes" },
-          { title: "Plataforma", value: "plataforma" },
           { title: "Originals", value: "originals" },
           { title: "Camisetas", value: "camisetas" },
           { title: "Toma todo", value: "tomatodos" },
@@ -155,48 +134,10 @@ export const product = defineType({
           { title: "Running", value: "running" },
           { title: "Poleras", value: "poleras" },
           { title: "Tenis", value: "tenis" },
-          { title: "Básket", value: "basquet" },
           { title: "Training ", value: "training" },
         ], // <-- predefined values
       },
     },
-    {
-      title: "Colecciones",
-      name: "colecciones",
-      type: "string",
-
-      options: {
-        list: [
-          { title: "Adidas Superstar", value: "superstar" },
-          { title: "Adidas Rivalry", value: "rivalry" },
-          { title: "Adidas Forum", value: "forum" },
-          { title: "Adidas Stan Smith", value: "stansmith" },
-          { title: "Adidas Samba", value: "samba" },
-          { title: "Adidas Gazelle", value: "gazelle" },
-          { title: "Adidas Campus", value: "campus" },
-          { title: "Adidas Rivalry", value: "rivalry" },
-          { title: "Adidas Spezial", value: "spezial" },
-          { title: "Adidas Adi2000", value: "adi2000" },
-          { title: "Adidas Adilette", value: "adilette" },
-          { title: "Adidas Falcon", value: "falcon" },
-          { title: "Adidas Adimatic", value: "adimatic" },
-          { title: "Adidas Adicolor", value: "adicolor" },
-          { title: "Adidas For Her", value: "forher" },
-          { title: "Adidas Adventure", value: "adventure" },
-          { title: "Adidas Ozweego ", value: "ozweego" },
-          { title: "Adidas INJECTION PACK ", value: "injectionpack" },
-          { title: "Adidas GRAPHICS ", value: "graphics" },
-          { title: "Adidas TREFOIL ESSENTIALS ", value: "trefoilessentials" },
-          { title: "Nike Air Max Excee", value: "airmaxexcee" },
-          { title: "Nike Air Force 1", value: "airforce1" },
-          { title: "Nike Air Max SC", value: "airmaxsc" },
-          { title: "Nike Air Max 90", value: "airforcemax90" },
-          { title: "Nike Air Jordan", value: "airjordan" },
-          { title: "Nike Dunk", value: "dunk" },
-        ], // <-- predefined values
-      },
-    },
-
     {
       name: "color",
       title: "Color",
@@ -260,6 +201,12 @@ export const product = defineType({
       validation: (rule) => rule.required(),
     },
     {
+      name: "preciotest",
+      title: "test price",
+      type: "number",
+      validation: (rule) => rule.required(),
+    },
+    {
       name: "stock",
       title: "Stock Total",
       type: "number",
@@ -301,12 +248,7 @@ export const product = defineType({
       name: "descuento",
       title: "Descuento Ecommerce",
       type: "number",
-    },
-
-    {
-      name: "preciomanual",
-      title: "Precio Manual",
-      type: "number",
+      validation: (rule) => rule.required(),
     },
   ],
 });

@@ -8,9 +8,10 @@ import Product from "../product/product";
 
 interface Props {
   products: SanityProduct[];
+  descuentos: any;
 }
 
-export function ProductGridTab({ products }: Props) {
+export function ProductGridTab({ products, descuentos }: Props) {
   if (products.length === 0) {
     return (
       <div className="mx-auto grid h-40 w-full place-items-center rounded-md border-2 border-dashed bg-gray-50 py-10 text-center dark:bg-gray-900">
@@ -30,6 +31,7 @@ export function ProductGridTab({ products }: Props) {
         // .filter((el) => el.stock > 0)
         .map((product, i) => (
           <Product
+            descuentos={descuentos}
             key={i}
             generoSku={true}
             outlet={false}

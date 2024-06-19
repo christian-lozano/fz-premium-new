@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity"
 
 export const home = defineType({
   name: "home",
-  title: "Home",
+  title: "Home Fritz Sport",
   type: "document",
   validation: (rule) => rule.required(),
 

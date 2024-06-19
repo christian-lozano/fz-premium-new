@@ -1,10 +1,13 @@
 // import { Metadata } from "next";
-
+// import { Metadata } from "next";
+export const fetchCache = "force-no-store";
+export const revalidate = 0; // seconds
+export const dynamic = "force-dynamic";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
 // import { metadataPage } from "@/config/generateMetadata";
-import { SanityProduct, SanitySlider } from "@/config/inventory";
+import { SanityProduct } from "@/config/inventory";
 import { precioProduct } from "@/config/precio-product";
 
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados";
@@ -19,7 +22,9 @@ import {
 } from "@/components/ui/accordion";
 import { AccordionDescription } from "@/components/acordion-details/acordion-description";
 import { AccordionDetails } from "@/components/acordion-details/acordion-details";
-import ModalDesk from "@/components/modal/Modal";
+import { FiltroGlobal, FiltroViewProduct } from "@/utilits/filtro-products";
+import { notFound } from "next/navigation";
+import Descuentos from "@/config/descuentos";
 
 interface Props {
   params: {
@@ -36,8 +41,8 @@ interface Props {
 // };
 
 export default async function Page({ params }: Props) {
-  const product =
-    await client.fetch<SanityProduct>(groq`*[_type == "product" &&  categories match "originals" && slug.current == "${params.slug}" && sku == "${params.id}"][0] {
+  const productFilter = FiltroViewProduct(params);
+  const product = await client.fetch<SanityProduct>(groq`${productFilter} {
     _id,
     _createAt,
     "id":_id,
@@ -50,6 +55,7 @@ export default async function Page({ params }: Props) {
     description,
     sizes,
     categories,
+    detalles,
     colors,
     genero,
     tipo,
@@ -59,16 +65,18 @@ export default async function Page({ params }: Props) {
     "slug":slug.current
   }`);
 
-  // if (!product) {
-  //   return notFound();
-  // }
+  if (!product) {
+    return notFound();
+  }
   const productosGenero = async () => {
     const order = `| order(_id) [0...10]`;
 
-    const productFilter = `_type == "product"`;
+    const productFilter = FiltroGlobal();
 
     const generoFilterHombre = `${product?.genero}`
-      ? `&& genero match "${product?.genero}"&& marca match "${product?.marca}" && categories match "originals" && sku != "${product?.sku}"`
+      ? `&& genero in ["${product?.genero}","unisex"] && marca match "${
+          product?.marca
+        }" && images != undefined && sku != "${product?.sku.trim()}"`
       : "";
     const filter = `*[${productFilter}${generoFilterHombre}]`;
 
@@ -85,6 +93,7 @@ export default async function Page({ params }: Props) {
           descuento,
           tipo,
           genero,
+          detalles,
           descuento,
           preciomanual,
           "slug":slug.current
@@ -94,7 +103,7 @@ export default async function Page({ params }: Props) {
   };
 
   const products = await productosGenero();
-
+  let descuentos = await Descuentos();
   return (
     <>
       <main className=" mb-0 xl:pt-16  z-[1]">
@@ -120,7 +129,8 @@ export default async function Page({ params }: Props) {
                     {precioProduct(
                       product?.descuento,
                       product?.priceecommerce,
-                      product?.preciomanual
+                      product?.preciomanual,
+                      descuentos
                     )}
                   </p>
                 </div>
@@ -154,29 +164,31 @@ export default async function Page({ params }: Props) {
                     </div>
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value={`items-}`}>
-                  <AccordionTrigger>
-                    <span className="w-full">
-                      <span className="ml-1 text-xs xl:text-base   uppercase text-black dark:text-gray-400">
-                        Detalles
+                {product.detalles && (
+                  <AccordionItem value={`items-}`}>
+                    <AccordionTrigger>
+                      <span className="w-full">
+                        <span className="ml-1 text-xs xl:text-base   uppercase text-black dark:text-gray-400">
+                          Detalles
+                        </span>
                       </span>
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className=" space-y-4  ">
-                      <div
-                        className={`flex items-center justify-center space-x-2 py-10 `}
-                      >
-                        <AccordionDetails product={product} />
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className=" space-y-4  ">
+                        <div
+                          className={`flex items-center justify-center space-x-2 py-10 `}
+                        >
+                          <AccordionDetails product={product} />
+                        </div>
                       </div>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+                    </AccordionContent>
+                  </AccordionItem>
+                )}
               </Accordion>
             </div>
 
             {/* Product info */}
-            <ProductInfo product={product} />
+            <ProductInfo product={product} descuentos={descuentos} />
           </div>
         </div>
       </main>
@@ -187,7 +199,10 @@ export default async function Page({ params }: Props) {
           Productos Relacionados
         </h5>
 
-        <CarouselProductRelacionados products={products} />
+        <CarouselProductRelacionados
+          descuentos={descuentos}
+          products={products}
+        />
       </div>
     </>
   );

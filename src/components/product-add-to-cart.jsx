@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import ModalDesk from "./modal/Modal";
 import LoveFollow from "./love-follow/love-follow";
 
-export default function ProductAddToCart({ product }) {
+export default function ProductAddToCart({ product, descuentos }) {
   const { toast } = useToast();
   const [selectSize, setSelectSize] = useState({
     talla: "",
@@ -20,7 +20,9 @@ export default function ProductAddToCart({ product }) {
   });
   const [activeAddProduct, setActiveAddProduct] = useState(true);
   const [stock, setStock] = useState(
-    product.tallas.every((el) => el.stock === 0)
+    product.tallas.every(
+      (el) => el.stock === 0 || el.stock === undefined || el.stock === null
+    )
   );
   const { addItem, items } = useCart();
 
@@ -44,7 +46,8 @@ export default function ProductAddToCart({ product }) {
       price: precioProduct(
         product.descuento,
         product.priceecommerce,
-        product.preciomanual
+        product.preciomanual,
+        descuentos
       ),
       talla: String(`${selectSize.talla}`),
       slug: product.slug,
@@ -87,9 +90,13 @@ export default function ProductAddToCart({ product }) {
               key={_key}
               disabled={
                 stock <= 0 ||
+                stock === undefined ||
+                stock === null ||
                 items.find(
                   (itemsCarrito) =>
-                    itemsCarrito.id === _key && itemsCarrito.quantity >= stock
+                    itemsCarrito.id === _key &&
+                    itemsCarrito.quantity >= stock &&
+                    itemsCarrito.objectID === product.sku
                 )
               }
               variant={
@@ -101,7 +108,9 @@ export default function ProductAddToCart({ product }) {
                 stock <= 0 ||
                 (items.find(
                   (itemsCarrito) =>
-                    itemsCarrito.id === _key && itemsCarrito.quantity >= stock
+                    itemsCarrito.id === _key &&
+                    itemsCarrito.quantity >= stock &&
+                    itemsCarrito.objectID === product.sku
                 ) &&
                   "line-through")
               } mr-2 mt-4 `}
@@ -126,7 +135,7 @@ export default function ProductAddToCart({ product }) {
                 <Button
                   disabled={false}
                   type="button"
-                  className=" mt-20 w-full bg-black py-6 text-base font-medium focus:outline-none focus:ring-2 dark:bg-white "
+                  className=" w-full bg-black py-6 text-base font-medium focus:outline-none focus:ring-2 dark:bg-white "
                 >
                   Producto Agotado
                 </Button>

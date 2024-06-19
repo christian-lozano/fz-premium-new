@@ -16,6 +16,6 @@ const PageSearch = () => {
       setSearchQuery={setSearchQuery}
     />
   );
-};
+};  
 
 export default PageSearch;

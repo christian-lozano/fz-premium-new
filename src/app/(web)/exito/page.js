@@ -3,18 +3,21 @@
 import { client } from "@/sanity/lib/client";
 
 import { useEffect, useState } from "react";
-import { notFound } from "next/navigation";
-import { PatchSelection } from "@sanity/client";
+import { notFound, useRouter } from "next/navigation";
 import { useCart } from "react-use-cart";
+
+import { groq } from "next-sanity";
+import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 // tr
 export default function Page() {
+  const router = useRouter();
   const { emptyCart } = useCart();
-
+  const { data: session } = useSession();
   const [isLoading, setLoading] = useState(true);
-  const [dataProductosComprados, setDataProductosComprados] = useState<
-    React.SetStateAction<any>
-  >({
+
+  const [dataProductosComprados, setDataProductosComprados] = useState({
     nombres: "",
     cart_total: "",
     productos: [],
@@ -36,43 +39,46 @@ export default function Page() {
         .then((res) => res.json())
         .then(async (resultado) => {
           // setResultado(resultado)
+          let resut = await resultado;
+          const pedido = await client.fetch(
+            groq`*[_type == "pedidos" && id_payer match "${preference_id}"][0]`
+          );
+          console.log(pedido);
+          if (pedido.id_mercado_pago === "01") {
+            let resulta = await client
+              .patch(String(preference_id))
+              .set({ estado: "pagado", id_mercado_pago: collection_id })
+              .commit();
 
-          let resulta = await client
-            .patch(String(preference_id))
-            .set({ estado: "pagado", id_mercado_pago: collection_id })
-            .commit();
+            // stock reduce
+            if (resultado.additional_info.items && isLoading) {
+              setDataProductosComprados(resulta);
 
-          // stock reduce
-          if (resultado.additional_info.items && isLoading) {
-            setDataProductosComprados(resulta);
+              let result = await resultado.additional_info.items.map(
+                async (el) => {
+                  await client
+                    .patch(el.id)
+                    .dec({
+                      [`tallas[_key == \"${el.description}\"].stock`]: Number(
+                        el.quantity
+                      ),
+                    })
+                    .commit();
 
-            let result = await resultado.additional_info.items.map(
-              async (el: {
-                id: PatchSelection | any;
-                description: string;
-                quantity: number;
-              }) => {
-                await client
-                  .patch(el.id)
-                  .dec({
-                    [`tallas[_key == \"${el.description}\"].stock`]: Number(
-                      el.quantity
-                    ),
-                  })
-                  .commit();
-
-                setLoading(false);
-              }
-            );
-            console.log(result);
+                  setLoading(false);
+                }
+              );
+            }
+            //
+          } else {
+            router.push("/");
+            return notFound();
           }
-          //
         })
         .catch((error) => {
           console.log(error);
         });
     } else {
-      return notFound();
     }
   }, []);
   if (isLoading)
@@ -100,7 +106,7 @@ export default function Page() {
             ¡Pago Realizado con éxito!
           </h3>
           <p className="my-2 text-white">
-            <span className="mr-1 font-bold uppercase">
+            <span className="mr-1 font-bold uppercase text-white">
               {" "}
               {dataProductosComprados.nombres}
             </span>
@@ -113,54 +119,46 @@ export default function Page() {
             pedido!
           </p> */}
           <p>
-            <div className="mt-5 text-xl">
+            <div className="mt-5 text-xl text-white">
               Total :S/{dataProductosComprados.cart_total}{" "}
             </div>
 
             <div className=" grid grid-cols-1 justify-items-center gap-x-6 gap-y-10 sm:grid-cols-1 lg:col-span-3 lg:gap-x-8">
-              {dataProductosComprados.productos.map(
-                (el: {
-                  picture_url: string;
-                  name: string;
-                  sku: string;
-                  cantidad: string | number;
-                  talla: string | number;
-                }) => (
-                  <div
-                    key={el.sku}
-                    className="flex h-[700px] w-[500px] flex-col  justify-center p-1"
-                  >
-                    <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-md    group-hover:opacity-75 ">
-                      {el.picture_url && (
-                        <img
-                          width={500}
-                          height={500}
-                          className="relative "
-                          src={el.picture_url}
-                          alt=""
-                        />
-                      )}
-                    </div>
-                    <div className="mt-2 text-lg font-medium uppercase xl:text-xl">
-                      {el.name}
-                    </div>
-                    <div className="ml-2 flex flex-col items-start justify-between ">
-                      {/* <div className="mt-4 text-xs font-medium">
+              {dataProductosComprados.productos.map((el) => (
+                <div
+                  key={el.sku}
+                  className="flex h-[700px] w-[500px] flex-col  justify-center p-1"
+                >
+                  <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-md    group-hover:opacity-75 ">
+                    {el.picture_url && (
+                      <img
+                        width={500}
+                        height={500}
+                        className="relative "
+                        src={el.picture_url}
+                        alt=""
+                      />
+                    )}
+                  </div>
+                  <div className="mt-2 text-lg font-medium uppercase xl:text-xl text-white">
+                    {el.name}
+                  </div>
+                  <div className="ml-2 flex flex-col items-start justify-between ">
+                    {/* <div className="mt-4 text-xs font-medium">
                         Sku: {el.sku}
                       </div> */}
-                      <div className="mt-4 text-sm font-medium">
-                        Cantidad: {el.cantidad}
-                      </div>
-                      <div className="mt-4 text-sm font-medium">
-                        Talla: {el.talla}
-                      </div>
+                    <div className="mt-4 text-sm font-medium text-white">
+                      Cantidad: {el.cantidad}
+                    </div>
+                    <div className="mt-4 text-sm font-medium text-white">
+                      Talla: {el.talla}
                     </div>
                   </div>
-                )
-              )}
+                </div>
+              ))}
             </div>
           </p>
-          <p className="my-5 text-xl uppercase tracking-widest">
+          <p className="my-5 text-xl uppercase tracking-widest text-white">
             {dataProductosComprados.tipoEntrega === "envio" ? (
               <span>
                 NOS ESTAREMOS COMUNICANDO CONTIGO PARA ENVIAR TU PEDIDO , EL
@@ -180,13 +178,21 @@ export default function Page() {
             )}
           </p>
           <p className="text-white">¡Qué tengas un lindo día!</p>
-          <div className="py-10 text-center">
-            <a
-              href={`${process.env.URL_DOMINIO}/tienda`}
-              className="bg-indigo-600 px-12 py-3 font-semibold text-white hover:bg-indigo-500"
-            >
-              Seguir Comprando
-            </a>
+          <div className="py-10 text-center flex justify-center">
+            <div className="flex flex-col gap-y-5 container w-3/6">
+              <Link
+                href={`/tienda`}
+                className="bg-indigo-600 uppercase xl:px-12 py-3 font-semibold text-white hover:bg-indigo-500"
+              >
+                Seguir Comprando
+              </Link>
+              <Link
+                href={`/users/${session.user.id}`}
+                className="bg-indigo-600 uppercase xl:px-12 py-3 font-semibold text-white hover:bg-indigo-500"
+              >
+                Ver Estado de Pedido
+              </Link>
+            </div>
           </div>
         </div>
       </div>

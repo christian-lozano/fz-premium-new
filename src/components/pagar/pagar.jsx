@@ -8,21 +8,14 @@ import { useCart } from "react-use-cart";
 
 import { CartItemsEmpty } from "../cart-items-empty";
 import FormPagar from "./form-pagar";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+
+
 
 export default function PaginaPagar() {
   const { items, removeItem } = useCart();
-  // console.log(items)
-  const { data: session } = useSession();
-  //   console.log(session?.user.id);
-
-  let router = useRouter();
-
-  // useEffect(() => {
-  // }, []);
   const [domLoaded, setDomLoaded] = useState(false);
   const [tipoEntrega, setTipoEntrega] = useState("envio");
+
   useEffect(() => {
     setDomLoaded(true);
     items.find((item) => {
@@ -48,14 +41,6 @@ export default function PaginaPagar() {
     });
   }, []);
 
-  if (!session?.user.id) {
-    router.push("/auth");
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900" />
-      </div>
-    );
-  } else {
     return (
       <div className=" xl:pt-20">
         <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
@@ -196,4 +181,4 @@ export default function PaginaPagar() {
       </div>
     );
   }
-}
+

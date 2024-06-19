@@ -1,5 +1,5 @@
 "use client";
-
+import { FiltroProducts } from "@/utilits/filtro-products";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
@@ -13,7 +13,7 @@ export default function ProductSimilares({ products, relacionados }) {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    const productFilter = `_type == "product" && name match "${products.name}*" && categories match "originals"  && sku != "${products.sku}"`;
+    const productFilter = FiltroProducts(products);
 
     const filter = `*[${productFilter}]`;
     client

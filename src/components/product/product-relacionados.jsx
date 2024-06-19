@@ -3,13 +3,14 @@ import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
 
 import { precioProduct } from "@/config/precio-product";
-import LoveFollow from "../love-follow/love-follow";
 
 export default function ProductRelacionados({
   products,
   nuevo = false,
   generoSku = true,
+  descuentos,
 }) {
+ 
   return (
     <>
       <Link
@@ -60,7 +61,8 @@ export default function ProductRelacionados({
             {precioProduct(
               products.descuento,
               products.priceecommerce,
-              products.preciomanual
+              products.preciomanual,
+              descuentos
             )}{" "}
           </p>
         </div>

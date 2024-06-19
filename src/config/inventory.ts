@@ -23,10 +23,14 @@ interface InventorySlider {
   sku: string;
   genero: string;
   tallas: ApiData[];
+  id_mercado_pago: any;
 }
 interface ApiData {
   talla: string;
   stock: number;
+}
+interface Pedidos {
+  id_mercado_pago: string;
 }
 
 export interface InventoryNuestrasTiendas
@@ -44,6 +48,7 @@ export interface InventoryNuestrasTiendas
   images: Image[];
 }
 export interface SanityProduct extends Omit<InventoryProduct, "images"> {
+  detalles: any;
   tipo: string;
   stock: number;
   razonsocial: string;
@@ -67,6 +72,11 @@ export interface SanitySlider extends Omit<InventorySlider, "images"> {
   slug: string;
   images: Image[];
   whatsapp: string;
+}
+export interface SanityPedidos extends Omit<Pedidos, "images"> {
+  _id: string;
+  _createdAt: Date;
+  id_mercado_pago: string;
 }
 
 export interface SanityPromo extends Omit<InventorySlider, "images"> {

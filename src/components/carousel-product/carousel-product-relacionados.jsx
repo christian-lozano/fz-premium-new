@@ -28,8 +28,9 @@ const CarouselProductRelacionados = ({
   products,
   nuevo = false,
   generoSku = true,
+  descuentos
 }) => {
-  const productos = products.filter((el) => el.razonsocial !== "fritzduran" );
+
   return (
     <div className="parent ">
       {/* los mas vendidos */}
@@ -53,12 +54,13 @@ const CarouselProductRelacionados = ({
         slideImageFit="cover"
         dotListClass="custom-dot-list-style"
       >
-        {productos.map((el, index) => (
+        {products.map((el, index) => (
           <ProductRelacionados
             key={index}
             generoSku={generoSku}
             nuevo={nuevo}
             products={el}
+            descuentos={descuentos}
           />
         ))}
       </Carousel>

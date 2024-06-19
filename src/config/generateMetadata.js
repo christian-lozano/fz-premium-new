@@ -1,6 +1,6 @@
-import { client } from "@/sanity/lib/client"
-import { urlForImage } from "@/sanity/lib/image"
-import { groq } from "next-sanity"
+import { client } from "@/sanity/lib/client";
+import { urlForImage } from "@/sanity/lib/image";
+import { groq } from "next-sanity";
 
 export async function metadataPage({ params }) {
   const product = await client.fetch(
@@ -16,7 +16,7 @@ export async function metadataPage({ params }) {
   tipo,
   "slug":slug.current
 }`
-  )
+  );
   return {
     openGraph: {
       title: `Producto: ${product.name}`,
@@ -25,13 +25,17 @@ export async function metadataPage({ params }) {
       siteName: "Fz Premium",
       images: [
         {
-          url: `${urlForImage(product.images[0].asset._ref).url()}`,
+          url: `${
+            product.images && urlForImage(product.images[0].asset._ref).url()
+          }`,
           width: 800,
           height: 600,
           alt: `${product.name} Imagen`,
         },
         {
-          url: `${urlForImage(product.images[0].asset._ref).url()}`,
+          url: `${
+            product.images && urlForImage(product.images[0].asset._ref).url()
+          }`,
 
           width: 1800,
           height: 1600,
@@ -39,5 +43,5 @@ export async function metadataPage({ params }) {
         },
       ],
     },
-  }
+  };
 }

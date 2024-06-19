@@ -110,9 +110,11 @@ export default function LoveFollowNavigation() {
                     Iniciar Session
                   </Button>
                 </Link>
-                <Button color="blue-gray" onClick={handleOpen}>
-                  Regístrate
-                </Button>
+                <Link href={"/auth"}>
+                  <Button color="blue-gray" onClick={handleOpen}>
+                    Regístrate
+                  </Button>
+                </Link>
               </div>
             </div>
           )}

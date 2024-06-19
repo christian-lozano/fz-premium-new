@@ -8,6 +8,7 @@ import { groq } from "next-sanity";
 
 import { precioProduct } from "@/config/precio-product";
 import LoveFollow from "../love-follow/love-follow";
+import { FiltroProducts } from "@/utilits/filtro-products";
 
 // import LoveFollow from "../love-follow/love-follow";
 
@@ -16,6 +17,7 @@ export default function Product({
   generoSku = false,
   outlet,
   relacionados = true,
+  descuentos,
 }) {
   const [stock, setStock] = useState();
 
@@ -45,9 +47,9 @@ export default function Product({
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productFilter = `_type == "product" && categories match "originals" && name match "${products.name}*" && sku != "${products.sku}" && genero == "${products.genero}"`;
+    const productFilter = FiltroProducts(products);
 
-    const filter = `*[${productFilter}]`;
+    const filter = `*[${productFilter}][0..5]`;
     client
       .fetch(
         groq`${filter} {
@@ -84,16 +86,18 @@ export default function Product({
             href={`/products/${products.slug}/${products.sku}`}
             className="group z-10 text-sm"
           >
-            {products.images && (
+            {products?.images && (
               <img
                 onMouseEnter={() =>
                   setHoverImage(
-                    urlForImage(products.images[1].asset._ref).url()
+                    products?.images[1]
+                      ? urlForImage(products?.images[1]?.asset._ref).url()
+                      : urlForImage(products?.images[0]?.asset._ref).url()
                   )
                 }
                 onMouseLeave={() =>
                   setHoverImage(
-                    urlForImage(products.images[0].asset._ref).url()
+                    urlForImage(products?.images[0]?.asset._ref).url()
                   )
                 }
                 width={2000}
@@ -105,21 +109,49 @@ export default function Product({
             )}
           </Link>
           <LoveFollow product={products} />
-          {products.descuento && (
+          {descuentos.descuentofritzsport ||
+          descuentos.descuentofritzsport > 0 ? (
             <div className="absolute right-0 top-4 z-10 ">
               <div className=" mt-1 text-xs text-white ">
-                <div className="flex flex-col ">
-                  {outlet && (
-                    <>
-                      <span className="flex justify-center bg-black px-3 py-1">
-                        {" "}
-                        {!stock ? `-${products.descuento}%` : "Agotado"}
-                      </span>
+                <div className="flex flex-col">
+                  <>
+                    <span className="flex justify-center bg-black px-3 py-1">
+                      {" "}
+                      {!stock && descuentos.descuentofritzsport
+                        ? `-${descuentos.descuentofritzsport}%`
+                        : "Agotado"}
+                    </span>
+                    {descuentos.descuentofritzsport && (
                       <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
                         oferta
                       </span>
-                    </>
-                  )}
+                    )}
+                  </>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="absolute right-0 top-4 z-10 ">
+              <div className=" mt-1 text-xs text-white ">
+                <div className="flex flex-col">
+                  <>
+                    {stock && (
+                      <span className="flex justify-center bg-black px-3 py-1">
+                        Agotado
+                      </span>
+                    )}
+                    {!stock && products.descuento && (
+                      <span className="flex justify-center  mt-2 bg-black text-white px-3 py-1">
+                        {`-${products.descuento}%`}
+                      </span>
+                    )}
+
+                    {descuentos.descuento && (
+                      <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
+                        oferta
+                      </span>
+                    )}
+                  </>
                 </div>
               </div>
             </div>
@@ -127,7 +159,7 @@ export default function Product({
         </div>
         {relacionados && (
           <>
-            <div className="mt-2 flex gap-1">
+            <div className="mt-2 xl:flex gap-1 hidden ">
               {data?.map((el, i) => (
                 <Link key={i} href={`/products/${el.slug}/${el.sku}`}>
                   <img
@@ -169,15 +201,20 @@ export default function Product({
           </h3>
 
           <div className="flex">
-            <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
-              S/{products.priceecommerce}
-            </span>
+            {products.descuento || descuentos.descuentofritzsport ? (
+              <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
+                S/{products.priceecommerce}
+              </span>
+            ) : (
+              <></>
+            )}
             <p className="mt-2 font-semibold">
               S/
               {precioProduct(
                 products.descuento,
                 products.priceecommerce,
-                products.preciomanual
+                products.preciomanual,
+                descuentos
               )}
             </p>
           </div>

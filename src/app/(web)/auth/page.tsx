@@ -92,7 +92,17 @@ const Auth = () => {
           <input
             type="text"
             name="name"
-            placeholder="John Doe"
+            placeholder="Nombre"
+            required
+            className={inputStyles}
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+
+          <input
+            type="text"
+            name="apellido"
+            placeholder="Apellido"
             required
             className={inputStyles}
             value={formData.name}

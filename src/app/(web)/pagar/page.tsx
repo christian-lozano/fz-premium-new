@@ -4,6 +4,9 @@ import PaginaPagar from "@/components/pagar/pagar";
 
 import { Metadata } from "next";
 
+import { authOptions } from "@/libs/auth";
+import { getServerSession } from "next-auth";
+import { NextResponse } from "next/server";
 export const metadata: Metadata = {
   openGraph: {
     title: " Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
@@ -28,7 +31,18 @@ export const metadata: Metadata = {
     ],
   },
 };
-export default function page() {
+export default async function page() {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    return new NextResponse("Authentication required", { status: 400 });
+  }
+  // Check if user is authorized to perform the action
+  // if (userRole !== "admin") {
+  //   throw new Error(
+  //     "Unauthorized access: User does not have admin privileges."
+  //   );
+  // }
   return (
     <div className="overflow-x-hidden">
       <PaginaPagar></PaginaPagar>

@@ -32,6 +32,7 @@ const filters = [
       { label: "Adidas Campus", value: "campus" },
       { label: "Nike Air Max Excee", value: "airmaxexcee" },
       { label: "Nike Air Force 1", value: "airforce1" },
+      { label: "Nike Air Max SC", value: "airmaxsc" },
       { label: "Nike Air Max 90", value: "airforcemax90" },
       { label: "Nike Air Jordan", value: "airjordan" },
       { label: "Nike Dunk", value: "airjordan" },

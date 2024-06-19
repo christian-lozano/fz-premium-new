@@ -1,6 +1,6 @@
-export const fetchCache = "force-no-store";
-export const revalidate = 0; // seconds
-export const dynamic = "force-dynamic";
+// export const fetchCache = "force-no-store";
+// export const revalidate = 0; // seconds
+// export const dynamic = "force-dynamic";
 
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
@@ -12,6 +12,8 @@ import { ProductGrid } from "@/components/product-grid";
 import { ProductSort } from "@/components/product-sort";
 
 import { Metadata } from "next";
+import { FiltroGlobal } from "@/utilits/filtro-products";
+import Descuentos from "@/config/descuentos";
 
 interface Props {
   searchParams: {
@@ -81,7 +83,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `${priceOrder}${dateOrder}`;
 
-    const productFilter = `_type == "product" && categories match "originals"`;
+    const productFilter = FiltroGlobal();
     const colorFilter = color ? `&& color match "${color}"` : "";
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : "";
     const marcaFilter = marca ? `&& marca match "${marca}"` : "";
@@ -90,16 +92,16 @@ export default async function Page({ searchParams }: Props) {
     const categoryFilter = category ? `&& "${category}" match categories` : "";
 
     const sizeFilter = size ? `&& tallas match "tallas"` : "";
-    const generoFilter = genero ? `&& genero match "${genero}"` : "";
+    const generoFilter = genero ? `&& genero in ["${genero}","unisex"] ` : "";
     const coleccionFilter = coleccion
       ? `&& coleccion match "${coleccion}"`
       : "";
     const searchFilter = search
-      ? `&& name match "${search}" || sku match "${search}" || genero match "${search}"|| marca match "${search}"|| tipo match "${search}"|| category match "${search}"|| color match "${search}" || coleccion match "${search}" `
+      ? `&& name match "${search}" || sku match "${search}" || genero match "${search}"|| marca match "${search}"|| tipo match "${search}"|| category match "${search}"|| color match "${search}" || coleccion match "${search}" && categories != "originals" `
       : "";
 
     const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${coleccionFilter}${tallaFilter}]`;
-    console.log(filter);
+
 
     // await seedSanityData()
 
@@ -129,8 +131,9 @@ export default async function Page({ searchParams }: Props) {
   }
   const products = await fetchNextPage();
   // console.log(products[0].tallas)
-  const productos = products.filter((el) => el.razonsocial !== "fritzduran");
+
   // console.log(productos);
+  let descuentos = await Descuentos();
 
   return (
     <div>
@@ -170,7 +173,12 @@ export default async function Page({ searchParams }: Props) {
                 <ProductFilters />
               </div>
             </div>
-            <ProductGrid outlet={false} products={productos} generoSku={true} />
+            <ProductGrid
+              descuentos={descuentos}
+              outlet={false}
+              products={products}
+              generoSku={true}
+            />
             {/* Product grid */}
           </section>
         </main>

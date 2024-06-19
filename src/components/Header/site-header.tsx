@@ -1,14 +1,10 @@
 "use client";
-
 import { useState } from "react";
-
 import { Logo } from "@/components/logo/logo";
-
-import { Banner } from "../banner/banner";
 import { NavNavigation } from "./Nav/nav-navigation";
 import NavSearch from "./Nav/nav-search";
 import NavTop from "./Nav/nav-top";
-import LoveFollow from "../love-follow/love-follow";
+
 
 export function SiteHeader() {
   const [activeSearchDesk, setActiveSearchDesk] = useState<boolean>(true);

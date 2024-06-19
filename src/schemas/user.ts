@@ -40,11 +40,57 @@ const user = {
       of: [{ type: "string" }],
     }),
 
-
     defineField({
       name: "email",
       type: "string",
       title: "Email",
+    }),
+
+    defineField({
+      name: "apellidos",
+      type: "string",
+      title: "Apellido",
+    }),
+
+    defineField({
+      name: "telefono",
+      type: "string",
+      title: "Telefono",
+    }),
+    defineField({
+      name: "documento",
+      type: "string",
+      title: "Documento",
+    }),
+    defineField({
+      name: "direccion",
+      type: "string",
+      title: "direccion",
+    }),
+    defineField({
+      name: "infadi",
+      type: "string",
+      title: "Información Addicional",
+    }),
+    defineField({
+      name: "factura",
+      type: "string",
+      title: "Factura",
+    }),
+    defineField({
+      name: "departamento",
+      type: "string",
+      title: "Departamento",
+    }),
+    defineField({
+      name: "provincia",
+      type: "string",
+      title: "Provincia",
+    }),
+    defineField({
+      name: "distrito",
+      type: "string",
+      title: "Distrito",
     }),
     defineField({
       name: "emailVerified",

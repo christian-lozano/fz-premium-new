@@ -1,3 +1,7 @@
+// export const fetchCache = "force-no-store";
+// export const revalidate = 50; // seconds
+// export const dynamic = "force-dynamic";
+
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
@@ -9,8 +13,9 @@ import CarouselProductRelacionados from "@/components/carousel-product/carousel-
 import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid";
 import PromoImage from "@/components/promo-image/promo-image";
 import MainTab from "@/components/tabs-home-genero/main-tab";
-import VideoHome from "@/components/video/video";
 import CarouselProductSimilares from "@/components/carousel-product/carousel-product-similares";
+import Descuentos from "@/config/descuentos";
+import { FiltroGlobal } from "@/utilits/filtro-products";
 export const metadata: Metadata = {
   title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
@@ -160,7 +165,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `| order(_id) [0...${cantidad}]`;
 
-    const productFilter = `_type == "product" && categories match "originals"`;
+    const productFilter = FiltroGlobal();
 
     const generoFilterHombre = genero ? `&& genero match "${genero}"` : "";
 
@@ -192,7 +197,7 @@ export default async function Page({ searchParams }: Props) {
   };
 
   const slider = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home"] {
+    groq`*[_type == "home-fz"] [0] {
       slider
     }`
   );
@@ -206,18 +211,11 @@ export default async function Page({ searchParams }: Props) {
       semifiltro
     }`
   );
-  const homeVideo = await client.fetch<SanitySlider[]>(groq`*[_type == "home"] {
-    videohome
-  }`);
-  const promoHome = await client.fetch<
-    SanitySlider[]
-  >(groq`*[_type == "home"] [0] {
-    promo
-  }`);
 
+  const productFilter = FiltroGlobal();
   const newProducts = await client.fetch<
     SanitySlider[]
-  >(groq`*[_type == "product" && categories match "originals"][0..20] | order(_createdAt desc) {
+  >(groq`*[${productFilter}][0..20] | order(_createdAt desc) {
       _id,
       _createdAt,
       name,
@@ -303,12 +301,12 @@ export default async function Page({ searchParams }: Props) {
       ],
     },
   ];
-
+  let descuentos = await Descuentos();
   return (
     <div>
       {/* <DialogSizes promoHome={promoHome}></DialogSizes> */}
       <div className="conta">
-        <Carousel dataSlider={slider[0]} />
+        <Carousel dataSlider={slider} />
         {/* <VideoHome url={homeVideo[0]} /> */}
 
         {/* <Carousel dataSlider={slider[0]} /> */}
@@ -370,6 +368,7 @@ export default async function Page({ searchParams }: Props) {
             generoSku={false}
             nuevo={true}
             products={newProducts}
+            descuentos={descuentos}
           />
         </div>
 
@@ -391,6 +390,7 @@ export default async function Page({ searchParams }: Props) {
         <main className=" xl:px-6">
           <div className="text-center text-xl uppercase xl:text-4xl">Icons</div>
           <MainTab
+            descuentos={descuentos}
             dataCabeceraTab={dataCabeceraTab}
             dataProductTab={dataProductTab}
           />
@@ -414,7 +414,10 @@ export default async function Page({ searchParams }: Props) {
             <div className="text-center text-xl xl:text-4xl">
               LOS MAS VENDIDOS
             </div>
-            <CarouselProductRelacionados products={productosAll} />
+            <CarouselProductRelacionados
+              products={productosAll}
+              descuentos={descuentos}
+            />
           </div>
           <div className="grid w-full grid-cols-1 xl:grid-cols-2 xl:gap-x-10">
             <PromoImage

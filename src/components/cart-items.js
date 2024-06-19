@@ -38,7 +38,7 @@ export function CartItems() {
               /> */}
                 <img
                   className="h-24 w-24 rounded-md border-2 border-gray-200 object-cover object-center dark:border-gray-800 sm:h-48 sm:w-48"
-                  src={urlForImage(el.image).url()}
+                  src={urlForImage(el?.image).url()}
                   width={150}
                   alt="Polaroid camera"
                 />

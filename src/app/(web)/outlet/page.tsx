@@ -8,6 +8,8 @@ import { ProductGrid } from "@/components/product-grid";
 import { ProductSort } from "@/components/product-sort";
 
 import { Metadata } from "next";
+import { FiltroGlobal } from "@/utilits/filtro-products";
+import Descuentos from "@/config/descuentos";
 
 interface Props {
   searchParams: {
@@ -76,7 +78,7 @@ export default async function Page({ searchParams }: Props) {
 
     const order = `${priceOrder}${dateOrder}`;
 
-    const productFilter = `_type == "product" && categories match "originals"`;
+    const productFilter = FiltroGlobal();
     const colorFilter = color ? `&& color match "${color}"` : "";
     const tipoFilter = tipo ? `&& tipo match "${tipo}"` : "";
     const marcaFilter = marca ? `&& marca match "${marca}"` : "";
@@ -86,7 +88,7 @@ export default async function Page({ searchParams }: Props) {
 
     const categoryFilter = category ? `&& "${category}" match categories` : "";
     const sizeFilter = size ? `&& tallas match "tallas"` : "";
-    const generoFilter = genero ? `&& genero match "${genero}"` : "";
+    const generoFilter = genero ? `&& genero in ["${genero}","unisex"] ` : "";
 
     const searchFilter = search
       ? `&& name match "${search}" || sku match "${search}" || genero match "${search}"|| marca match "${search}"|| tipo match "${search}"|| category match "${search}"|| color match "${search}" || coleccion match "${search}"  `
@@ -122,7 +124,7 @@ export default async function Page({ searchParams }: Props) {
   }
   const products = await fetchNextPage();
   // console.log(products[0].tallas)
-  const productos = products.filter((el) => el.razonsocial !== "fritzduran");
+  let descuentos = await Descuentos();
 
   return (
     <div>
@@ -162,7 +164,12 @@ export default async function Page({ searchParams }: Props) {
                 <ProductFilters />
               </div>
             </div>
-            <ProductGrid outlet={true} products={productos} generoSku={true} />
+            <ProductGrid
+              outlet={true}
+              products={products}
+              generoSku={true}
+              descuentos={descuentos}
+            />
             {/* Product grid */}
           </section>
         </main>

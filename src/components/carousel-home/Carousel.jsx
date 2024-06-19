@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Slide from "./Slide/Slide";
 import "./Carousel.css";
+import { useCart } from "react-use-cart";
 
 const Carousel = ({ dataSlider }) => {
   const [timeduration] = useState(8000);
@@ -88,10 +89,10 @@ const Carousel = ({ dataSlider }) => {
     };
   }, [play, timeduration]);
 
-  // const { emptyCart } = useCart()
-  // useEffect(() => {
-  //   emptyCart()
-  // }, [])
+  const { emptyCart } = useCart();
+  useEffect(() => {
+    emptyCart();
+  }, []);
 
   return (
     <>

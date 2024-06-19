@@ -9,18 +9,16 @@ import { signOut } from "next-auth/react";
 import { getUserBookings } from "@/libs/apis";
 import { User } from "@/models/user";
 import LoadingSpinner from "../../loading";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BsJournalBookmarkFill } from "react-icons/bs";
-import { GiMoneyStack } from "react-icons/gi";
-import Table from "@/components/Table/Table";
-import Chart from "@/components/Chart/Chart";
+import { IoIosSend } from "react-icons/io";
+
 import RatingModal from "@/components/RatingModal/RatingModal";
 import BackDrop from "@/components/BackDrop/BackDrop";
 import toast from "react-hot-toast";
-import { client } from "@/sanity/lib/client";
-import { SanitySlider } from "@/config/inventory";
-import { groq } from "next-sanity";
+
 import PedidosTabsUser from "@/components/pedidos-tabs-user/pedidos-tabs-user";
+import FormInfoCuenta from "@/components/form-info-cuenta/form-info-cuenta";
 
 const UserDetails = (props: { params: { id: string } }) => {
   const {
@@ -128,36 +126,42 @@ const UserDetails = (props: { params: { id: string } }) => {
         </div>
 
         <div className="md:col-span-8 lg:col-span-9">
-          <div className="flex items-center">
-            <h5 className="text-2xl font-bold mr-3">Hola, {userData.name}</h5>
-          </div>
-          <div className="md:hidden w-14 h-14 rounded-l-full overflow-hidden">
-            {userData.image && (
-              <Image
-                className="img scale-animation rounded-full"
-                width={56}
-                height={56}
-                src={userData.image}
-                alt="User  Name"
-              />
-            )}
-          </div>
-          <p className="block w-fit md:hidden text-sm py-2">
-            {userData.about ?? ""}
-          </p>
+          <div className="flex justify-center">
+            <div className="flex flex-col items-center justify-center">
+              <div className="flex items-center">
+                <h5 className="text-2xl font-bold mr-3">
+                  Hola, {userData.name}
+                </h5>
+              </div>
+              <div className="md:hidden w-14 h-14 rounded-l-full overflow-hidden">
+                {userData.image && (
+                  <Image
+                    className="img scale-animation rounded-full"
+                    width={56}
+                    height={56}
+                    src={userData.image}
+                    alt="User  Name"
+                  />
+                )}
+              </div>
+              <p className="block w-fit md:hidden text-sm py-2">
+                {userData.about ?? ""}
+              </p>
 
-          <p className="text-xs py-2 font-medium">
-            Te uniste el: {userData._createdAt.split("T")[0]}
-          </p>
-          <div className="md:hidden flex items-center my-2">
-            <p className="mr-2">Sign out</p>
-            <FaSignOutAlt
-              className="text-3xl cursor-pointer"
-              onClick={() => signOut({ callbackUrl: "/" })}
-            />
+              <p className="text-xs py-2 font-medium">
+                Te uniste el: {userData._createdAt.split("T")[0]}
+              </p>
+              <div className="md:hidden flex items-center my-2">
+                <p className="mr-2">Sign out</p>
+                <FaSignOutAlt
+                  className="text-3xl cursor-pointer"
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                />
+              </div>
+            </div>
           </div>
 
-          <nav className="sticky top-0 px-2 w-fit mx-auto md:w-full md:px-5 py-3 mb-8 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 mt-7">
+          <nav className="sticky top-0 px-2 w-fit mx-auto md:w-full md:px-5 py-3 mb-8 text-gray-700 border border-gray-200 rounded-none bg-gray-50 mt-7">
             <ol
               className={`${
                 currentNav === "bookings" ? "text-blue-600" : "text-gray-700"
@@ -173,40 +177,31 @@ const UserDetails = (props: { params: { id: string } }) => {
                 </a>
               </li>
             </ol>
-            {/* <ol
+            <ol
               className={`${
                 currentNav === "amount" ? "text-blue-600" : "text-gray-700"
-              } inline-flex mr-1 md:mr-5 items-center space-x-1 md:space-x-3`}
+              } inline-flex mr-1 md:mr-5 items-center space-x-1 md:space-x-3 border-l-[1px] border-black`}
             >
               <li
                 onClick={() => setCurrentNav("amount")}
-                className="inline-flex items-center cursor-pointer"
+                className="inline-flex items-center cursor-pointer "
               >
-                <GiMoneyStack />
+                <IoIosSend />
+
                 <a className="inline-flex items-center mx-1 md:mx-3 text-xs md:text-sm font-medium">
-                  Amount Spent
+                  Datos de Usuario
                 </a>
               </li>
-            </ol> */}
+            </ol>
           </nav>
-          <PedidosTabsUser></PedidosTabsUser>
-          {/* {currentNav === "bookings" ? (
-            userBookings && (
-              <Table
-                bookingDetails={userBookings}
-                setRoomId={setRoomId}
-                toggleRatingModal={toggleRatingModal}
-              />
-            )
+
+          {currentNav === "bookings" ? (
+            userBookings && <PedidosTabsUser></PedidosTabsUser>
           ) : (
             <></>
           )}
 
-          {currentNav === "amount" ? (
-            userBookings && <Chart userBookings={userBookings} />
-          ) : (
-            <></>
-          )} */}
+          {currentNav === "amount" ? userBookings && <FormInfoCuenta /> : <></>}
         </div>
       </div>
 
