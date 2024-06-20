@@ -1,6 +1,6 @@
-// export const fetchCache = "force-no-store";
-// export const revalidate = 0; // seconds
-// export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const revalidate = 0; // seconds
+export const dynamic = "force-dynamic";
 
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
@@ -77,7 +77,7 @@ export default async function Page({ searchParams }: Props) {
       tipo,
     } = searchParams;
 
-    const priceOrder = price ? `| order(priceecommerce ${price})` : "";
+    const priceOrder = price ? `| order(priceecommerce ${price}) ` : "";
 
     const dateOrder = date ? `| order(_createAt ${date})` : "";
 
@@ -101,7 +101,6 @@ export default async function Page({ searchParams }: Props) {
       : "";
 
     const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}${generoFilter}${tipoFilter}${marcaFilter}${coleccionFilter}${tallaFilter}]`;
-
 
     // await seedSanityData()
 

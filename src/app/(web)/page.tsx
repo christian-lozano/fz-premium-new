@@ -449,12 +449,11 @@ export default async function Page({ searchParams }: Props) {
               url={"/tienda"}
             />
           </div>
-
-          <div className="grid h-full grid-cols-2  items-center justify-center xl:flex xl:justify-around ">
+          {/* <div className="grid hidden h-full grid-cols-2  items-center justify-center xl:flex xl:justify-around ">
             {benefits.map((el, i) => (
               <Benefit key={i} benefits={el}></Benefit>
             ))}
-          </div>
+          </div> */}
         </main>
       </div>
     </div>

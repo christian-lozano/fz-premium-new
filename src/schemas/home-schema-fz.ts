@@ -38,9 +38,9 @@ export const homefz = defineType({
               name: "imgtab",
               type: "image",
               validation: (rule) => rule.required(),
-              options: {
-                hotspot: true, // <-- Defaults to false
-              },
+              // options: {
+              //   hotspot: true, // <-- Defaults to false
+              // },
             },
 
             {

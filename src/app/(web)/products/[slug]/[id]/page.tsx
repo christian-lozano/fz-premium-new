@@ -1,5 +1,8 @@
 // import { Metadata } from "next";
 // import { Metadata } from "next";
+// export const fetchCache = "force-no-store";
+// export const revalidate = 0; // seconds
+// export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 export const revalidate = 0; // seconds
 export const dynamic = "force-dynamic";

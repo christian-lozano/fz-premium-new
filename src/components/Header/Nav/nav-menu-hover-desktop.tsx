@@ -24,7 +24,7 @@ export default function NavMenuHoverDesktop({
       onMouseEnter={() => setAndler(true)}
       onMouseLeave={() => setAndler(false)}
     >
-      <div className="container grid w-full     grid-flow-col">
+      <div className="container grid w-full grid-flow-col">
         {hoverMenu &&
           hoverMenu.map((menulist, index) => (
             <div key={index} className="p-5 ">

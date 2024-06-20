@@ -120,9 +120,14 @@ export default function ProductAddToCart({ product, descuentos }) {
           ))}
       </div>
 
-      <ModalDesk>
-        <GiaDeTallasMain gender={product.genero} product_type={product.tipo} />
-      </ModalDesk>
+      {product.tipo == "calzado" && (
+        <ModalDesk>
+          <GiaDeTallasMain
+            gender={product.genero}
+            product_type={product.tipo}
+          />
+        </ModalDesk>
+      )}
 
       <form
         className=" flex items-center mt-4 "

@@ -8,7 +8,7 @@ export interface AuxProps {
 }
 export default function ModalDesk({ children }: AuxProps) {
   const [activeModal, setActiveModal] = useState(false);
-  console.log(activeModal);
+
 
   return (
     <div>

@@ -174,7 +174,10 @@ export default function Product({
                     width={50}
                     height={50}
                     className="relative"
-                    src={urlForImage(el.images[0].asset._ref).url()}
+                    src={
+                      el.images[0].asset &&
+                      urlForImage(el.images[0].asset._ref).url()
+                    }
                     alt=""
                   />
                 </Link>

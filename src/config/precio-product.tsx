@@ -4,7 +4,7 @@ export function precioProduct(
   precioManual: number | string | undefined,
   descuentos: any
 ) {
-  console.log(descuentos);
+
 
   let resultado: Number;
   if (precioManual) {

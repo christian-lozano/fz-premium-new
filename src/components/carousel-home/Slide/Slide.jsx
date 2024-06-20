@@ -9,6 +9,7 @@ import { urlForImage } from "@/sanity/lib/image";
 const Slide = (props) => {
   const { className } = props;
   if (!props.slide) return <div>cargando....</div>;
+  console.log(props.slide);
   return (
     <div className={className}>
       {/* {props.img2 && (
@@ -41,7 +42,7 @@ const Slide = (props) => {
         />
 
         <img
-          // src={urlForImage(props.slide.imgtab.asset._ref).url()}
+          src={urlForImage(props.slide.imgtab?.asset._ref).url()}
           className="hidden md:block lg:block xl:hidden"
           alt=""
         />

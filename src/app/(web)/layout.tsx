@@ -3,7 +3,7 @@ import { Poppins, Raleway } from "next/font/google";
 
 // import Header from "@/components/Header/Header";
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
+
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 import { NextAuthProvider } from "@/components/AuthProvider/AuthProvider";
 import Toast from "@/components/Toast/Toast";
@@ -13,6 +13,7 @@ import IconWhatapp from "@/components/icon-whatsapp/icon-whatapp";
 import { client } from "@/sanity/lib/client";
 import { SanitySlider } from "@/config/inventory";
 import { groq } from "next-sanity";
+import Footer from "@/components/footer-update/footer";
 
 const raleway = Raleway({
   weight: ["800"],

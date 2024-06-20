@@ -32,7 +32,6 @@ export default function NavMenuDesktop({
               <div>
                 <div className="flex items-center justify-around ">
                   {/* logo nav */}
-
                   <div className=" h-[7rem] lg:block ">
                     <div className="mb-6 mt-4 grid h-full grid-flow-col  p-0 lg:my-0 lg:flex-row lg:px-1   ">
                       {dataHeader.menuSubmenu.map((el, index) => (

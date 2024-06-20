@@ -84,6 +84,7 @@ function Loading({ disableLoadAddProduct = true }) {
   );
 }
 export default function FormPagar({ tipoEntrega }) {
+  console.log(tipoEntrega);
   const router = useRouter();
   const { data: session } = useSession();
   //   console.log(session?.user.id);
@@ -122,10 +123,7 @@ export default function FormPagar({ tipoEntrega }) {
     if (tipoEntrega === "recojo") {
       setPrecioDelibery(0);
     } else {
-      if (
-        allValues.provincia === "ancon lima" &&
-        allValues.departamento === "Lima"
-      ) {
+      if (allValues.provincia === "3285" && allValues.departamento === "Lima") {
         setPrecioDelibery(10);
       } else {
         setPrecioDelibery(20);
@@ -243,7 +241,7 @@ export default function FormPagar({ tipoEntrega }) {
         },
       });
       const data = await res.json();
-
+      console.log(data);
       // if (res.status === 200) {
       //   let dataEnvioMongoUser = {
       //     tipoEntrega: tipoEntrega,

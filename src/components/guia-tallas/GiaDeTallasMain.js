@@ -358,10 +358,13 @@ export default function GiaDeTallasMain({ gender, product_type }) {
         case "niña":
           setGuiaTallasZapatillas(dataGiaTallasNinosZapatillas);
           break;
+        case "unisex":
+          setGuiaTallasZapatillas(dataGiaTallasHombreZapatillas);
+          break;
       }
     }
   }, [gender, product_type]);
-
+ 
   return (
     <div className="xl:w-[40vw]  w-[90vw]">
       {/* {product_type === "calzado" && gender !== "unisex" && (
@@ -400,7 +403,7 @@ export default function GiaDeTallasMain({ gender, product_type }) {
         </button>
       )} */}
 
-      {product_type === "calzado" && gender !== "unisex" && (
+      {product_type === "calzado" && (
         <GiaDeTallasZapatillas dataTallasZapatillas={guiaTallasZapatillas} />
       )}
     </div>

@@ -163,7 +163,7 @@ export default function Page() {
               <span>
                 NOS ESTAREMOS COMUNICANDO CONTIGO PARA ENVIAR TU PEDIDO , EL
                 PLAZO MÁXIMO ES DE{" "}
-                {dataProductosComprados.provincia === "ancon lima"
+                {dataProductosComprados.provincia === "3285"
                   ? "3 "
                   : "5 "}
                 DIAS hábiles

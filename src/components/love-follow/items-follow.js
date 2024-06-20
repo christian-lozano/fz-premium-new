@@ -16,6 +16,7 @@ export function ItemsFollow({ sku, id, ind }) {
   const [follows, setFollows] = useState([]);
   const [loadingFollow, setLoadingFollow] = useState(false);
   const [reload, setReload] = useState(false);
+  const [descuento, setDescuento] = useState({});
   const router = useRouter();
   useEffect(() => {
     setLoadingFollow(true);
@@ -44,7 +45,29 @@ export function ItemsFollow({ sku, id, ind }) {
 
         console.log(error);
       });
+
+    client
+      .fetch(
+        groq`*[_type == "descuentos"][0] {
+          descuentofritzsport,
+          descuentooutlet,
+          descuentofz
+      }`
+      )
+      .then((el) => {
+        // console.log(el);
+
+        setDescuento(el);
+        setLoadingFollow(false);
+        router.refresh();
+      })
+      .catch((error) => {
+        setLoadingFollow(false);
+
+        console.log(error);
+      });
   }, [reload]);
+  console.log(descuento);
   //test
   // console.log(follows);
 
@@ -110,7 +133,8 @@ export function ItemsFollow({ sku, id, ind }) {
                       {precioProduct(
                         follows?.descuento,
                         follows?.priceecommerce,
-                        follows?.preciomanual
+                        follows?.preciomanual,
+                        descuento
                       )}
                     </p>
                   </div>

@@ -8,13 +8,13 @@ export default function GiaDeTallasZapatillas({ dataTallasZapatillas }) {
       </div> */}
       <table className="w-full  table-auto text-left text-white ">
         <thead>
-          <tr className="sticky top-0 mb-10">
+          <tr className="sticky top-0 mb-10 ">
             {dataTallasZapatillas?.TABLE_HEAD.map((head) => (
               <th
                 key={head}
-                className="border-b border-blue-gray-100 bg-black 2xl:p-2 p-1"
+                className="border-b border-blue-gray-100 bg-black 2xl:p-2 p-1 "
               >
-                <div className="font-extrabold text-white uppercase 2xl:text-base text-sm leading-none opacity-70 text-center">
+                <div className=" font-extrabold text-white uppercase 2xl:text-base text-sm leading-none opacity-70 text-center">
                   {head}
                 </div>
               </th>
