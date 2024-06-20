@@ -163,15 +163,13 @@ export default function Page() {
               <span>
                 NOS ESTAREMOS COMUNICANDO CONTIGO PARA ENVIAR TU PEDIDO , EL
                 PLAZO MÁXIMO ES DE{" "}
-                {dataProductosComprados.provincia === "3285"
-                  ? "3 "
-                  : "5 "}
+                {dataProductosComprados.provincia === "3285" ? "3 " : "5 "}
                 DIAS hábiles
               </span>
             ) : (
               <span>
                 ACÉRCATE A NUESTRA SEDE: <br />
-                Fz Premium, Av. Miguel Grau 231, Lima 15001. <br /> DESPUÉS DE
+                Fritz Sport, Av. Miguel Grau 231, Lima 15001. <br /> DESPUÉS DE
                 48 HORAS DE LUNES A VIERNES DE 10AM A 7PM Y SABADOS DE 9AM A
                 12PM PARA EL RECOJO DE TU PEDIDO
               </span>

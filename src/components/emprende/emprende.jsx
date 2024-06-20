@@ -1,14 +1,7 @@
 "use client";
 
 import { urlForImage } from "@/sanity/lib/image";
-import {
-  Button,
-  Tab,
-  TabPanel,
-  Tabs,
-  TabsBody,
-  TabsHeader,
-} from "@material-tailwind/react";
+import { Button } from "../ui/button";
 
 export default function PaginaEmprende({ emprende }) {
   const dataEmprende = {
@@ -131,7 +124,6 @@ export default function PaginaEmprende({ emprende }) {
     <>
       <div className=" pt-14 md:pt-16">
         <div className="">
-          {}
           {emprende.portadadeskt.asset._ref && (
             <img
               src={urlForImage(emprende.portadadeskt.asset._ref).url()}
@@ -148,7 +140,7 @@ export default function PaginaEmprende({ emprende }) {
           )}
         </div>
 
-        <div className="">
+        <div>
           <div className=" mx-auto h-full ">
             <div className="draggable h-full w-full">
               <h3 className="pt-20  text-center text-3xl">
@@ -177,47 +169,26 @@ export default function PaginaEmprende({ emprende }) {
                   ))}
                 </div>
                 {/* 
-              /*---------------------------------*/
+              /*-------------------------------------------*/
                 /* ¡Inicia a tu manera y gana! page Emprende*/
-                /* ---------------------------------*/}
+                /* --------------------------------------*/}
 
                 {/* ------------------------------ */}
-                <Tabs value="Emprendedor" className="">
+                <div value="Emprendedor" className="">
                   <h4 className="pb-20   text-center text-2xl">
                     {emprende.tituloemprende}
                   </h4>
 
-                  <TabsHeader
-                    className="bg-transparent"
-                    indicatorProps={{
-                      className: " shadow-none !text-white",
-                    }}
-                    nonce={undefined}
-                    onResize={undefined}
-                    onResizeCapture={undefined}
-                  >
-                    {emprende.emprendemayorista.map((el) => (
-                      <Tab
-                        key={el.titulo}
-                        value={el.titulo}
-                        className="mb-5 text-lg font-bold"
-                        nonce={undefined}
-                        onResize={undefined}
-                        onResizeCapture={undefined}
-                      >
-                        {el.titulo}
-                      </Tab>
-                    ))}
-                  </TabsHeader>
+                  <div>
+                    {emprende.emprendemayorista.map((el, i) => (
+                      <div key={el.titulo}>
+                        <div className="w-full flex justify-center py-8">
+                          <div className="text-xl">
+                            {i === 0 ? "EMPRENDEDOR" : "MAYORISTA"}
+                          </div>
+                        </div>
 
-                  <TabsBody
-                    nonce={undefined}
-                    onResize={undefined}
-                    onResizeCapture={undefined}
-                  >
-                    {emprende.emprendemayorista.map((el) => (
-                      <TabPanel key={el.titulo} value={el.titulo}>
-                        <div className="block w-full items-center  xl:flex xl:flex-col">
+                        <div className="flex flex-col  w-full items-center  xl:flex xl:flex-row">
                           <div className="w-full">
                             <img
                               src={urlForImage(el.img.asset._ref).url()}
@@ -225,7 +196,7 @@ export default function PaginaEmprende({ emprende }) {
                             />
                           </div>
 
-                          <div className="flex w-full flex-col items-center  xl:px-5">
+                          <div className="flex w-full flex-col items-center  text-base  xl:px-5">
                             <div>
                               <div className="my-7  text-center text-3xl font-bold  text-black dark:text-white">
                                 {el.Requisitos}
@@ -249,8 +220,11 @@ export default function PaginaEmprende({ emprende }) {
                                 {el.titulobeneficios}
                               </div>
                               <ul className="flex flex-col ">
-                                {el.beneficios.map((el,i) => (
-                                  <li key={i} className="mt-3 font-semibold  text-black dark:text-white">
+                                {el.beneficios.map((el, i) => (
+                                  <li
+                                    key={i}
+                                    className="mt-3 font-semibold  text-black dark:text-white"
+                                  >
                                     {el}
                                   </li>
                                 ))}
@@ -258,9 +232,9 @@ export default function PaginaEmprende({ emprende }) {
                             </div>
                           </div>
                         </div>
-                      </TabPanel>
+                      </div>
                     ))}
-                  </TabsBody>
+                  </div>
 
                   {/* ---------------------------------------------------------------- */}
 
@@ -275,7 +249,7 @@ export default function PaginaEmprende({ emprende }) {
                       />
 
                       <div className="flex flex-col items-start justify-center px-10">
-                        {emprende.pasos.afiliate.map((el,i) => (
+                        {emprende.pasos.afiliate.map((el, i) => (
                           <div key={i} className=" mt-10 flex flex-col">
                             <p className="my-3 text-lg font-bold">
                               {el.titulo}
@@ -306,12 +280,7 @@ export default function PaginaEmprende({ emprende }) {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <Button
-                              className="text-base"
-                              nonce={undefined}
-                              onResize={undefined}
-                              onResizeCapture={undefined}
-                            >
+                            <Button className="text-base rounded-none">
                               {el.textbutton}
                             </Button>
                           </a>
@@ -319,7 +288,7 @@ export default function PaginaEmprende({ emprende }) {
                       </div>
                     </div>
                   </div>
-                </Tabs>
+                </div>
               </div>
             </div>
           </div>

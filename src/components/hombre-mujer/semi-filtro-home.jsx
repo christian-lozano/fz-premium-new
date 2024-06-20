@@ -4,7 +4,7 @@ import React from "react"
 import Link from "next/link"
 import { urlForImage } from "@/sanity/lib/image"
 
-import Appbtn from "../carousel-home/Appbtn/Appbtn"
+
 
 export default function SemiFiltroHome({ dataSemifiltroHome }) {
   return (
@@ -37,11 +37,11 @@ export default function SemiFiltroHome({ dataSemifiltroHome }) {
                 {el.titulo}
               </h3>
               <Link href={el.link}>
-                <Appbtn
+                {/* <Appbtn
                   text={el.btnText}
                   icon="fal fa-chevron-right"
                   className="reverse w-full"
-                />
+                /> */}
               </Link>
             </div>
           </div>

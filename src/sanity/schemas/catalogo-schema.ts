@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity"
+import { defineField, defineType } from "sanity";
 
 export const catalogo = defineType({
   name: "catalogo",
@@ -36,7 +36,7 @@ export const catalogo = defineType({
                   { title: "Puma", value: "puma" },
                   { title: "Reebok", value: "reebok" },
                   { title: "Cat", value: "cat" },
-                  { title: "Fz Premium", value: "fritzsport" },
+                  { title: "Fritz Sport", value: "fritzsport" },
                   { title: "joma", value: "joma" },
                 ], // <-- predefined values
               },
@@ -147,4 +147,4 @@ export const catalogo = defineType({
       ],
     },
   ],
-})
+});

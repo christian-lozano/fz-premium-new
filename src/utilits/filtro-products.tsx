@@ -7,7 +7,7 @@ export function FiltroProducts(products: SanityProduct) {
 }
 
 export function FiltroGlobal() {
-  const productFilter = `_type == "product" && categories != "originals" && images != undefined && tallas != undefined`;
+  const productFilter = `_type == "product" && categories != "originals" && images != undefined  && images != null && tallas != undefined`;
 
   return productFilter;
 }

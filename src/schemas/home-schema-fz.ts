@@ -1,8 +1,8 @@
-import { defineField, defineType } from "sanity"
+import { defineField, defineType } from "sanity";
 
 export const homefz = defineType({
   name: "home-fz",
-  title: "Home Fz Premium",
+  title: "Home Fritz Sport",
   type: "document",
   validation: (rule) => rule.required(),
 
@@ -262,4 +262,4 @@ export const homefz = defineType({
       validation: (rule) => rule.required(),
     },
   ],
-})
+});

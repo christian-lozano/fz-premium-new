@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 
 interface Props {
   urlWhatsApp: {
-    whatsapp: string
-  }
+    whatsapp: string;
+  };
 }
 
 export default function IconWhatapp({ urlWhatsApp }: Props) {
   return (
     <>
-      {/* <Link
+      <Link
         href="/emprende"
         className="z-header  sticky-0 fixed bottom-20 right-5 z-[999] flex items-center justify-center xl:bottom-[100px] xl:right-16 "
         rel="noreferrer"
@@ -38,7 +38,7 @@ export default function IconWhatapp({ urlWhatsApp }: Props) {
             </span>
           </div>
         </div>
-      </Link> */}
+      </Link>
       <Link
         href={`https://api.whatsapp.com/send/?phone=51${urlWhatsApp.whatsapp}&text&type=phone_number&app_absent=0`}
         target="_blank"
@@ -76,6 +76,6 @@ export default function IconWhatapp({ urlWhatsApp }: Props) {
         </div>
       </Link>
     </>
-  )
+  );
 }
 //

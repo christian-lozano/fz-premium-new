@@ -239,7 +239,7 @@ const FooterMobil = () => {
       <div className="flex justify-center w-full ">
         <div className="flex justify-center text-xs flex-col items-center">
           <span>
-            Todos los derechos Reservados Fz Premium {date.getFullYear()}
+            Todos los derechos Reservados Fritz Sport {date.getFullYear()}
           </span>
 
           <small className="mt-1">
@@ -454,7 +454,7 @@ export default function Footer() {
                 <div className="flex justify-center w-full ">
                   <div className="flex justify-around w-full  text-xs  items-center mb-2">
                     <span>
-                      Todos los derechos Reservados Fz Premium{" "}
+                      Todos los derechos Reservados Fritz Sport{" "}
                       {date.getFullYear()}
                     </span>
 

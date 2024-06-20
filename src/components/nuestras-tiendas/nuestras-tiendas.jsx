@@ -3,15 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
-import { Dialog, DialogBody, DialogHeader } from "@material-tailwind/react";
-
-import { Button } from "@/components/ui/button";
+import ModalHorarios from "../modal/modal-horarios";
 
 const dataNuestrasEmpresas = [
   {
     img: "https://lh5.googleusercontent.com/p/AF1QipNc0m8OUrP-oiueHkxwr2q8Rc2Hstqf9rM7uQl5=s450-k-no",
     title: "Miguel Graú ",
-    subtitle: "Fz Premium, Av. Miguel Grau 231, Lima 15001",
+    subtitle: "Fritz Sport, Av. Miguel Grau 231, Lima 15001",
     dataHorarios: [
       " Lunes de 09:00 am a 09:00 pm",
       " Martes de 09:00 am a 09:00 pm",
@@ -67,7 +65,7 @@ export default function NuestrasTiendas({ nuestrasTiendas }) {
                   className="laptop:h-full hidden  w-[100vw] xl:block"
                 >
                   <source
-                    src={nuestrasTiendas.videohomedesk}
+                    src={`https://www.fritzsport.pe/adidas-video.mp4`}
                     type="video/mp4"
                   />
                   <track
@@ -94,7 +92,10 @@ export default function NuestrasTiendas({ nuestrasTiendas }) {
                   loop={true}
                   className="h-full w-[100vw]  xl:hidden"
                 >
-                  <source src={nuestrasTiendas.videohomemob} type="video/mp4" />
+                  <source
+                    src={`https://www.fritzsport.pe/adidas-video.mp4`}
+                    type="video/mp4"
+                  />
                   <track
                     src="captions_en.vtt"
                     kind="captions"
@@ -139,12 +140,6 @@ export default function NuestrasTiendas({ nuestrasTiendas }) {
                   </div>
                   <div className="flex items-center justify-between p-6">
                     <div className="flex w-full justify-around gap-1">
-                      <button
-                        className=" bg-black p-5 py-2 capitalize  dark:bg-white "
-                        onClick={handleOpen}
-                      >
-                        Ver Horarios
-                      </button>
                       <Link
                         href={el.urlubicacion}
                         target="_blank"
@@ -155,63 +150,25 @@ export default function NuestrasTiendas({ nuestrasTiendas }) {
                         </button>
                       </Link>
 
-                      <Dialog
-                        className="relative"
-                        open={open}
-                        handler={handleOpen}
-                        nonce={undefined}
-                        onResize={undefined}
-                        onResizeCapture={undefined}
-                      >
-                        <Button
-                          className="absolute right-1 top-1 cursor-pointer "
-                          onClick={handleOpen}
-                        >
-                          <span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="currentColor"
-                              className="h-6 w-6"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                              />
-                            </svg>
-                          </span>
-                        </Button>
-                        <DialogHeader
-                          className="flex  justify-center text-center"
-                          nonce={undefined}
-                          onResize={undefined}
-                          onResizeCapture={undefined}
-                        >
-                          <div>Horarios de Atención</div>
-                        </DialogHeader>
-
-                        <DialogBody
-                          className=""
-                          nonce={undefined}
-                          onResize={undefined}
-                          onResizeCapture={undefined}
-                        >
-                          {" "}
-                          <div className="flex w-full flex-col  items-center justify-center">
-                            {el.horarios.map((horario, i) => (
-                              <div
-                                key={i}
-                                className="my-2 w-full  border-b-2 text-center"
-                              >
-                                {horario}
-                              </div>
-                            ))}
+                      <div className="relative">
+                        <ModalHorarios>
+                          <div className="xl:p-5 p-1 xl:text-xl">
+                            <div className="flex  justify-center text-center">
+                              <div>Horarios de Atención</div>
+                            </div>{" "}
+                            <div className="flex w-full flex-col  items-center justify-center">
+                              {el.horarios.map((horario, i) => (
+                                <div
+                                  key={i}
+                                  className="my-2 w-full  border-b-2 text-center"
+                                >
+                                  {horario}
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </DialogBody>
-                      </Dialog>
+                        </ModalHorarios>
+                      </div>
                     </div>
                   </div>
                 </div>

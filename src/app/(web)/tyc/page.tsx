@@ -89,7 +89,7 @@ export default function index() {
 
           <p>
             El presente Política de Privacidad establece los términos en que
-            FZ PREMIUM usa y protege la información que es proporcionada por
+            Fritz Sport usa y protege la información que es proporcionada por
             sus usuarios al momento de utilizar su sitio web. Esta compañía está
             comprometida con la seguridad de los datos de sus usuarios. Cuando
             le pedimos llenar los campos de información personal con la cual
@@ -125,7 +125,7 @@ export default function index() {
             que usted proporcione y podrán ser cancelados en cualquier momento.
           </p>
           <p>
-            FZ PREMIUM está altamente comprometido para cumplir con el
+            Fritz Sport está altamente comprometido para cumplir con el
             compromiso de mantener su información segura. Usamos los sistemas
             más avanzados y los actualizamos constantemente para asegurarnos que
             no exista ningún acceso no autorizado.
@@ -189,7 +189,7 @@ export default function index() {
             requerido por un juez con un orden judicial.
           </p>
           <p className="my-5 text-xl text-[var(--negro)] font-medium">
-            FZ PREMIUM Se reserva el derecho de cambiar los términos de la
+            Fritz Sport Se reserva el derecho de cambiar los términos de la
             presente Política de Privacidad en cualquier momento.
           </p>
         </div>

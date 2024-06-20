@@ -22,7 +22,7 @@ export default function Product({
   const [stock, setStock] = useState();
 
   const [hoverImage, setHoverImage] = useState(
-    products.images
+    products.images[0]?.asset
       ? urlForImage(products.images[0]?.asset._ref).url()
       : "http://via.placeholder.com/640x360"
   );
@@ -37,7 +37,7 @@ export default function Product({
 
   useEffect(() => {
     setHoverImage(
-      products.images
+      products.images[0]?.asset
         ? urlForImage(products.images[0]?.asset._ref).url()
         : "http://via.placeholder.com/640x360"
     );
@@ -97,7 +97,9 @@ export default function Product({
                 }
                 onMouseLeave={() =>
                   setHoverImage(
-                    urlForImage(products?.images[0]?.asset._ref).url()
+                    products?.images[0]
+                      ? urlForImage(products?.images[0]?.asset._ref).url()
+                      : urlForImage(products?.images[1]?.asset._ref).url()
                   )
                 }
                 width={2000}

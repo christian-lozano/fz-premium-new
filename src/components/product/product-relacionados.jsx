@@ -10,7 +10,6 @@ export default function ProductRelacionados({
   generoSku = true,
   descuentos,
 }) {
- 
   return (
     <>
       <Link
@@ -24,7 +23,10 @@ export default function ProductRelacionados({
               width={800}
               height={800}
               className="relative "
-              src={urlForImage(products.images[0].asset._ref).url()}
+              src={
+                products.images[0].asset &&
+                urlForImage(products.images[0].asset._ref).url()
+              }
               alt=""
             />
           )}
@@ -50,7 +52,9 @@ export default function ProductRelacionados({
             {products.marca} - {products.genero}
           </h3>
         )}
-        <h3 className="mt-2 font-medium uppercase ">{products.name}</h3>
+        <h3 className="mt-2 font-medium uppercase text-sm">
+          {products.name} {products.genero}
+        </h3>
 
         <div className="flex">
           <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">

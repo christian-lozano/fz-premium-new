@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 
 import "react-multi-carousel/lib/styles.css";
 import Product from "../product/product";
-import { Button } from "../ui/button";
+import ProductRelacionados from "../product/product-relacionados";
 
 const responsive = {
   desktop: {
@@ -25,37 +24,9 @@ const responsive = {
   },
 };
 
-const CarouselProduct = ({ products }) => {
-  const [tipo, setTipo] = useState("calzado");
-
-  const productos = products.filter(
-    (el) => el.tipo === tipo && el.marca === "adidas" && el.stock > 0
-  );
+const CarouselProduct = ({ products, descuentos }) => {
   return (
     <>
-      <div className="flex w-full justify-center">
-        <div className="w-[5rem]  ">
-          <Button
-            className="mr-5 rounded-none uppercase"
-            onClick={() => setTipo("ropa")}
-          >
-            Ropa
-          </Button>
-          <Button
-            className="rounded-none  uppercase "
-            onClick={() => setTipo("calzado")}
-          >
-            Calzado
-          </Button>
-          <Button
-            className="ml-5 rounded-none  uppercase "
-            onClick={() => setTipo("accesorios")}
-          >
-            Accesorios
-          </Button>
-        </div>
-      </div>
-
       {/* <div>
         <Button onClick={() => setCategoria("urbano")}>Urbano</Button>
         <Button onClick={() => setCategoria("casacas")}>casacas</Button>
@@ -80,8 +51,12 @@ const CarouselProduct = ({ products }) => {
           slideImageFit="cover"
           dotListClass="custom-dot-list-style"
         >
-          {productos.map((el, index) => (
-            <Product key={index} products={el} />
+          {products.map((el, index) => (
+            <ProductRelacionados
+              key={index}
+              products={el}
+              descuentos={descuentos}
+            />
           ))}
         </Carousel>
       </div>

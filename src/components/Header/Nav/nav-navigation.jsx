@@ -26,11 +26,11 @@ const dataHeader = {
             //   title: "Terrex",
             //   url: "/tienda?genero=mujer&category=terrex",
             // },
-            {
-              id: "5",
-              title: "Originals",
-              url: "/tienda?genero=mujer&category=originals",
-            },
+            // {
+            //   id: "5",
+            //   title: "Originals",
+            //   url: "/tienda?genero=mujer&category=originals",
+            // },
             {
               id: "6",
               title: "Sandalias",
@@ -115,11 +115,11 @@ const dataHeader = {
               title: "Ver Todas las Zapatillas",
               url: "/tienda?genero=hombre&tipo=calzado",
             },
-            {
-              id: "3",
-              title: "Originals",
-              url: "/tienda?genero=hombre&category=originals",
-            },
+            // {
+            //   id: "3",
+            //   title: "Originals",
+            //   url: "/tienda?genero=hombre&category=originals",
+            // },
             // {
             //   id: "5",
             //   title: "Urbano",
@@ -242,127 +242,127 @@ const dataHeader = {
       titulo: "Tienda",
       url: "tienda",
     },
-    {
-      id: "colections",
-      titulo: "Colecciones",
-      url: "tienda?category=originals",
-      infoNav: [
-        // { label: "Adidas Superstar", value: "superstar" },
-        // { label: "Adidas Forum", value: "forum" },
-        // { label: "Adidas Stan Smith", value: "stansmith" },
-        // { label: "Adidas Samba", value: "samba" },
-        // { label: "Adidas Gazelle", value: "gazelle" },
-        // { label: "Adidas Campus", value: "campus" },
+    // {
+    //   id: "colections",
+    //   titulo: "Colecciones",
+    //   url: "tienda?category=originals",
+    //   infoNav: [
+    //     // { label: "Adidas Superstar", value: "superstar" },
+    //     // { label: "Adidas Forum", value: "forum" },
+    //     // { label: "Adidas Stan Smith", value: "stansmith" },
+    //     // { label: "Adidas Samba", value: "samba" },
+    //     // { label: "Adidas Gazelle", value: "gazelle" },
+    //     // { label: "Adidas Campus", value: "campus" },
 
-        {
-          categoria: [
-            {
-              id: "1",
-              title: "Adidas",
-              url: "/tienda?marca=adidas&category=originals",
-            },
-            {
-              id: "3",
-              title: " Superstar",
-              url: "/tienda?coleccion=superstar",
-            },
-            {
-              id: "5",
-              title: "Forum",
-              url: "/tienda?coleccion=forum",
-            },
-            {
-              id: "6",
-              title: " Stan Smith",
-              url: "/tienda?coleccion=stansmith",
-            },
-            {
-              id: "6",
-              title: " Samba",
-              url: "/tienda?coleccion=samba",
-            },
-            {
-              id: "6",
-              title: " Gazelle",
-              url: "/tienda?coleccion=gazelle",
-            },
-            {
-              id: "6",
-              title: " Campus",
-              url: "/tienda?coleccion=campus",
-            },
-          ],
-        },
-        {
-          categoria: [
-            {
-              id: "1",
-              title: "Nike",
-              url: "/tienda?marca=nike&category=originals",
-            },
-            {
-              id: "3",
-              title: "Air Force 1",
-              url: "/tienda?coleccion=airforce1",
-            },
-            {
-              id: "4",
-              title: "Air Max Excee",
-              url: "/tienda?coleccion=airmaxexcee",
-            },
-            {
-              id: "6",
-              title: "Air Max 90",
-              url: "/tienda?coleccion=airforcemax90",
-            },
-            {
-              id: "5",
-              title: "Jordan",
-              url: "/tienda?coleccion=jordan",
-            },
-            {
-              id: "5",
-              title: "Dunk",
-              url: "/tienda?coleccion=dunk",
-            },
-          ],
-        },
-        // {
-        //   categoria: [
-        //     {
-        //       id: "9",
-        //       title: "Nike",
-        //       url: "/tienda?tipo=ropa&genero=hombre",
-        //     },
-        //     {
-        //       id: "10",
-        //       title: "Polos",
-        //       url: "/tienda?tipo=ropa&genero=hombre&category=polo",
-        //     },
-        //     {
-        //       id: "12",
-        //       title: "Casacas",
-        //       url: "/tienda?tipo=ropa&genero=hombre&category=casaca",
-        //     },
-        //     {
-        //       id: "12",
-        //       title: "Poleras",
-        //       url: "/tienda?tipo=ropa&genero=hombre&category=polera",
-        //     },
-        //     {
-        //       id: "12",
-        //       title: "Pantalones",
-        //       url: "/tienda?tipo=ropa&genero=hombre&category=pantalon",
-        //     },
-        //     {
-        //       id: "12",
-        //       title: "Buzos",
-        //       url: "/tienda?tipo=ropa&genero=hombre&category=buzo",
-        //     },
-        //   ],
-        // },
-      ],
-    },
+    //     {
+    //       categoria: [
+    //         {
+    //           id: "1",
+    //           title: "Adidas",
+    //           url: "/tienda?marca=adidas&category=originals",
+    //         },
+    //         {
+    //           id: "3",
+    //           title: " Superstar",
+    //           url: "/tienda?coleccion=superstar",
+    //         },
+    //         {
+    //           id: "5",
+    //           title: "Forum",
+    //           url: "/tienda?coleccion=forum",
+    //         },
+    //         {
+    //           id: "6",
+    //           title: " Stan Smith",
+    //           url: "/tienda?coleccion=stansmith",
+    //         },
+    //         {
+    //           id: "6",
+    //           title: " Samba",
+    //           url: "/tienda?coleccion=samba",
+    //         },
+    //         {
+    //           id: "6",
+    //           title: " Gazelle",
+    //           url: "/tienda?coleccion=gazelle",
+    //         },
+    //         {
+    //           id: "6",
+    //           title: " Campus",
+    //           url: "/tienda?coleccion=campus",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       categoria: [
+    //         {
+    //           id: "1",
+    //           title: "Nike",
+    //           url: "/tienda?marca=nike&category=originals",
+    //         },
+    //         {
+    //           id: "3",
+    //           title: "Air Force 1",
+    //           url: "/tienda?coleccion=airforce1",
+    //         },
+    //         {
+    //           id: "4",
+    //           title: "Air Max Excee",
+    //           url: "/tienda?coleccion=airmaxexcee",
+    //         },
+    //         {
+    //           id: "6",
+    //           title: "Air Max 90",
+    //           url: "/tienda?coleccion=airforcemax90",
+    //         },
+    //         {
+    //           id: "5",
+    //           title: "Jordan",
+    //           url: "/tienda?coleccion=jordan",
+    //         },
+    //         {
+    //           id: "5",
+    //           title: "Dunk",
+    //           url: "/tienda?coleccion=dunk",
+    //         },
+    //       ],
+    //     },
+    //     // {
+    //     //   categoria: [
+    //     //     {
+    //     //       id: "9",
+    //     //       title: "Nike",
+    //     //       url: "/tienda?tipo=ropa&genero=hombre",
+    //     //     },
+    //     //     {
+    //     //       id: "10",
+    //     //       title: "Polos",
+    //     //       url: "/tienda?tipo=ropa&genero=hombre&category=polo",
+    //     //     },
+    //     //     {
+    //     //       id: "12",
+    //     //       title: "Casacas",
+    //     //       url: "/tienda?tipo=ropa&genero=hombre&category=casaca",
+    //     //     },
+    //     //     {
+    //     //       id: "12",
+    //     //       title: "Poleras",
+    //     //       url: "/tienda?tipo=ropa&genero=hombre&category=polera",
+    //     //     },
+    //     //     {
+    //     //       id: "12",
+    //     //       title: "Pantalones",
+    //     //       url: "/tienda?tipo=ropa&genero=hombre&category=pantalon",
+    //     //     },
+    //     //     {
+    //     //       id: "12",
+    //     //       title: "Buzos",
+    //     //       url: "/tienda?tipo=ropa&genero=hombre&category=buzo",
+    //     //     },
+    //     //   ],
+    //     // },
+    //   ],
+    // },
 
     // {
     //   id: "Ntiendas",
@@ -374,6 +374,11 @@ const dataHeader = {
       id: "outlet",
       titulo: "SALE",
       url: "outlet",
+    },
+    {
+      id: "nuestras-tiendas",
+      titulo: "Nuestras Tiendas",
+      url: "nuestras-tiendas",
     },
   ],
 };

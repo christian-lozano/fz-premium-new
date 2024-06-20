@@ -1,9 +1,8 @@
-import ContedorCarouselProduct from "@/components/carousel-product/contedor-carousel-product"
+import ContedorCarouselProduct from "@/components/carousel-product/contedor-carousel-product";
 
-import SemiFiltroHome from "./semi-filtro-home"
+import SemiFiltroHome from "./semi-filtro-home";
 
-export default function MainFiltroGenero({ dataSemifiltroHome }) {
-
+export default function MainFiltroGenero({ dataSemifiltroHome, descuentos }) {
   return (
     <div className=" flex h-full   w-full flex-col justify-around">
       {/* <div className="flex h-20 w-full justify-center text-4xl font-extrabold">
@@ -16,9 +15,10 @@ export default function MainFiltroGenero({ dataSemifiltroHome }) {
           <ContedorCarouselProduct
             genero={el.filtro}
             cantidad={el.cantidadSlider}
+            descuentos={descuentos}
           />
         </>
       ))}
     </div>
-  )
+  );
 }

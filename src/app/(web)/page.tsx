@@ -5,7 +5,8 @@
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
-
+import HombreMujer from "@/components/hombre-mujer/hombre-mujer";
+import MainFiltroGenero from "@/components/hombre-mujer/main-filtro-genero";
 import { SanityProduct, SanitySlider } from "@/config/inventory";
 import Benefit from "@/components/benefits/Benefit";
 import Carousel from "@/components/carousel-home/Carousel";
@@ -16,30 +17,31 @@ import MainTab from "@/components/tabs-home-genero/main-tab";
 import CarouselProductSimilares from "@/components/carousel-product/carousel-product-similares";
 import Descuentos from "@/config/descuentos";
 import { FiltroGlobal } from "@/utilits/filtro-products";
+import VideoHome from "@/components/video/video";
 export const metadata: Metadata = {
-  title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
+  title: "Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
-    "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
+    "Bienvenido(a) al sitio oficial de Fritz Sport Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
   openGraph: {
-    title: " Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
+    title: " Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
     description:
-      "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
+      "Bienvenido(a) al sitio oficial de Fritz Sport Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
     url: `${process.env.URL_DOMINIO}`,
-    siteName: "Fz Premium",
+    siteName: "Fritz Sport",
     images: [
       {
         url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
 
         width: 800,
         height: 600,
-        alt: `Fz Premium share Imagen`,
+        alt: `Fritz Sport share Imagen`,
       },
       {
         url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
 
         width: 1200,
         height: 630,
-        alt: `Fz Premium share Imagen`,
+        alt: `Fritz Sport share Imagen`,
       },
     ],
   },
@@ -57,6 +59,7 @@ interface Props {
     sku?: string;
   };
 }
+
 const benefits = [
   {
     icon: (
@@ -197,7 +200,7 @@ export default async function Page({ searchParams }: Props) {
   };
 
   const slider = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home-fz"] [0] {
+    groq`*[_type == "home"] [0] {
       slider
     }`
   );
@@ -215,7 +218,7 @@ export default async function Page({ searchParams }: Props) {
   const productFilter = FiltroGlobal();
   const newProducts = await client.fetch<
     SanitySlider[]
-  >(groq`*[${productFilter}][0..20] | order(_createdAt desc) {
+  >(groq`*[${productFilter}] | order(_createdAt desc)[0..100] {
       _id,
       _createdAt,
       name,
@@ -302,6 +305,7 @@ export default async function Page({ searchParams }: Props) {
     },
   ];
   let descuentos = await Descuentos();
+
   return (
     <div>
       {/* <DialogSizes promoHome={promoHome}></DialogSizes> */}
@@ -311,58 +315,11 @@ export default async function Page({ searchParams }: Props) {
 
         {/* <Carousel dataSlider={slider[0]} /> */}
 
-        <div className="mt-20 ">
-          <div className="text-center text-xl xl:text-4xl uppercase">
-            Categoria Destacada
-          </div>
-
-          <CarouselProductSimilares>
-            <PromoImageGrid
-              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/def4074c1b5cfaf8317c95ab9405575f9bc94389-420x640.jpg"
-              titulo={""}
-              subtitulo={""}
-              url={"/tienda?coleccion=samba"}
-            />
-
-            <PromoImageGrid
-              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/6116786d1ea4f8d900bdddd3aee0ace7efb031ab-420x640.jpg"
-              titulo={""}
-              subtitulo={""}
-              url={"/tienda?coleccion=superstar"}
-            />
-            <PromoImageGrid
-              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/d7f1f560cecada98d6c195e55c083a19ac1ac4d0-420x640.jpg"
-              titulo={""}
-              subtitulo={""}
-              url={"/tienda?coleccion=forum"}
-            />
-
-            <PromoImageGrid
-              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/12358e578ba6bb168c457f6fe266a51311986ef4-420x640.jpg"
-              titulo={""}
-              subtitulo={""}
-              url={"/tienda?coleccion=stansmith"}
-            />
-            <PromoImageGrid
-              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/bc16f1f1b866b4ba40b691fadf050396ff31edf1-420x640.jpg"
-              titulo={""}
-              subtitulo={""}
-              url={"/tienda?coleccion=gazelle"}
-            />
-            <PromoImageGrid
-              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/3e2ce05e043c21006791b518f7ea67f7ada6618c-420x640.jpg"
-              titulo={""}
-              subtitulo={""}
-              url={"/tienda?coleccion=campus"}
-            />
-          </CarouselProductSimilares>
-          <div className="grid grid-cols-2 justify-items-center gap-4 xl:grid-cols-6"></div>
-        </div>
-
-        {/* los mas vendidos */}
+        <HombreMujer bannerGenero={bannerGenero[0]} />
+        {/* nuevos ingresos */}
         <div className="mt-10">
           <div className="text-center text-xl uppercase xl:text-4xl">
-            New Arrivals
+            nuevos ingresos
           </div>
           <CarouselProductRelacionados
             generoSku={false}
@@ -371,8 +328,25 @@ export default async function Page({ searchParams }: Props) {
             descuentos={descuentos}
           />
         </div>
+        <MainFiltroGenero
+          dataSemifiltroHome={categoriaSlider[0]}
+          descuentos={descuentos}
+        />
+        <div className="mt-20 ">
+          <VideoHome />
+        </div>
 
-        <PromoImage
+        {/* los mas vendidos */}
+        <div className="">
+          <div className="text-center text-xl xl:text-4xl">
+            LOS MAS VENDIDOS
+          </div>
+          <CarouselProductRelacionados
+            products={productosAll}
+            descuentos={descuentos}
+          />
+        </div>
+        {/* <PromoImage
           urlDesk={
             "https://shop.adidas.jp/creative/202405/MH_AWAYTH_SAMBA_d197b341.jpg"
           }
@@ -383,11 +357,11 @@ export default async function Page({ searchParams }: Props) {
           subtitulo={"Un original, miles de historias que partieron de él."}
           url={"/tienda"}
           bottom={false}
-        />
+        /> */}
 
         {/* <HombreMujer bannerGenero={bannerGenero[0]} /> */}
         {/* <MainFiltroGenero dataSemifiltroHome={categoriaSlider[0]} /> */}
-        <main className=" xl:px-6">
+        {/* <main className=" xl:px-6">
           <div className="text-center text-xl uppercase xl:text-4xl">Icons</div>
           <MainTab
             descuentos={descuentos}
@@ -409,16 +383,6 @@ export default async function Page({ searchParams }: Props) {
             bottom={false}
           />
 
-          {/* los mas vendidos */}
-          <div className="">
-            <div className="text-center text-xl xl:text-4xl">
-              LOS MAS VENDIDOS
-            </div>
-            <CarouselProductRelacionados
-              products={productosAll}
-              descuentos={descuentos}
-            />
-          </div>
           <div className="grid w-full grid-cols-1 xl:grid-cols-2 xl:gap-x-10">
             <PromoImage
               urlDesk={
@@ -449,12 +413,12 @@ export default async function Page({ searchParams }: Props) {
               url={"/tienda"}
             />
           </div>
-          {/* <div className="grid hidden h-full grid-cols-2  items-center justify-center xl:flex xl:justify-around ">
+          <div className="grid hidden h-full grid-cols-2  items-center justify-center xl:flex xl:justify-around ">
             {benefits.map((el, i) => (
               <Benefit key={i} benefits={el}></Benefit>
             ))}
-          </div> */}
-        </main>
+          </div>
+        </main> */}
       </div>
     </div>
   );

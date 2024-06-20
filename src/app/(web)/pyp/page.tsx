@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function index() {
   return (
@@ -14,7 +14,7 @@ export default function index() {
           <div>
             <div>
               <p>
-                FZ PREMIUM, tiene un firme compromiso por el respeto y el
+                Fritz Sport, tiene un firme compromiso por el respeto y el
                 cumplimiento de todas las disposiciones legales y reglamentarias
                 que le son aplicables en el ejercicio de sus actividades.
                 Asimismo, entiende que los datos personales, al ser parte
@@ -53,7 +53,7 @@ export default function index() {
                 </strong>
               </p>
               <p>
-                Los datos personales que son recabados por FZ PREMIUM se
+                Los datos personales que son recabados por Fritz Sport se
                 utilizarán para las siguientes finalidades:
               </p>
               <p>· Realizar publicidad a través de nuestras redes sociales</p>
@@ -66,7 +66,7 @@ export default function index() {
                 página web.
               </p>
               <p>
-                En virtud de lo anterior, FZ PREMIUM cuenta con los bancos de
+                En virtud de lo anterior, Fritz Sport cuenta con los bancos de
                 datos debidamente inscritos ante el Ministerio de Justicia y
                 Derechos Humanos.
               </p>
@@ -80,7 +80,7 @@ export default function index() {
                 para sus propios fines.
               </p>
               <p>
-                Para dichas finalidades, FZ PREMIUM podrá valerse de encargados
+                Para dichas finalidades, Fritz Sport podrá valerse de encargados
                 de tratamiento, en el caso que estos se encuentren situados
                 fuera del Perú, se producirá una transferencia internacional
                 (flujo transfronterizo) de datos personales.
@@ -103,7 +103,7 @@ export default function index() {
                 excepción expresamente establecidos por Ley.
               </p>
               <p>
-                FZ PREMIUM no requerirá consentimiento para tratar sus datos
+                Fritz Sport no requerirá consentimiento para tratar sus datos
                 personales obtenidos de fuentes accesibles al público, gratuitas
                 o no para el uso por el cual fueron hechos públicos; así mismo,
                 podrá
@@ -119,7 +119,7 @@ export default function index() {
               </p>
               <p>
                 Como titular de sus datos personales, el usuario tiene el
-                derecho de acceder a sus datos en posesión de FZ PREMIUM;
+                derecho de acceder a sus datos en posesión de Fritz Sport;
                 conocer las características de su tratamiento, rectificarlos en
                 caso de ser inexactos o incompletos; solicitar sean suprimidos o
                 cancelados al considerarlos innecesarios para las finalidades
@@ -128,13 +128,13 @@ export default function index() {
                 consentimiento otorgado expresamente, tanto como limitar el uso
                 o divulgación de sus datos personales.
               </p>
-              <p>Los derechos que le asisten frente a FZ PREMIUM son:</p>
+              <p>Los derechos que le asisten frente a Fritz Sport son:</p>
               <p>
                 1. Derecho de Acceso e información: Como consecuencia del
                 derecho de acceso, el titular de datos personales tiene derecho
                 a obtener la información que, sobre sí mismo, sea objeto de
                 tratamiento a través de los bancos de datos de titularidad de
-                FZ PREMIUM
+                Fritz Sport
               </p>
               <p>
                 El derecho de información, por su parte, otorga al titular el
@@ -149,7 +149,7 @@ export default function index() {
                 2. Derecho de rectificación, actualización e inclusión: El
                 titular de datos personales tiene derecho a la actualización,
                 inclusión y rectificación de sus datos personales materia de
-                tratamiento por parte de FZ PREMIUM cuando estos sean parcial o
+                tratamiento por parte de Fritz Sport cuando estos sean parcial o
                 totalmente inexactos, incompletos o cuando se hubiere advertido
                 omisión, error o falsedad.
               </p>
@@ -157,7 +157,7 @@ export default function index() {
                 3. Derecho de Cancelación o Supresión: El titular de datos
                 personales podrá solicitar la cancelación o supresión de sus
                 datos personales no relacionados o necesarios para la ejecución
-                de las obligaciones de cargo de FZ PREMIUM previstas en los
+                de las obligaciones de cargo de Fritz Sport previstas en los
                 contratos suscritos o las dispuestas por la normativa vigente.
               </p>
               <p>
@@ -182,7 +182,7 @@ export default function index() {
                 <strong>V. PLAZO DEL TRATAMIENTO DE DATOS PERSONALES</strong>
               </p>
               <p>
-                Los datos personales tratados por FZ PREMIUM serán almacenados
+                Los datos personales tratados por Fritz Sport serán almacenados
                 por un plazo máximo de un año, sin perjuicio de que el titular
                 de los datos pueda ejercer en cualquier momento los derechos
                 mencionados en el numeral IV de esta política.
@@ -191,7 +191,7 @@ export default function index() {
                 <strong>VI. SEGURIDAD DE DATOS PERSONALES</strong>
               </p>
               <p>
-                En cumplimiento de la normativa vigente, FZ PREMIUM adoptará
+                En cumplimiento de la normativa vigente, Fritz Sport adoptará
                 las medidas jurídicas, organizativas y técnicas apropiadas para
                 garantizar la seguridad de los datos personales, evitando su
                 alteración, pérdida, tratamiento indebido o acceso no
@@ -203,7 +203,7 @@ export default function index() {
                 riesgos a los que se encuentran expuestos.
               </p>
               <p className="my-5 text-xl text-[var(--negro)] font-medium">
-                FZ PREMIUM sólo realizará tratamiento sobre datos personales
+                Fritz Sport sólo realizará tratamiento sobre datos personales
                 que estén almacenados en repositorios que reúnan las condiciones
                 de seguridad exigidas por la normativa vigente en protección de
                 datos personales.
@@ -213,5 +213,5 @@ export default function index() {
         </div>
       </main>
     </>
-  )
+  );
 }

@@ -106,7 +106,7 @@ export default function FormPagar({ tipoEntrega }) {
     adicional: "",
     checkTerminos: false,
     estado: "pendiente",
-    razon: "Fz Premium",
+    razon: "Fritz Sport",
     userId: session?.user.id,
   });
 
@@ -158,7 +158,7 @@ export default function FormPagar({ tipoEntrega }) {
           adicional: el?.infadi ? el?.infadi : "",
           checkTerminos: false,
           estado: "pendiente",
-          razon: "Fz Premium",
+          razon: "Fritz Sport",
           userId: session?.user.id,
         });
       });
