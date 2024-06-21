@@ -22,7 +22,7 @@ export default function ModalHorarios({ children }: AuxProps) {
         onClick={() => setActiveModal(!activeModal)}
         className={` ${
           activeModal ? "fixed" : "hidden"
-        } 2xl:top-[88px] lg:top-[50] top-[70px] left-0  bg-white/80 dark:bg-blue-gray-900/80 h-full w-[100vw] z-[999] flex justify-center items-center`}
+        } 2xl:top-[88px]  lg:top-[50] top-[70px] left-0  bg-white/80 dark:bg-blue-gray-900/80 h-full w-[100vw] z-[999] flex justify-center items-center`}
       >
         <div className="flex justify-start items-end bg-black  top-0">
           <Button

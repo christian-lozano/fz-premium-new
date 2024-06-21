@@ -3,7 +3,7 @@ let options = [
   {
     id: 10,
     title: "Calzado",
-    icon: <i className="fa fa-paragraph"></i>,
+    icon: "",
     hideBorder: true,
     disabled: false,
     to: "/shop",
@@ -11,55 +11,55 @@ let options = [
       {
         id: 9,
         title: "Hombre",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 9,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
           {
             id: 9,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
           {
             id: 9,
             title: "Sandalias",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
           // ,
           // {
           //   id: 9,
           //   title: "Running",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20running"
           // }
           // {
           //   id: 9,
           //   title: "Chimpunes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Chimpunes",
           // },
           // {
           //   id: 9,
           //   title: "Originals",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20chimpunes"
           // }
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Comodo",
           // },
           // {
           //   id: 9,
           //   title: "Futbol",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20basquet"
           // }
           ,
@@ -68,64 +68,64 @@ let options = [
       {
         id: 8,
         title: "Mujer",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 3,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
           {
             id: 3,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
           {
             id: 3,
             title: "Sandalias",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
           // ,
           // {
           //   id: 3,
           //   title: "Running",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20running"
           // }
           // ,
           // {
           //   id: 3,
           //   title: "Chimpunes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20chimpunes"
 
           // }
           // {
           //   id: 3,
           //   title: "Originals",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"//mujer/calzado/origins?p=1"
           // }
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Comodo&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Zapatillas",
           // },
           // {
           //   id: 9,
           //   title: "Calzado de Plataforma",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Plataforma",
           // },
 
           // {
           //   id: 3,
           //   title: "Básquet",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20basquet"
 
           // }
@@ -135,24 +135,24 @@ let options = [
       {
         id: 7,
         title: "Niños",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 1,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=niños",
           },
           {
             id: 2,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=niños",
           },
           {
             id: 3,
             title: "Sandalias",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=sandalia&genero=niños",
           },
         ],
@@ -163,7 +163,7 @@ let options = [
   {
     id: 20,
     title: "Mujer",
-    icon: <i className="fa fa-paragraph"></i>,
+    icon: "",
     hideBorder: true,
     disabled: false,
     to: "/shop",
@@ -171,30 +171,30 @@ let options = [
       {
         id: 19,
         title: "Calzado",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 3,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
           {
             id: 3,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
           {
             id: 3,
             title: "Sandalias",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=sandalia&genero=mujer",
           },
           // {
           //   id: 3,
           //   title: "Running",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20running"
 
           // }
@@ -202,34 +202,34 @@ let options = [
           // {
           //   id: 3,
           //   title: "Chimpunes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20chimpunes"
 
           // }
           // {
           //   id: 3,
           //   title: "Originals",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20comodo"
 
           // }
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Comodo&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Zapatillas",
           // },
           // {
           //   id: 9,
           //   title: "Calzado de Plataforma",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Comodo&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Zapatillas",
           // },
           // ,
           // {
           //   id: 3,
           //   title: "Básquet",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20basquet"
 
           // }
@@ -240,19 +240,19 @@ let options = [
       // {
       //   id: 18,
       //   title: "Ropa",
-      //   icon: <i className="fa fa-opera"></i>,
+      //   icon: "",
       //   children: [
       //     {
       //       id: 3,
       //       title: "Ver Toda la Ropa",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa"
 
       //     },
       //     {
       //       id: 3,
       //       title: "Polos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20polos"
 
       //     },
@@ -260,14 +260,14 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Poleras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20poleras"
 
       //     },
       //     {
       //       id: 3,
       //       title: "Licras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20licras"
 
       //     }
@@ -275,7 +275,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Casacas",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20casacas"
 
       //     }
@@ -283,7 +283,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Pantalones",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20pantalones"
 
       //     }
@@ -291,7 +291,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Camisetas de Futbol",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20camisetas%20futbol"
 
       //     }
@@ -299,7 +299,7 @@ let options = [
       //     {
       //       id: 9,
       //       title: "Shorts",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20shorts"
 
       //     }
@@ -307,7 +307,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Buzos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20buzos"
 
       //     }
@@ -316,54 +316,54 @@ let options = [
       // {
       //   id: 17,
       //   title: "Accesorios",
-      //   icon: <i className="fa fa-opera"></i>,
+      //   icon: "",
       //   children: [
       //     {
       //       id: 1,
       //       title: "Bolsos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20bolsos"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Mochilas",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20mochilas"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Guantes",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20guantes"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Gorras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20gorras"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Medias",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20medias"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Tomatodos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20tomatodos"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Bolsos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20bolsos"
 
       //     },
@@ -375,7 +375,7 @@ let options = [
   {
     id: 30,
     title: "Hombre",
-    icon: <i className="fa fa-paragraph"></i>,
+    icon: "",
     hideBorder: true,
     disabled: false,
     to: "/shop",
@@ -383,31 +383,31 @@ let options = [
       {
         id: 29,
         title: "Calzado",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 9,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
           {
             id: 9,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
           {
             id: 3,
             title: "Sandalias",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=sandalias&genero=hombre",
           },
           // ,
           // {
           //   id: 9,
           //   title: "Running",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20running"
 
           // }
@@ -415,7 +415,7 @@ let options = [
           // {
           //   id: 9,
           //   title: "Chimpunes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   url: "?tipo=calzado&genero=hombre",
 
           // },
@@ -423,19 +423,19 @@ let options = [
           // {
           //   id: 9,
           //   title: "Originals",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20running"
           // }
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Comodo",
           // },
           // {
           //   id: 9,
           //   title: "Básquet",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas%20basquet"
 
           // }
@@ -444,61 +444,61 @@ let options = [
       {
         id: 28,
         title: "Ropa",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 3,
             title: "Ver Toda la Ropa",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?tipo=ropa&genero=hombre",
           },
           {
             id: 3,
             title: "Polos",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             url: "/tienda?search=&tipo=ropa&genero=hombre&category=polos",
           },
           ,
           {
             id: 3,
             title: "Poleras",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=poleras",
           },
           // {
           //   id: 3,
           //   title: "Licras",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20licras",
           // },
           {
             id: 3,
             title: "Casacas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=casacas",
           },
           {
             id: 3,
             title: "Pantalones",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=pantalones",
           },
           {
             id: 3,
             title: "Camisetas de Futbol",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=camisetas",
           },
           {
             id: 9,
             title: "Shorts",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             url: "tienda?search=&tipo=ropa&genero=hombre&category=shorts",
           },
           {
             id: 3,
             title: "Buzos",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "tienda?search=&tipo=ropa&genero=hombre&category=buzos",
           },
         ],
@@ -506,48 +506,48 @@ let options = [
       {
         id: 27,
         title: "Accesorios",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           // {
           //   id: 1,
           //   title: "Bolsos",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20bolsos",
           // },
           {
             id: 1,
             title: "Mochilas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=mochilas",
           },
           // {
           //   id: 1,
           //   title: "Guantes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20guantes",
           // },
           {
             id: 1,
             title: "Gorras",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=gorras",
           },
           {
             id: 1,
             title: "Medias",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=medias",
           },
           {
             id: 1,
             title: "Tomatodos",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=tomatodo",
           },
           {
             id: 1,
             title: "Bolsos",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=ropa&genero=hombre&category=bolsos",
           },
         ],
@@ -557,7 +557,7 @@ let options = [
   {
     id: 22,
     title: "Niño",
-    icon: <i className="fa fa-paragraph"></i>,
+    icon: "",
     hideBorder: true,
     disabled: false,
     to: "/shop",
@@ -565,24 +565,24 @@ let options = [
       {
         id: 21,
         title: "Calzado",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 3,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
           {
             id: 3,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
           // {
           //   id: 3,
           //   title: "Sandalias",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20sandalias"
 
           // }
@@ -590,7 +590,7 @@ let options = [
           // {
           //   id: 3,
           //   title: "Running",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20running"
 
           // }
@@ -598,21 +598,21 @@ let options = [
           // {
           //   id: 3,
           //   title: "Chimpunes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20chimpunes"
 
           // }
           // {
           //   id: 3,
           //   title: "Originals",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20"
 
           // }
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20comodo"
 
           // }
@@ -621,7 +621,7 @@ let options = [
           // {
           //   id: 3,
           //   title: "Básquet",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20comodo"
 
           // }
@@ -632,19 +632,19 @@ let options = [
       // {
       //   id: 18,
       //   title: "Ropa",
-      //   icon: <i className="fa fa-opera"></i>,
+      //   icon: "",
       //   children: [
       //     {
       //       id: 3,
       //       title: "Ver Toda la Ropa",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20ropa"
 
       //     },
       //     {
       //       id: 3,
       //       title: "Polos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20polos"
 
       //     },
@@ -652,14 +652,14 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Poleras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20poleras"
 
       //     },
       //     {
       //       id: 3,
       //       title: "Licras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20licras"
 
       //     }
@@ -667,7 +667,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Casacas",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20casacas"
 
       //     }
@@ -675,7 +675,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Pantalones",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20pantalones"
 
       //     }
@@ -683,7 +683,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Camisetas de Futbol",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20camisetas%20futbol"
 
       //     }
@@ -691,7 +691,7 @@ let options = [
       //     {
       //       id: 9,
       //       title: "Shorts",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20shorts"
 
       //     }
@@ -699,7 +699,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Buzos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20buzos"
 
       //     }
@@ -708,54 +708,54 @@ let options = [
       // {
       //   id: 17,
       //   title: "Accesorios",
-      //   icon: <i className="fa fa-opera"></i>,
+      //   icon: "",
       //   children: [
       //     {
       //       id: 1,
       //       title: "Bolsos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20accesorios"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Mochilas",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20mochilas"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Guantes",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20guantes"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Gorras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20gorras"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Medias",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20medias"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Tomatodos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20tomatodos"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Bolsos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20bolsas"
 
       //     },
@@ -766,7 +766,7 @@ let options = [
   {
     id: 32,
     title: "Niña",
-    icon: <i className="fa fa-paragraph"></i>,
+    icon: "",
     hideBorder: true,
     disabled: false,
     to: "/shop",
@@ -774,24 +774,24 @@ let options = [
       {
         id: 38,
         title: "Calzado",
-        icon: <i className="fa fa-opera"></i>,
+        icon: "",
         children: [
           {
             id: 9,
             title: "Ver Todas las Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
           {
             id: 9,
             title: "Zapatillas",
-            icon: <i className="fa fa-opera"></i>,
+            icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
           // {
           //   id: 9,
           //   title: "Sandalias",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20sandalias"
 
           // }
@@ -799,7 +799,7 @@ let options = [
           // {
           //   id: 9,
           //   title: "Running",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20running"
 
           // }
@@ -807,7 +807,7 @@ let options = [
           // {
           //   id: 9,
           //   title: "Chimpunes",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20chimpunes"
 
           // }
@@ -815,14 +815,14 @@ let options = [
           // {
           //   id: 9,
           //   title: "Originals",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20"
           // }
           // ,
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20comodo"
 
           // }
@@ -830,7 +830,7 @@ let options = [
           // {
           //   id: 9,
           //   title: "Calzado de Plataforma",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20plataforma"
 
           // }
@@ -838,7 +838,7 @@ let options = [
           // {
           //   id: 9,
           //   title: "Básquet",
-          //   icon: <i className="fa fa-opera"></i>,
+          //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20basquet"
 
           // }
@@ -847,19 +847,19 @@ let options = [
       // {
       //   id: 37,
       //   title: "Ropa",
-      //   icon: <i className="fa fa-opera"></i>,
+      //   icon: "",
       //   children: [
       //     {
       //       id: 3,
       //       title: "Ver Toda la Ropa",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20ropa"
 
       //     },
       //     {
       //       id: 3,
       //       title: "Polos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20polos"
 
       //     },
@@ -867,14 +867,14 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Poleras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20poleras"
 
       //     },
       //     {
       //       id: 3,
       //       title: "Licras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20licras"
 
       //     }
@@ -882,7 +882,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Casacas",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20casacas"
 
       //     }
@@ -890,7 +890,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Pantalones",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
 
       //     }
@@ -898,7 +898,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Camisetas de Futbol",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20camisetas%20futbol"
 
       //     }
@@ -906,7 +906,7 @@ let options = [
       //     {
       //       id: 9,
       //       title: "Shorts",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
 
       //     }
@@ -914,7 +914,7 @@ let options = [
       //     {
       //       id: 3,
       //       title: "Buzos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
 
       //     }
@@ -923,53 +923,53 @@ let options = [
       // {
       //   id: 36,
       //   title: "Accesorios",
-      //   icon: <i className="fa fa-opera"></i>,
+      //   icon: "",
       //   children: [
       //     {
       //       id: 1,
       //       title: "Bolsos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20accesorios"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Mochilas",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20mochilas"
       //     },
       //     {
       //       id: 1,
       //       title: "Guantes",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20guantes"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Gorras",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20gorras"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Medias",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20medias"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Tomatodos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20tomatodos"
 
       //     },
       //     {
       //       id: 1,
       //       title: "Bolsos",
-      //       icon: <i className="fa fa-opera"></i>,
+      //       icon: "",
       //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20bolsos"
 
       //     },
@@ -980,7 +980,7 @@ let options = [
   // {
   //   id: 50,
   //   title: "OUTLET",
-  //   icon: <i className="fa fa-paragraph"></i>,
+  //   icon: "",
   //   hideBorder: true,
   //   disabled: false,
   //   to: "/shop",
@@ -988,26 +988,26 @@ let options = [
   //     {
   //       id:49,
   //       title: "Calzado",
-  //       icon: <i className="fa fa-opera"></i>,
+  //       icon: "",
   //       children: [
   //         {
   //           id: 1,
   //           title: "Nike",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=nike"
 
   //         },
   //         {
   //           id: 2,
   //           title: "Adidas",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=adidas"
 
   //         },
   //         {
   //           id: 3,
   //           title: "Sandalias",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=sandalias"
 
   //         }
@@ -1016,26 +1016,26 @@ let options = [
   //     {
   //       id: 48,
   //       title: "Ropa",
-  //       icon: <i className="fa fa-opera"></i>,
+  //       icon: "",
   //       children: [
   //         {
   //           id: 1,
   //           title: "Nike",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=nike%20ropa"
 
   //         },
   //         {
   //           id: 2,
   //           title: "Adidas",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=adidas%20ropa"
 
   //         },
   //         {
   //           id: 3,
   //           title: "Sandalias",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=sandalias"
 
   //         }
@@ -1044,26 +1044,26 @@ let options = [
   //     {
   //       id: 47,
   //       title: "Accesorios",
-  //       icon: <i className="fa fa-opera"></i>,
+  //       icon: "",
   //       children: [
   //         {
   //           id: 1,
   //           title: "Nike",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=nike%20accesorios"
 
   //         },
   //         {
   //           id: 2,
   //           title: "Adidas",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=adidas%20accesorios"
 
   //         },
   //         {
   //           id: 3,
   //           title: "Sandalias",
-  //           icon: <i className="fa fa-opera"></i>,
+  //           icon: "",
   //           to:"/?pwa_ecom_ui_template_products%5Bquery%5D=sandalias"
 
   //         }
@@ -1075,7 +1075,7 @@ let options = [
   {
     id: 19,
     title: "Tienda",
-    icon: <i className="fa fa-graduation-cap"></i>,
+    icon: "",
     hideBorder: false,
     disabled: false,
     to: "/tienda",
@@ -1083,7 +1083,7 @@ let options = [
   {
     id: 20,
     title: "Emprende",
-    icon: <i className="fa fa-graduation-cap"></i>,
+    icon: "",
     hideBorder: false,
     disabled: false,
     to: "/emprende",
@@ -1091,7 +1091,7 @@ let options = [
   {
     id: 25,
     title: "Nuestras Tiendas",
-    icon: <i className="fa fa-graduation-cap"></i>,
+    icon: "",
     hideBorder: false,
     disabled: false,
     to: "nuestras-tiendas",
@@ -1099,7 +1099,7 @@ let options = [
   {
     id: 25,
     title: "SALE",
-    icon: <i className="fa fa-graduation-cap"></i>,
+    icon: "",
     hideBorder: false,
     disabled: false,
     to: "https://www.fritzsportoutlet.pe",
@@ -1107,7 +1107,7 @@ let options = [
   // {
   //   id: 28,
   //   title: "OUTLET",
-  //   icon: <i className="fa fa-graduation-cap"></i>,
+  //   icon: "",
   //   hideBorder: false,
   //   disabled: false,
   //   to: "https://www.fritzsportoutlet.pe",

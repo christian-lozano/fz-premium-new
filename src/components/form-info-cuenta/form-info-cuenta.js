@@ -242,8 +242,6 @@ export default function FormPagar() {
   }, [allValues, session?.user]);
 
   const handlerDepartamento = (data, id) => {
-    console.log(data, id);
-
     setDepartamento(data);
     setAllValues({
       ...allValues,

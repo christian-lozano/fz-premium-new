@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 
+import ModalPreguntasFrecuentes from "../modal/modal-preguntas-frecuentes";
+
 interface Props {
   urlWhatsApp: {
     whatsapp: string;
@@ -11,6 +13,144 @@ interface Props {
 export default function IconWhatapp({ urlWhatsApp }: Props) {
   return (
     <>
+      <ModalPreguntasFrecuentes>
+        <>
+          <div className="bg-white">
+            <div className=" overflow-y-scroll xl:h-[60vh] h-[80vh] xl:w-[40vw] w-full xl:p-8 xl:py-5 p-2">
+              <div>
+                {/* <div className="font-extrabold pt-5 pb-2">
+                  TIENDAS Y HORARIOS DE ATENCIÓN
+                </div>
+                <p className="text-xs xl:text-base">
+                  Contamos con 3 Tiendas y nuestro Canal Online
+                  www.futurevisions.pe. Flagship Acacias - Miraflores -
+                  Dirección: Calle Las Acacias 310 Miraflores - Lima - Horarios
+                  de Atención: Lunes a sábado de 11 am a 7 pm, Domingo de 12 am
+                  a 7 pm FV Secret Store - San Isidro - Dirección: Calle Miguel
+                  Dasso 126. Tienda 205 - 2do Piso San Isidro - Lima - Horarios
+                  de Atención: Lunes a viernes de 11am a 7pm Sábado de 11am a
+                  7pm
+                </p> */}
+
+                <div className="font-extrabold pt-5 pb-2">MEDIOS DE PAGO</div>
+                <p className="text-xs xl:text-base ">
+                  Contamos con diversos medios de pago. - Pago con tarjeta de
+                  crédito o débito al finalizar tu compra en el carrito. Visa /
+                  Mastercard / AMEX / Dinners.
+                </p>
+              </div>
+              <div>
+                <div className="font-extrabold pt-5 pb-2">
+                  ¿CUÁNTO DEMORA EN LLEGAR MI PEDIDO?
+                </div>
+                <p className="text-xs xl:text-base">
+                  De 3 hasta 10 días hábiles según el destino de entrega. -
+                  Entregas de 5 a 7 días hábiles: Cercado de lima, Magdalena,
+                  San Miguel, Jesús María, Lince, Pueblo Libre, Miraflores, San
+                  Borja, Chorrillos, Callao, Barranco, Surquillo, Surco, Breña,
+                  San Luis, San Isidro, Santa Anita, La Victoria, Ate, La
+                  Molina, Carabayllo, Comas, Independencia, Los Olivos, San
+                  Martín de Porres, Ventanilla (Hasta Refinería), Rímac, San
+                  Juan de Miraflores y Callao. - Entregas de 7 a 10 días
+                  hábiles: Provincias del País. - Recojos en tienda de 3 a 5
+                  días hábiles.
+                </p>
+                <p className="text-xs xl:text-base">
+                  Nuestros tiempos pueden variar según coyunturas y casos
+                  extraordinarios. Los días hábiles son considerados de Lunes a
+                  Viernes, no cuentan fines de semana ni feriados. Atención al
+                  cliente:{" "}
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    className="text-green-300"
+                  >
+                    consultas
+                  </a>
+                </p>
+              </div>
+              <div>
+                <div className="font-extrabold pt-5 pb-2">
+                  ¿SI COMPRO CON EL MÉTODO RECOJO EN TIENDA PUEDO IR HOY MISMO?
+                </div>
+                <p className="text-xs xl:text-base">
+                  La opción de recojo en tienda para una compra por
+                  www.futurevisions.pe, recibirás una llamada cuando tu pedido
+                  esté listo para que puedes pasar a recoger el producto. Aplica
+                  para el Flagship de Acacias y Secret Store Dasso. Cualquier
+                  detalle adicional por favor comunícate con
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    className="text-green-300 ml-2"
+                  >
+                    consultas
+                  </a>
+                </p>
+              </div>
+              <div>
+                <div className="font-extrabold pt-5 pb-2">
+                  CAMBIOS Y DEVOLUCIONES
+                </div>
+                <p className="text-xs xl:text-base">
+                  Cuentas con 7 días para poder realizar cambio y/o devoluciones
+                  posteriores a la entrega. No aplica para productos en
+                  descuentos, YEEZY o lanzamientos. Atención al cliente:{" "}
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    className="text-green-300 ml-2"
+                  >
+                    consultas
+                  </a>
+                </p>
+              </div>
+              <div>
+                <div className="font-extrabold pt-5 pb-2">
+                  ¿TODOS SUS PRODUCTOS SON 100% ORIGINALES?
+                </div>
+                <p className="text-xs xl:text-base">
+                  Sí, trabajamos directamente con las marcas globales para
+                  ofrecerles nuestros productos en calidad y precio retail de
+                  las marcas.
+                </p>
+              </div>
+              <div>
+                <div className="font-extrabold pt-5 pb-2">
+                  ¿TODOS LOS PRODUCTOS DE TIENDA SE ENCUENTRAN EN WEB?
+                </div>
+                <p className="text-xs xl:text-base">
+                  La web contiene todos los productos de nuestras marcas.
+                  Cualquier detalle estamos a tu disposición en
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    className="text-green-300 ml-2"
+                  >
+                    Preguntas
+                  </a>
+                </p>
+              </div>
+              <div>
+                <div className="font-extrabold pt-5 pb-2">
+                  ¿POR QUÉ MI COMPRA FUE CANCELADA?
+                </div>
+                <p className="text-xs xl:text-base">
+                  Si tu compra fuera cancelada, por favor comunícate con
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    className="text-green-300 ml-2"
+                  >
+                    consulta sobre tu pedido
+                  </a>{" "}
+                  para que te puedan brindar mayor detalle.
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      </ModalPreguntasFrecuentes>
       <Link
         href="/emprende"
         className="z-header  sticky-0 fixed bottom-20 right-5 z-[999] flex items-center justify-center xl:bottom-[100px] xl:right-16 "

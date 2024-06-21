@@ -332,7 +332,7 @@ export default function FormPagar({ tipoEntrega }) {
     // } else {
     //   setPrecioDelibery(20)
     // }
-  }, [allValues]);
+  }, [allValues,session?.user]);
 
   const handlerDepartamento = (data, id) => {
     setDepartamento(data);
@@ -342,12 +342,12 @@ export default function FormPagar({ tipoEntrega }) {
         .nombre_ubigeo,
     });
   };
-  const handlerProvincia = (data, id) => {
+  const handlerProvincia = (data, value) => {
     setProvincia(data);
 
     setAllValues({
       ...allValues,
-      provincia: data[0].buscador_ubigeo,
+      provincia: value,
     });
   };
 
@@ -660,12 +660,12 @@ export default function FormPagar({ tipoEntrega }) {
                 }
                 value={
                   departamento?.find(
-                    (el) => el.id_ubigeo === String(allValues?.provincia)
+                    (el) => el.id_ubigeo === String(allValues?.distrito)
                   )?.id_ubigeo
                 }
                 defaultValue={
                   departamento?.find(
-                    (el) => el.id_ubigeo === String(allValues?.provincia)
+                    (el) => el.id_ubigeo === String(allValues?.distrito)
                   )?.id_ubigeo
                 }
                 nonce={undefined}
