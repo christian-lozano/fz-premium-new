@@ -57,9 +57,13 @@ export default function ProductRelacionados({
         </h3>
 
         <div className="flex">
-          <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
-            S/{products.priceecommerce}
-          </span>
+          {descuentos.descuentofritzsport > 0 || products.descuento ? (
+            <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
+              S/{products.priceecommerce}
+            </span>
+          ) : (
+            <></>
+          )}
           <p className="mt-2 font-semibold">
             S/
             {precioProduct(

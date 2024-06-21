@@ -65,9 +65,14 @@ export function ProductInfo({ product, descuentos }: Props) {
           <div className="mt-3 hidden 2xl:block">
             <h2 className="sr-only">Product information</h2>
             <div className="mb-5 flex">
-              <p className=" mr-2 text-3xl font-semibold tracking-tight text-[#767677] line-through">
-                S/{product?.priceecommerce}
-              </p>
+              {descuentos.descuentofritzsport > 0 || product.descuento ? (
+                <p className=" mr-2 text-3xl font-semibold tracking-tight text-[#767677] line-through">
+                  S/{product?.priceecommerce}
+                </p>
+              ) : (
+                <></>
+              )}
+
               <p className="text-3xl tracking-tight ">
                 S/
                 {precioProduct(

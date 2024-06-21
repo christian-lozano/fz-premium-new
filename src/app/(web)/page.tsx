@@ -8,13 +8,13 @@ import { groq } from "next-sanity";
 import HombreMujer from "@/components/hombre-mujer/hombre-mujer";
 import MainFiltroGenero from "@/components/hombre-mujer/main-filtro-genero";
 import { SanityProduct, SanitySlider } from "@/config/inventory";
-import Benefit from "@/components/benefits/Benefit";
+// import Benefit from "@/components/benefits/Benefit";
 import Carousel from "@/components/carousel-home/Carousel";
 import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados";
-import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid";
-import PromoImage from "@/components/promo-image/promo-image";
-import MainTab from "@/components/tabs-home-genero/main-tab";
-import CarouselProductSimilares from "@/components/carousel-product/carousel-product-similares";
+// import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid";
+// import PromoImage from "@/components/promo-image/promo-image";
+// import MainTab from "@/components/tabs-home-genero/main-tab";
+// import CarouselProductSimilares from "@/components/carousel-product/carousel-product-similares";
 import Descuentos from "@/config/descuentos";
 import { FiltroGlobal } from "@/utilits/filtro-products";
 import VideoHome from "@/components/video/video";
@@ -172,7 +172,7 @@ export default async function Page({ searchParams }: Props) {
 
     const generoFilterHombre = genero ? `&& genero match "${genero}"` : "";
 
-    const filter = `*[${productFilter}${generoFilterHombre}]`;
+    const filter = `*[${productFilter}${generoFilterHombre}] | order(_createdAt desc)[0..100]`;
 
     // await seedSanityData()
     const products = await client.fetch<
@@ -210,7 +210,7 @@ export default async function Page({ searchParams }: Props) {
     }`
   );
   const categoriaSlider = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home"] {
+    groq`*[_type == "home"][0] {
       semifiltro
     }`
   );
@@ -218,7 +218,7 @@ export default async function Page({ searchParams }: Props) {
   const productFilter = FiltroGlobal();
   const newProducts = await client.fetch<
     SanitySlider[]
-  >(groq`*[${productFilter}] | order(_createdAt desc)[0..100] {
+  >(groq`*[${productFilter} && genero != "niños"] | order(_createdAt desc)[0..100] {
       _id,
       _createdAt,
       name,
@@ -329,7 +329,7 @@ export default async function Page({ searchParams }: Props) {
           />
         </div>
         <MainFiltroGenero
-          dataSemifiltroHome={categoriaSlider[0]}
+          dataSemifiltroHome={categoriaSlider}
           descuentos={descuentos}
         />
         <div className="mt-20 ">

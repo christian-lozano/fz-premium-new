@@ -6,8 +6,8 @@ import { FiltroGlobal } from "@/utilits/filtro-products";
 
 export default async function ContedorCarouselProduct({
   genero,
-  cantidad = "10",
-  descuentos
+  cantidad = "80",
+  descuentos,
 }) {
   const productosGenero = async (genero, cantidad) => {
     const order = `| order(_id) [0...${cantidad}]`;
@@ -16,7 +16,7 @@ export default async function ContedorCarouselProduct({
 
     const generoFilterHombre = genero ? `&& genero match "${genero}"` : "";
 
-    const filter = `*[${productFilter}${generoFilterHombre}]`;
+    const filter = `*[${productFilter}${generoFilterHombre}] | order(_createdAt desc)[0..100]`;
 
     // await seedSanityData()
     const products = await client.fetch(`${filter} ${order} {

@@ -1,11 +1,9 @@
 export function precioProduct(
   descuento: number | string | undefined,
-  precioEcommerce: number | string | undefined,
+  precioEcommerce: number | string | undefined | null,
   precioManual: number | string | undefined,
   descuentos: any
 ) {
-
-
   let resultado: Number;
   if (precioManual) {
     if (Number(precioManual) < 20) {
@@ -16,17 +14,28 @@ export function precioProduct(
   } else {
     const precio = precioEcommerce;
 
-    if (Number(precio) < 20 || null) {
-      resultado = 999;
+    if (
+      Number(precio) < 20 ||
+      precioEcommerce === null ||
+      precioEcommerce === undefined
+    ) {
+      return (resultado = 999);
     } else {
-      if (descuentos?.descuentofritzsport) {
-        const operation =
-          (Number(descuentos.descuentofritzsport) / 100) * Number(precio);
-        resultado = Number(precio) - operation;
-        if (Number(resultado) <= 20) {
-          return 999;
+      if (
+        descuentos?.descuentofritzsport ||
+        descuentos.descuentofritzsport === 0
+      ) {
+        if (descuentos.descuentofritzsport === 0) {
+          return precioEcommerce;
         } else {
-          return Number(resultado.toFixed(0));
+          const operation =
+            (Number(descuentos.descuentofritzsport) / 100) * Number(precio);
+          resultado = Number(precio) - operation;
+          if (Number(resultado) <= 20) {
+            return 999;
+          } else {
+            return Number(resultado.toFixed(0));
+          }
         }
       } else {
         const operation = (Number(descuento) / 100) * Number(precio);

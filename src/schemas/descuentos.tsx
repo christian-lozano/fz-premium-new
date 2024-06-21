@@ -25,7 +25,7 @@ export const descuentos = defineType({
     },
     {
       name: "descuentofz",
-      title: "Descuento Fritz Sport",
+      title: "Descuento Fz Premium",
       type: "number",
     },
   ],
