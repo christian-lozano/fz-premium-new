@@ -117,16 +117,21 @@ export default function Product({
               <div className=" mt-1 text-xs text-white ">
                 <div className="flex flex-col">
                   <>
-                    <span className="flex justify-center bg-black px-3 py-1">
-                      {" "}
-                      {!stock && descuentos.descuentofritzsport
-                        ? `-${descuentos.descuentofritzsport}%`
-                        : "Agotado"}
-                    </span>
-                    {descuentos.descuentofritzsport && (
+                    {!products.preciomanual && (
+                      <span className="flex justify-center bg-black px-3 py-1">
+                        {" "}
+                        {!stock && descuentos.descuentofritzsport
+                          ? `-${descuentos.descuentofritzsport}%`
+                          : "Agotado"}
+                      </span>
+                    )}
+                    {descuentos.descuentofritzsport &&
+                    !products.preciomanual ? (
                       <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
                         oferta
                       </span>
+                    ) : (
+                      <></>
                     )}
                   </>
                 </div>
@@ -145,20 +150,26 @@ export default function Product({
                     {descuentos.descuentofritzsport === undefined ||
                     descuentos.descuentofritzsport === null ? (
                       <>
-                        {!stock && products.descuento && (
+                        {!stock &&
+                        products.descuento &&
+                        !products.preciomanual ? (
                           <span className="flex justify-center  mt-2 bg-black text-white px-3 py-1">
                             {`-${products.descuento}%`}
                           </span>
+                        ) : (
+                          <></>
                         )}
                       </>
                     ) : (
                       <></>
                     )}
 
-                    {descuentos.descuento && (
-                      <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
+                    {descuentos.descuento && !products.preciomanual ? (
+                      <span className="mt-1 hidden bg-red-500 px-3 py-1 uppercase">
                         oferta
                       </span>
+                    ) : (
+                      <></>
                     )}
                   </>
                 </div>
@@ -214,9 +225,15 @@ export default function Product({
 
           <div className="flex">
             {descuentos.descuentofritzsport > 0 || products.descuento ? (
-              <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
-                S/{products.priceecommerce}
-              </span>
+              <>
+                {descuentos.descuentofritzsport && !products.preciomanual ? (
+                  <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
+                    S/{products.priceecommerce}
+                  </span>
+                ) : (
+                  <></>
+                )}
+              </>
             ) : (
               <></>
             )}

@@ -48,20 +48,8 @@ export const catalogo = defineType({
               validation: (rule) => rule.required(),
             },
             {
-              title: "Imagen Header Catalogo(png,webp)",
-              name: "imgheader",
-              type: "image",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Imagen Footer Catalogo(png,webp)",
-              name: "imgfooter",
-              type: "image",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Imagen Price Catalogo(png,webp) 155pxx65px",
-              name: "imgprice",
+              title: "Imagen Fondo Producto(png,webp) 2480pxx3505px",
+              name: "imgfondo",
               type: "image",
               validation: (rule) => rule.required(),
             },
@@ -89,6 +77,7 @@ export const catalogo = defineType({
               type: "image",
               validation: (rule) => rule.required(),
             },
+
             {
               name: "categorias",
               title: "Categorias",
@@ -114,11 +103,12 @@ export const catalogo = defineType({
                           { title: "Bolsos", value: "bolsos" },
                           { title: "Medias", value: "medias" },
                           { title: "Chimpunes", value: "chimpunes" },
+                          { title: "Peloteras", value: "peloteras" },
                           { title: "Plataforma", value: "plataforma" },
                           { title: "Originals", value: "originals" },
                           { title: "Camisetas", value: "camisetas" },
                           { title: "Toma todo", value: "tomatodos" },
-
+                          { title: "Medias", value: "medias" },
                           { title: "Buzos", value: "buzos" },
                           { title: "Escolar", value: "escolar" },
                           { title: "Pantalón", value: "pantalon" },
@@ -127,8 +117,10 @@ export const catalogo = defineType({
                           { title: "Polos", value: "polos" },
                           { title: "Sandalias", value: "sandalias" },
                           { title: "Running", value: "running" },
-                          { title: "Poleras", value: "poleras" },
-                          { title: "Básquet", value: "basquet" },
+
+          { title: "Tenis", value: "tenis" },
+          { title: "Básket", value: "basquet" },
+          { title: "Training ", value: "training" },
                         ], // <-- predefined values
                       },
                     },

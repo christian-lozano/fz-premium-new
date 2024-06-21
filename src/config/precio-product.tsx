@@ -7,18 +7,14 @@ export function precioProduct(
   let resultado: Number;
   if (precioManual) {
     if (Number(precioManual) < 20) {
-      resultado = 999;
+      return (resultado = 999);
     } else {
-      resultado = Number(precioManual);
+      return (resultado = Number(precioManual));
     }
   } else {
     const precio = precioEcommerce;
 
-    if (
-      Number(precio) < 20 ||
-      precioEcommerce === null ||
-      precioEcommerce === undefined
-    ) {
+    if (Number(precio) < 20 || precio === null || precio === undefined) {
       return (resultado = 999);
     } else {
       if (

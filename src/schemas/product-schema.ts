@@ -127,21 +127,13 @@ export const product = defineType({
       options: {
         list: [
           { title: "Mochilas", value: "mochilas" },
-          { title: "Terrex", value: "terrex" },
           { title: "Urbano", value: "urbano" },
           { title: "Casacas", value: "casacas" },
           { title: "Bolsos", value: "bolsos" },
           { title: "Medias", value: "medias" },
           { title: "Chimpunes", value: "chimpunes" },
           { title: "Plataforma", value: "plataforma" },
-          { title: "Mochilas", value: "mochilas" },
           { title: "Terrex", value: "terrex" },
-          { title: "Urbano", value: "urbano" },
-          { title: "Casacas", value: "casacas" },
-          { title: "Bolsos", value: "bolsos" },
-          { title: "Medias", value: "medias" },
-          { title: "Chimpunes", value: "chimpunes" },
-          { title: "Plataforma", value: "plataforma" },
           { title: "Originals", value: "originals" },
           { title: "Camisetas", value: "camisetas" },
           { title: "Toma todo", value: "tomatodos" },
@@ -243,25 +235,18 @@ export const product = defineType({
 
     {
       name: "priceecommerce",
-      title: "Precio Ecommerce",
+      title: "Precio Retail (Ecommerce - Catalogo)",
       type: "number",
       validation: (rule) => rule.required(),
     },
     {
-      name: "pricemayorista",
-      title: "Precio Mayorista",
+      name: "preciomanual",
+      title: "Precio Manual (Ignora por completo el descuento global)",
       type: "number",
-      validation: (rule) => rule.required(),
-    },
-    {
-      name: "priceemprendedor",
-      title: "Precio Emprendedor",
-      type: "number",
-      validation: (rule) => rule.required(),
     },
     {
       name: "stock",
-      title: "Stock Total",
+      title: "Stock Total - ( '0' no parece en el catalogo)",
       type: "number",
       validation: (rule) => rule.required(),
     },
@@ -300,12 +285,6 @@ export const product = defineType({
     {
       name: "descuento",
       title: "Descuento Ecommerce",
-      type: "number",
-    },
-
-    {
-      name: "preciomanual",
-      title: "Precio Manual",
       type: "number",
     },
   ],

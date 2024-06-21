@@ -31,21 +31,26 @@ export default function ProductRelacionados({
             />
           )}
           {/* <LoveFollow /> */}
-          {products.descuento ? (
+          {/* {products.descuento ? (
             <div className="absolute right-0 top-4 bg-black px-3 py-1">
               <h4 className=" mt-1 text-xs text-white ">
-                {nuevo ? "New" : `-${products.descuento}%`}
+                {`-${products.descuento}%`}
               </h4>
             </div>
           ) : (
             <>
+              <div className="absolute right-0 top-4 bg-black px-3 py-1">
+                <h4 className=" mt-1 text-xs text-white ">
+                  {`-${products.descuento}%`}
+                </h4>
+              </div>
+            </>
+          )} */}
               {nuevo && (
                 <div className="absolute right-0 top-4 bg-black px-3 py-1">
                   <h4 className=" mt-1 text-xs text-white ">Nuevo</h4>
                 </div>
               )}
-            </>
-          )}
         </div>
         {generoSku && (
           <h3 className="mt-4 font-medium capitalize ">
@@ -58,9 +63,15 @@ export default function ProductRelacionados({
 
         <div className="flex">
           {descuentos.descuentofritzsport > 0 || products.descuento ? (
-            <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
-              S/{products.priceecommerce}
-            </span>
+            <>
+              {descuentos.descuentofritzsport ? (
+                <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
+                  S/{products.priceecommerce}
+                </span>
+              ) : (
+                <></>
+              )}
+            </>
           ) : (
             <></>
           )}
