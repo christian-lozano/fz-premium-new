@@ -53,9 +53,9 @@ export async function POST(req) {
       },
 
       back_urls: {
-        success: `http://localhost:3000/exito`,
-        failure: `https://www.fzpremium.pe`,
-        pending: `https://www.fzpremium.pe`,
+        success: `https://www.fritzsport.pe/exito`,
+        failure: `https://www.fritzsport.pe/`,
+        pending: `https://www.fritzsport.pe/`,
       },
 
       // installments: 1,
