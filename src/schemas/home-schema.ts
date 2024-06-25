@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity"
+import { defineField, defineType } from "sanity";
 
 export const home = defineType({
   name: "home",
@@ -59,41 +59,41 @@ export const home = defineType({
               validation: (rule) => rule.required(),
             },
             {
-              title: "Titulo",
-              name: "titulo",
+              title: "description image",
+              name: "tituloimg",
               type: "string",
               validation: (rule) => rule.required(),
             },
-            {
-              title: "Subtitulo",
-              name: "subtitulo",
-              type: "string",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Activar Botón con titulo",
-              name: "activebuttontitle",
-              type: "boolean",
-              initialValue: false,
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Btntext",
-              name: "btntext",
-              type: "string",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Link",
-              name: "link",
-              type: "string",
-              validation: (rule) => rule.required(),
-            },
-            {
-              title: "Image PNG 2000x2000",
-              name: "img2",
-              type: "image",
-            },
+            // {
+            //   title: "Subtitulo",
+            //   name: "subtitulo",
+            //   type: "string",
+            //   validation: (rule) => rule.required(),
+            // },
+            // {
+            //   title: "Activar Botón con titulo",
+            //   name: "activebuttontitle",
+            //   type: "boolean",
+            //   initialValue: false,
+            //   validation: (rule) => rule.required(),
+            // },
+            // {
+            //   title: "Btntext",
+            //   name: "btntext",
+            //   type: "string",
+            //   validation: (rule) => rule.required(),
+            // },
+            // {
+            //   title: "Link",
+            //   name: "link",
+            //   type: "string",
+            //   validation: (rule) => rule.required(),
+            // },
+            // {
+            //   title: "Image PNG 2000x2000",
+            //   name: "img2",
+            //   type: "image",
+            // },
           ],
         },
       ],
@@ -215,6 +215,68 @@ export const home = defineType({
       ],
     },
     {
+      title: "Banner Home",
+      type: "object",
+      name: "bannerhome",
+      fields: [
+        // {
+        //   title: "Activar Promo",
+        //   name: "activebuttontitle",
+        //   type: "boolean",
+        //   initialValue: true,
+        //   validation: (rule) => rule.required(),
+        // },
+        {
+          title: "Image Desktop(jpg,png) 1920x720",
+          name: "imgdeskt",
+          type: "image",
+          validation: (rule) => rule.required(),
+          options: {
+            hotspot: true, // <-- Defaults to false
+          },
+        },
+        {
+          title: "Image Mobil(jpg,png) 614x777",
+          name: "imgmob",
+          type: "image",
+          validation: (rule) => rule.required(),
+          options: {
+            hotspot: true, // <-- Defaults to false
+          },
+        },
+        {
+          title: "Descripción Imagen",
+          name: "desc",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "titulo",
+          name: "titulo",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "description",
+          name: "description",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "btn text",
+          name: "btntext",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "Url",
+          name: "urlbtn",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+      ],
+    },
+    {
       title: "Promo Home",
       type: "object",
       name: "promo",
@@ -262,4 +324,4 @@ export const home = defineType({
       validation: (rule) => rule.required(),
     },
   ],
-})
+});

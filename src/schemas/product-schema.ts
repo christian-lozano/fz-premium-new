@@ -133,6 +133,7 @@ export const product = defineType({
           { title: "Medias", value: "medias" },
           { title: "Chimpunes", value: "chimpunes" },
           { title: "Plataforma", value: "plataforma" },
+          { title: "Pelotas ", value: "pelotas" },
           { title: "Terrex", value: "terrex" },
           { title: "Originals", value: "originals" },
           { title: "Camisetas", value: "camisetas" },
@@ -281,10 +282,14 @@ export const product = defineType({
         catalogo: false,
       },
     },
-
     {
       name: "descuento",
       title: "Descuento Ecommerce",
+      type: "number",
+    },
+    {
+      name: "popularidad",
+      title: "Popularidad",
       type: "number",
     },
   ],

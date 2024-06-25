@@ -65,7 +65,7 @@ const filters = [
       { label: "Medias", value: "medias" },
       { label: "Chimpunes", value: "chimpunes" },
       { label: "Plataforma", value: "plataforma" },
-      // { label: "Originals", value: "originals" },
+      { label: "Pelotas ", value: "pelotas" },
       { label: "Camisetas", value: "camisetas" },
       { label: "Toma todo", value: "tomatodos" },
       { label: "Buzos", value: "buzos" },

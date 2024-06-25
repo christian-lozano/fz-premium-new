@@ -137,10 +137,10 @@ const Carousel = ({ dataSlider }) => {
                 </svg>
               )}
             </button>
-            <i
+            {/* <i
               onClick={() => setPlay(!play)}
               className={play ? "fal fa-pause" : "fal fa-play"}
-            ></i>
+            ></i> */}
           </div>
         </div>
       </div>

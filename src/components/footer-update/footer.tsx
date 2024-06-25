@@ -29,7 +29,10 @@ const FooterMobil = () => {
           <AccordionContent>
             <div className=" flex  gap-y-5  justify-center">
               <div className="flex flex-col items-start gap-y-5">
-                <Link href={"/"}>
+                <Link
+                  href={"https://maps.app.goo.gl/h54ryBi9SqHQkQUW6"}
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start `}>
                     Tienda - Miguel Grau
                     <span className="text-xs text-blue-gray-300 mt-1">
@@ -37,11 +40,14 @@ const FooterMobil = () => {
                     </span>
                   </div>
                 </Link>
-                <Link href={"/"}>
+                <Link
+                  href={"https://maps.app.goo.gl/iUxXwFKqF2BAEGhC7"}
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start  `}>
                     Tienda - Tumbes
                     <span className="text-xs text-blue-gray-300 mt-1">
-                      Cercado de Lima
+                      Av. República del Perú 373, 24101
                     </span>
                   </div>
                 </Link>
@@ -61,17 +67,22 @@ const FooterMobil = () => {
           <AccordionContent>
             <div className=" flex  gap-y-5  justify-center">
               <div className="flex flex-col items-start gap-y-5">
-                <Link href={"/"}>
+                <Link href={"/auth"}>
                   <div className={`flex flex-col  items-start justify-start `}>
                     Mi Cuenta
                   </div>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"/auth"}>
                   <div className={`flex flex-col  items-start justify-start  `}>
                     Regístrate
                   </div>
                 </Link>
-                <Link href={"/"}>
+                <Link
+                  href={
+                    "https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                  }
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start  `}>
                     Soporte
                   </div>
@@ -92,12 +103,12 @@ const FooterMobil = () => {
           <AccordionContent>
             <div className=" flex  gap-y-5  justify-center">
               <div className="flex flex-col items-start gap-y-5">
-                <Link href={"/"}>
+                <Link href={"/pyp"}>
                   <div className={`flex flex-col  items-start justify-start `}>
                     Políticas
                   </div>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"/tyc"}>
                   <div className={`flex flex-col  items-start justify-start  `}>
                     Términos y condiciones
                   </div>
@@ -118,17 +129,26 @@ const FooterMobil = () => {
           <AccordionContent>
             <div className=" flex  gap-y-5  justify-center">
               <div className="flex flex-col items-start gap-y-5">
-                <Link href={"/"}>
+                <Link
+                  href={"https://www.instagram.com/fritzsport/"}
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start `}>
                     Instagram
                   </div>
                 </Link>
-                <Link href={"/"}>
+                <Link
+                  href={"https://www.facebook.com/fritzsportsac/"}
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start  `}>
                     Facebook
                   </div>
                 </Link>
-                <Link href={"/"}>
+                <Link
+                  href={"https://www.tiktok.com/@fritzsport"}
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start  `}>
                     Tik Tok
                   </div>
@@ -149,7 +169,12 @@ const FooterMobil = () => {
           <AccordionContent>
             <div className=" flex  gap-y-5  justify-center">
               <div className="flex flex-col items-start gap-y-5">
-                <Link href={"/"}>
+                <Link
+                  href={
+                    "https://api.whatsapp.com/send/?phone=51908843497&text=%EF%BF%BD20%25Quisiera+trabajar+en+Fritz+Sport&type=phone_number&app_absent=0"
+                  }
+                  target="_blank"
+                >
                   <div className={`flex flex-col  items-start justify-start `}>
                     Trabaja con Nosotros
                   </div>
@@ -269,7 +294,10 @@ export default function Footer() {
                     {/* tiendas */}
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4">
                       <div className="uppercase text-sm">Tiendas</div>
-                      <Link href={"/"}>
+                      <Link
+                        href={"https://maps.app.goo.gl/h54ryBi9SqHQkQUW6"}
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col text-sm items-start justify-start `}
                         >
@@ -279,13 +307,16 @@ export default function Footer() {
                           </span>
                         </div>
                       </Link>
-                      <Link href={"/"}>
+                      <Link
+                        href={"https://maps.app.goo.gl/iUxXwFKqF2BAEGhC7"}
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col  text-sm items-start justify-start  `}
                         >
                           Tienda - Tumbes
                           <span className="text-xs text-blue-gray-300 mt-1">
-                            Cercado de Lima
+                            Av. República del Perú 373, 24101
                           </span>
                         </div>
                       </Link>
@@ -293,21 +324,26 @@ export default function Footer() {
                     {/* cuenta */}
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4 text-sm">
                       <div className="uppercase">Cuenta</div>
-                      <Link href={"/"}>
+                      <Link href={"/auth"}>
                         <div
                           className={`flex flex-col  items-start justify-start `}
                         >
                           Mi Cuenta
                         </div>
                       </Link>
-                      <Link href={"/"}>
+                      <Link href={"/auth"}>
                         <div
                           className={`flex flex-col  items-start justify-start  `}
                         >
                           Regístrate
                         </div>
                       </Link>
-                      <Link href={"/"}>
+                      <Link
+                        href={
+                          "https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                        }
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col  items-start justify-start  `}
                         >
@@ -318,14 +354,14 @@ export default function Footer() {
                     {/* Información */}
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4 text-sm">
                       <div className="uppercase">Información</div>
-                      <Link href={"/"}>
+                      <Link href={"/pyp"}>
                         <div
                           className={`flex flex-col  items-start justify-start `}
                         >
                           Políticas
                         </div>
                       </Link>
-                      <Link href={"/"}>
+                      <Link href={"/tyc"}>
                         <div
                           className={`flex flex-col  items-start justify-start  `}
                         >
@@ -336,21 +372,30 @@ export default function Footer() {
                     {/* redes sociales */}
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4 text-sm">
                       <div className="uppercase">Redes sociales</div>
-                      <Link href={"/"}>
+                      <Link
+                        href={"https://www.instagram.com/fritzsport/"}
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col  items-start justify-start `}
                         >
                           Instagram
                         </div>
                       </Link>
-                      <Link href={"/"}>
+                      <Link
+                        href={"https://www.facebook.com/fritzsportsac/"}
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col  items-start justify-start  `}
                         >
                           Facebook
                         </div>
                       </Link>
-                      <Link href={"/"}>
+                      <Link
+                        href={"https://www.tiktok.com/@fritzsport"}
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col  items-start justify-start  `}
                         >
@@ -362,7 +407,12 @@ export default function Footer() {
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4 text-sm">
                       <div className="uppercase">Únete a nosotros</div>
 
-                      <Link href={"/"}>
+                      <Link
+                        href={
+                          "https://api.whatsapp.com/send/?phone=51908843497&text=%EF%BF%BD20%25Quisiera+trabajar+en+Fritz+Sport&type=phone_number&app_absent=0"
+                        }
+                        target="_blank"
+                      >
                         <div
                           className={`flex flex-col  items-start justify-start `}
                         >

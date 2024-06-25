@@ -110,14 +110,14 @@ const SidebarContent = (props) => {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-y-6">
-                <Link href="/auth">
+                <Link href="/follows">
                   <div className="flex items-center">
                     <Heart className={`w-5 h-5 xl:h-auto xl:w-auto `} />
 
                     <div className="ml-2">Favoritos</div>
                   </div>
                 </Link>
-                <Link href="/follows">
+                <Link href="/auth">
                   <div className="flex">
                     <User className="h-6 w-6" />
                     <div className="ml-2">Mi Cuenta</div>

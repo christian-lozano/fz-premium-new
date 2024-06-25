@@ -39,17 +39,19 @@ export function ProductGalleryDesk({ product }: Props) {
                 activeViewImg ? "cursor-crosshair" : "cursor-default"
               }`}
             >
-              <PhotoProvider>
-                <PhotoView src={urlForImage(image).url()}>
-                  <img
-                    onMouseEnter={() => setActiveViewImg(true)}
-                    onMouseLeave={() => setActiveViewImg(false)}
-                    className="h-full w-full "
-                    src={urlForImage(image).url()}
-                    alt=""
-                  />
-                </PhotoView>
-              </PhotoProvider>
+              {image.asset && (
+                <PhotoProvider>
+                  <PhotoView src={urlForImage(image).url()}>
+                    <img
+                      onMouseEnter={() => setActiveViewImg(true)}
+                      onMouseLeave={() => setActiveViewImg(false)}
+                      className="h-full w-full "
+                      src={urlForImage(image).url()}
+                      alt=""
+                    />
+                  </PhotoView>
+                </PhotoProvider>
+              )}
             </div>
           ))}
         </ul>

@@ -5,7 +5,7 @@ import { schemaTypes } from "./src/schemas";
 
 export default defineConfig({
   name: "default",
-  title: "FZ-PREMIUM",
+  title: "FRITZ-SPORT",
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,

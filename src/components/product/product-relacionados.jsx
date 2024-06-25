@@ -9,12 +9,20 @@ export default function ProductRelacionados({
   nuevo = false,
   generoSku = true,
   descuentos,
+  outlet = false,
 }) {
+  let razonsocial = outlet
+    ? descuentos.descuentooutlet
+    : descuentos.descuentofritzsport;
   return (
     <>
       <Link
         key={products.id}
-        href={`/products/${products.slug}/${products.sku}`}
+        href={`${
+          products.razonsocial === "fritzsport"
+            ? `/products/${products.slug}/${products.sku}`
+            : `https://www.fritzsportoutlet.pe/products/${products.slug}/${products.sku}`
+        } `}
         className="group z-10 text-sm  border-y-[1px] border-l-[1px]  p-3 border-blue-gray-300  dark:border-none"
       >
         <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-md    group-hover:opacity-75 ">
@@ -30,13 +38,28 @@ export default function ProductRelacionados({
               alt=""
             />
           )}
+          {outlet && (
+            <>
+              <div className="absolute right-0 top-4 z-10 ">
+                <div className=" mt-1 text-xs text-white ">
+                  <div className="flex flex-col">
+                    <>
+                      <span className="flex justify-center bg-black px-3 py-1">
+                        {descuentos.descuentooutlet} %
+                      </span>
+
+                      <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
+                        oferta
+                      </span>
+                    </>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
           {/* <LoveFollow /> */}
           {/* {products.descuento ? (
-            <div className="absolute right-0 top-4 bg-black px-3 py-1">
-              <h4 className=" mt-1 text-xs text-white ">
-                {`-${products.descuento}%`}
-              </h4>
-            </div>
+         
           ) : (
             <>
               <div className="absolute right-0 top-4 bg-black px-3 py-1">
@@ -46,11 +69,11 @@ export default function ProductRelacionados({
               </div>
             </>
           )} */}
-              {nuevo && (
-                <div className="absolute right-0 top-4 bg-black px-3 py-1">
-                  <h4 className=" mt-1 text-xs text-white ">Nuevo</h4>
-                </div>
-              )}
+          {nuevo && (
+            <div className="absolute right-0 xl:top-4 top-1 bg-black px-2 py-1">
+              <h4 className=" xl:text-xs text-white ">new</h4>
+            </div>
+          )}
         </div>
         {generoSku && (
           <h3 className="mt-4 font-medium capitalize ">
@@ -62,9 +85,9 @@ export default function ProductRelacionados({
         </h3>
 
         <div className="flex">
-          {descuentos.descuentofritzsport > 0 || products.descuento ? (
+          {razonsocial > 0 || products.descuento ? (
             <>
-              {descuentos.descuentofritzsport ? (
+              {razonsocial ? (
                 <span className="mr-2 mt-2 font-semibold text-[#767677] line-through">
                   S/{products.priceecommerce}
                 </span>
@@ -81,8 +104,9 @@ export default function ProductRelacionados({
               products.descuento,
               products.priceecommerce,
               products.preciomanual,
-              descuentos
-            )}{" "}
+              descuentos,
+              outlet
+            )}
           </p>
         </div>
         {/* <p className="mt-2 font-medium">S/{products.descuento}</p> */}

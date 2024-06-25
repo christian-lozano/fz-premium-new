@@ -15,9 +15,9 @@ import { FiltroProducts } from "@/utilits/filtro-products";
 export default function Product({
   products,
   generoSku = false,
-  outlet,
   relacionados = true,
   descuentos,
+  outlet = false,
 }) {
   const [stock, setStock] = useState();
 
@@ -67,6 +67,7 @@ export default function Product({
       tallas,
       stock,
       descuento,
+      razonsocial,
       preciomanual,
       "slug":slug.current
     }`
@@ -83,14 +84,18 @@ export default function Product({
         <div className="aspect-h-1 aspect-w-1  overflow-hidden  rounded-md    group-hover:opacity-75 ">
           <Link
             key={products.id}
-            href={`/products/${products.slug}/${products.sku}`}
+            href={`${
+              products.razonsocial === "fritzsport"
+                ? `/products/${products.slug}/${products.sku}`
+                : `https://www.fritzsportoutlet.pe/products/${products.slug}/${products.sku}`
+            } `}
             className="group z-10 text-sm"
           >
             {products?.images && (
               <img
                 onMouseEnter={() =>
                   setHoverImage(
-                    products?.images[1]
+                    products?.images[1] && products?.images[1]?.asset
                       ? urlForImage(products?.images[1]?.asset._ref).url()
                       : urlForImage(products?.images[0]?.asset._ref).url()
                   )

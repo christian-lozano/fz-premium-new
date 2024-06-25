@@ -1,7 +1,7 @@
 // export const fetchCache = "force-no-store";
-// export const revalidate = 50; // seconds
+export const revalidate = 1000; // seconds
 // export const dynamic = "force-dynamic";
-
+import PromoImage from "@/components/promo-image/promo-image";
 import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
@@ -18,6 +18,7 @@ import CarouselProductRelacionados from "@/components/carousel-product/carousel-
 import Descuentos from "@/config/descuentos";
 import { FiltroGlobal } from "@/utilits/filtro-products";
 import VideoHome from "@/components/video/video";
+import ContedorCarouselProduct from "@/components/carousel-product/contedor-carousel-product";
 export const metadata: Metadata = {
   title: "Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
@@ -306,6 +307,12 @@ export default async function Page({ searchParams }: Props) {
   ];
   let descuentos = await Descuentos();
 
+  const bannerhome = await client.fetch<SanitySlider[]>(
+    groq`*[_type == "home"][0]{
+    bannerhome
+    }`
+  );
+
   return (
     <div>
       {/* <DialogSizes promoHome={promoHome}></DialogSizes> */}
@@ -313,6 +320,33 @@ export default async function Page({ searchParams }: Props) {
         <Carousel dataSlider={slider} />
         {/* <VideoHome url={homeVideo[0]} /> */}
 
+        <div className="mt-10">
+          <div className="text-center text-xl uppercase xl:text-4xl">
+            Productos De Selección
+          </div>
+          <ContedorCarouselProduct
+            genero={"unisex"}
+            cantidad={"20"}
+            descuentos={descuentos}
+            tipoCategoria={`&& categories in ["casacas","camisetas"] `}
+            outlet={true}
+          />
+        </div>
+
+        {/* <PromoImage bannerhome={bannerhome} bottom={false} /> */}
+
+        <div className="mt-10">
+          <div className="text-center text-xl uppercase xl:text-4xl">
+            Lo mejor en Chimpunes
+          </div>
+          <ContedorCarouselProduct
+            genero={"hombre"}
+            cantidad={"20"}
+            descuentos={descuentos}
+            tipoCategoria={`&& categories in ["chimpunes"] `}
+            outlet={true}
+          />
+        </div>
         {/* <Carousel dataSlider={slider[0]} /> */}
 
         <HombreMujer bannerGenero={bannerGenero[0]} />
@@ -328,10 +362,10 @@ export default async function Page({ searchParams }: Props) {
             descuentos={descuentos}
           />
         </div>
-        <MainFiltroGenero
+        {/* <MainFiltroGenero
           dataSemifiltroHome={categoriaSlider}
           descuentos={descuentos}
-        />
+        /> */}
         <div className="mt-20 ">
           <VideoHome />
         </div>

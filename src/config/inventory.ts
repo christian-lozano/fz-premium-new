@@ -51,7 +51,7 @@ export interface SanityProduct extends Omit<InventoryProduct, "images"> {
   detalles: any;
   tipo: string;
   stock: number;
-  razonsocial: string;
+  razonsocial: string | undefined;
   priceecommerce: number;
   preciomanual: number | undefined;
   sku: any;
@@ -68,7 +68,16 @@ export interface SanityProduct extends Omit<InventoryProduct, "images"> {
 export interface SanitySlider extends Omit<InventorySlider, "images"> {
   _id: string;
   _createdAt: Date;
-
+  bannerhome: {
+    bannerhome: {
+      titulo?: string | undefined;
+      description?: string | undefined;
+      btntext?: string | undefined; 
+      urlbtn?: string | undefined;
+      desc?: string | undefined;
+    };
+  } 
+  bottom: Boolean;
   slug: string;
   images: Image[];
   whatsapp: string;

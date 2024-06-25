@@ -8,16 +8,22 @@ export default async function ContedorCarouselProduct({
   genero,
   cantidad = "80",
   descuentos,
+
+  tipoCategoria,
+  outlet,
 }) {
-  const productosGenero = async (genero, cantidad) => {
+  const productosGenero = async (genero, cantidad, tipoCategoria) => {
     const order = `| order(_id) [0...${cantidad}]`;
 
-    const productFilter = FiltroGlobal();
+    const productFilter = FiltroGlobal("fritzduran");
 
-    const generoFilterHombre = genero ? `&& genero match "${genero}"` : "";
+    const generoFilterHombre = genero ? `&& genero match "${genero}"  ` : "";
+    const categoria = tipoCategoria
+      ?  tipoCategoria
+      : generoFilterHombre;
 
-    const filter = `*[${productFilter}${generoFilterHombre}] | order(_createdAt desc)[0..100]`;
-
+    const filter = `*[${productFilter}${categoria}] | order(_createdAt desc)[0..100]`;
+    console.log(filter);
     // await seedSanityData()
     const products = await client.fetch(`${filter} ${order} {
           _id,
@@ -40,12 +46,16 @@ export default async function ContedorCarouselProduct({
 
     return products;
   };
-  const products = await productosGenero(genero, cantidad);
+  const products = await productosGenero(genero, cantidad, tipoCategoria);
   // console.log(products)
 
   return (
     <div className="">
-      <CarouselProduct products={products} descuentos={descuentos} />
+      <CarouselProduct
+        products={products}
+        descuentos={descuentos}
+        outlet={outlet}
+      />
     </div>
   );
 }
