@@ -106,7 +106,7 @@ export default function FormPagar({ tipoEntrega }) {
     adicional: "",
     checkTerminos: false,
     estado: "pendiente",
-    razon: "Fritz Sport",
+    razon: "Fz Premium",
     userId: session?.user.id,
   });
 
@@ -158,7 +158,7 @@ export default function FormPagar({ tipoEntrega }) {
           adicional: el?.infadi ? el?.infadi : "",
           checkTerminos: false,
           estado: "pendiente",
-          razon: "Fritz Sport",
+          razon: "Fz Premium",
           userId: session?.user.id,
         });
       });
@@ -332,7 +332,7 @@ export default function FormPagar({ tipoEntrega }) {
     // } else {
     //   setPrecioDelibery(20)
     // }
-  }, [allValues,session?.user]);
+  }, [allValues, session?.user]);
 
   const handlerDepartamento = (data, id) => {
     setDepartamento(data);

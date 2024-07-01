@@ -18,7 +18,7 @@ const FooterMobil = () => {
 
       <Accordion type="single" collapsible className="my-10 ">
         {/* tiendas */}
-        <AccordionItem value={`item-}`}>
+        {/* <AccordionItem value={`item-}`}>
           <AccordionTrigger className="border-[1px]  border-t-black">
             <span className="w-full  ">
               <span className="ml-1 text-sm xl:text-base   uppercase text-black dark:text-gray-400">
@@ -54,7 +54,7 @@ const FooterMobil = () => {
               </div>
             </div>
           </AccordionContent>
-        </AccordionItem>
+        </AccordionItem> */}
         {/* cuenta */}
         <AccordionItem value={`item-}`}>
           <AccordionTrigger className="border-[1px]  border-t-black">
@@ -130,7 +130,7 @@ const FooterMobil = () => {
             <div className=" flex  gap-y-5  justify-center">
               <div className="flex flex-col items-start gap-y-5">
                 <Link
-                  href={"https://www.instagram.com/fritzsport/"}
+                  href={"https://www.instagram.com/fzpremium/"}
                   target="_blank"
                 >
                   <div className={`flex flex-col  items-start justify-start `}>
@@ -138,7 +138,7 @@ const FooterMobil = () => {
                   </div>
                 </Link>
                 <Link
-                  href={"https://www.facebook.com/fritzsportsac/"}
+                  href={"https://www.facebook.com/p/Fz-Premium-61554744027942/"}
                   target="_blank"
                 >
                   <div className={`flex flex-col  items-start justify-start  `}>
@@ -146,7 +146,7 @@ const FooterMobil = () => {
                   </div>
                 </Link>
                 <Link
-                  href={"https://www.tiktok.com/@fritzsport"}
+                  href={"https://www.tiktok.com/@fzpremium"}
                   target="_blank"
                 >
                   <div className={`flex flex-col  items-start justify-start  `}>
@@ -264,7 +264,7 @@ const FooterMobil = () => {
       <div className="flex justify-center w-full ">
         <div className="flex justify-center text-xs flex-col items-center">
           <span>
-            Todos los derechos Reservados Fritz Sport {date.getFullYear()}
+            Todos los derechos Reservados Fz Premium {date.getFullYear()}
           </span>
 
           <small className="mt-1">
@@ -292,7 +292,7 @@ export default function Footer() {
                 <div className="flex w-full justify-center py-5">
                   <div className=" grid grid-cols-6 gap-x-10 py-5">
                     {/* tiendas */}
-                    <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4">
+                    {/* <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4">
                       <div className="uppercase text-sm">Tiendas</div>
                       <Link
                         href={"https://maps.app.goo.gl/h54ryBi9SqHQkQUW6"}
@@ -320,7 +320,7 @@ export default function Footer() {
                           </span>
                         </div>
                       </Link>
-                    </ul>
+                    </ul> */}
                     {/* cuenta */}
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4 text-sm">
                       <div className="uppercase">Cuenta</div>
@@ -373,7 +373,7 @@ export default function Footer() {
                     <ul className="flex flex-col gap-y-3 border-l-[1px] dark:border-white border-black px-4 text-sm">
                       <div className="uppercase">Redes sociales</div>
                       <Link
-                        href={"https://www.instagram.com/fritzsport/"}
+                        href={"https://www.instagram.com/fzpremium/"}
                         target="_blank"
                       >
                         <div
@@ -383,7 +383,9 @@ export default function Footer() {
                         </div>
                       </Link>
                       <Link
-                        href={"https://www.facebook.com/fritzsportsac/"}
+                        href={
+                          "https://www.facebook.com/p/Fz-Premium-61554744027942/"
+                        }
                         target="_blank"
                       >
                         <div
@@ -393,7 +395,7 @@ export default function Footer() {
                         </div>
                       </Link>
                       <Link
-                        href={"https://www.tiktok.com/@fritzsport"}
+                        href={"https://www.tiktok.com/@fzpremium"}
                         target="_blank"
                       >
                         <div
@@ -504,7 +506,7 @@ export default function Footer() {
                 <div className="flex justify-center w-full ">
                   <div className="flex justify-around w-full  text-xs  items-center mb-2">
                     <span>
-                      Todos los derechos Reservados Fritz Sport{" "}
+                      Todos los derechos Reservados Fz Premium{" "}
                       {date.getFullYear()}
                     </span>
 

@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export const homefz = defineType({
   name: "home-fz",
-  title: "Home Fz Premium",
+  title: "Home FZ PREMIUM",
   type: "document",
   validation: (rule) => rule.required(),
 
@@ -13,6 +13,7 @@ export const homefz = defineType({
       type: "string",
       initialValue: "Home Page",
     }),
+
     // slider
     {
       name: "slider",
@@ -98,6 +99,123 @@ export const homefz = defineType({
         },
       ],
     },
+    // categoria destacada
+    // {
+    //   name: "catalogo",
+    //   title: "Categoria destacada",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       title: "Marca",
+    //       type: "object",
+    //       name: "marca",
+    //       fields: [
+
+    //       ],
+    //     },
+    //   ],
+    // },
+    // GENERO
+    // {
+    //   name: "bannergenero",
+    //   title: "Genero",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       title: "Hombre Mujer",
+    //       type: "object",
+    //       name: "bannergenero",
+    //       fields: [
+    //         {
+    //           title: "Imagen Principal (jpg,png,webp) 720x480",
+    //           name: "img",
+    //           type: "image",
+    //           options: {
+    //             hotspot: true, // <-- Defaults to false
+    //           },
+    //         },
+    //         {
+    //           title: "Titulo",
+    //           name: "titulo",
+    //           type: "string",
+    //           validation: (rule) => rule.required(),
+    //         },
+    //         {
+    //           title: "Link",
+    //           name: "link",
+    //           type: "string",
+    //           validation: (rule) => rule.required(),
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+    // BARNNER
+    {
+      title: "Banner Home ",
+      type: "object",
+      name: "bannerhome",
+      fields: [
+        // {
+        //   title: "Activar Promo",
+        //   name: "activebuttontitle",
+        //   type: "boolean",
+        //   initialValue: true,
+        //   validation: (rule) => rule.required(),
+        // },
+        {
+          title: "Image Desktop(jpg,png) 1920x720",
+          name: "imgdeskt",
+          type: "image",
+          validation: (rule) => rule.required(),
+          options: {
+            hotspot: true, // <-- Defaults to false
+          },
+        },
+        {
+          title: "Image Mobil(jpg,png) 614x777",
+          name: "imgmob",
+          type: "image",
+          validation: (rule) => rule.required(),
+          options: {
+            hotspot: true, // <-- Defaults to false
+          },
+        },
+        {
+          title: "Descripción Imagen",
+          name: "desc",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "titulo",
+          name: "titulo",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "description",
+          name: "description",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "btn text",
+          name: "btntext",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+        {
+          title: "Url",
+          name: "urlbtn",
+          type: "string",
+          validation: (rule) => rule.required(),
+        },
+      ],
+    },
+    // BANNER
+  
+  
     // {
     //   name: "bannergenero",
     //   title: "Genero",

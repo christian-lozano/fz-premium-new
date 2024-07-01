@@ -248,7 +248,7 @@ export default function GiaDeTallasMain({ gender, product_type }) {
       },
       {
         TITLE: "13K",
-        ADIDAS: "21",
+        ADIDAS: "31",
         REEBOK: "30.5",
         NIKE: "31",
         FILA: "31",
@@ -364,7 +364,7 @@ export default function GiaDeTallasMain({ gender, product_type }) {
       }
     }
   }, [gender, product_type]);
- 
+
   return (
     <div className="xl:w-[40vw]  w-[90vw]">
       {/* {product_type === "calzado" && gender !== "unisex" && (

@@ -9,7 +9,7 @@ const dataNuestrasEmpresas = [
   {
     img: "https://lh5.googleusercontent.com/p/AF1QipNc0m8OUrP-oiueHkxwr2q8Rc2Hstqf9rM7uQl5=s450-k-no",
     title: "Miguel Graú ",
-    subtitle: "Fritz Sport, Av. Miguel Grau 231, Lima 15001",
+    subtitle: "Fz Premium, Av. Miguel Grau 231, Lima 15001",
     dataHorarios: [
       " Lunes de 09:00 am a 09:00 pm",
       " Martes de 09:00 am a 09:00 pm",
@@ -65,7 +65,7 @@ export default function NuestrasTiendas({ nuestrasTiendas }) {
                   className="laptop:h-full hidden  w-[100vw] xl:block"
                 >
                   <source
-                    src={`https://www.fritzsport.pe/adidas-video.mp4`}
+                    src={`https://www.fzpremium.pe/adidas-video.mp4`}
                     type="video/mp4"
                   />
                   <track
@@ -93,7 +93,7 @@ export default function NuestrasTiendas({ nuestrasTiendas }) {
                   className="h-full w-[100vw]  xl:hidden"
                 >
                   <source
-                    src={`https://www.fritzsport.pe/adidas-video.mp4`}
+                    src={`https://www.fzpremium.pe/adidas-video.mp4`}
                     type="video/mp4"
                   />
                   <track

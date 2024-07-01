@@ -169,7 +169,7 @@ export default function Page() {
             ) : (
               <span>
                 ACÉRCATE A NUESTRA SEDE: <br />
-                Fritz Sport, Av. Miguel Grau 231, Lima 15001. <br /> DESPUÉS DE
+                Fz Premium, Av. Miguel Grau 231, Lima 15001. <br /> DESPUÉS DE
                 48 HORAS DE LUNES A VIERNES DE 10AM A 7PM Y SABADOS DE 9AM A
                 12PM PARA EL RECOJO DE TU PEDIDO
               </span>

@@ -6,6 +6,9 @@ import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import HombreMujer from "@/components/hombre-mujer/hombre-mujer";
+import CarouselProductSimilares from "@/components/carousel-product/carousel-product-similares";
+import MainTab from "@/components/tabs-home-genero/main-tab";
+
 import MainFiltroGenero from "@/components/hombre-mujer/main-filtro-genero";
 import { SanityProduct, SanitySlider } from "@/config/inventory";
 // import Benefit from "@/components/benefits/Benefit";
@@ -19,30 +22,31 @@ import Descuentos from "@/config/descuentos";
 import { FiltroGlobal } from "@/utilits/filtro-products";
 import VideoHome from "@/components/video/video";
 import ContedorCarouselProduct from "@/components/carousel-product/contedor-carousel-product";
+import PromoImageGrid from "@/components/promo-image-grid/promo-image-grid";
 export const metadata: Metadata = {
-  title: "Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
+  title: "Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
   description:
-    "Bienvenido(a) al sitio oficial de Fritz Sport Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
+    "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
   openGraph: {
-    title: " Fritz Sport Perú Tienda oficial | Zapatillas y ropa deportiva",
+    title: " Fz Premium Perú Tienda oficial | Zapatillas y ropa deportiva",
     description:
-      "Bienvenido(a) al sitio oficial de Fritz Sport Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
+      "Bienvenido(a) al sitio oficial de Fz Premium Perú. Encuentra en esta tienda online zapatillas y ropa deportiva, creados con tecnología y diseño. ¡Conoce más!",
     url: `${process.env.URL_DOMINIO}`,
-    siteName: "Fritz Sport",
+    siteName: "Fz Premium",
     images: [
       {
-        url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
+        url: `https:///ecommerce-share.jpeg`,
 
         width: 800,
         height: 600,
-        alt: `Fritz Sport share Imagen`,
+        alt: `Fz Premium share Imagen`,
       },
       {
-        url: `https://www.fzpremium.pe/ecommerce-share.jpeg`,
+        url: `https:///ecommerce-share.jpeg`,
 
         width: 1200,
         height: 630,
-        alt: `Fritz Sport share Imagen`,
+        alt: `Fz Premium share Imagen`,
       },
     ],
   },
@@ -201,20 +205,20 @@ export default async function Page({ searchParams }: Props) {
   };
 
   const slider = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home"] [0] {
+    groq`*[_type == "home-fz"] [0] {
       slider
     }`
   );
-  const bannerGenero = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home"] {
-      bannergenero
-    }`
-  );
-  const categoriaSlider = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home"][0] {
-      semifiltro
-    }`
-  );
+  // const bannerGenero = await client.fetch<SanitySlider[]>(
+  //   groq`*[_type == "home"] {
+  //     bannergenero
+  //   }`
+  // );
+  // const categoriaSlider = await client.fetch<SanitySlider[]>(
+  //   groq`*[_type == "home"][0] {
+  //     semifiltro
+  //   }`
+  // );
 
   const productFilter = FiltroGlobal();
   const newProducts = await client.fetch<
@@ -308,10 +312,17 @@ export default async function Page({ searchParams }: Props) {
   let descuentos = await Descuentos();
 
   const bannerhome = await client.fetch<SanitySlider[]>(
-    groq`*[_type == "home"][0]{
-    bannerhome
+    groq`*[_type == "home-fz"][0]{
+     bannerhome
     }`
   );
+
+  const promogrid = await client.fetch<SanitySlider[]>(
+    groq`*[_type == "home-fz"][0]{
+     promogrid
+    }`
+  );
+  console.log(promogrid);
 
   return (
     <div>
@@ -319,37 +330,53 @@ export default async function Page({ searchParams }: Props) {
       <div className="conta">
         <Carousel dataSlider={slider} />
         {/* <VideoHome url={homeVideo[0]} /> */}
-
-        <div className="mt-10">
-          <div className="text-center text-xl uppercase xl:text-4xl">
-            Productos De Selección
+        <div className="mt-20 ">
+          <div className="text-center text-xl xl:text-4xl uppercase">
+            Categoria Destacada
           </div>
-          <ContedorCarouselProduct
-            genero={"unisex"}
-            cantidad={"20"}
-            descuentos={descuentos}
-            tipoCategoria={`&& categories in ["casacas","camisetas"] `}
-            outlet={true}
-          />
+
+          <CarouselProductSimilares>
+            <PromoImageGrid
+              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/def4074c1b5cfaf8317c95ab9405575f9bc94389-420x640.jpg"
+              titulo={""}
+              subtitulo={""}
+              url={"/tienda?coleccion=samba"}
+            />
+
+            <PromoImageGrid
+              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/6116786d1ea4f8d900bdddd3aee0ace7efb031ab-420x640.jpg"
+              titulo={""}
+              subtitulo={""}
+              url={"/tienda?coleccion=superstar"}
+            />
+            <PromoImageGrid
+              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/d7f1f560cecada98d6c195e55c083a19ac1ac4d0-420x640.jpg"
+              titulo={""}
+              subtitulo={""}
+              url={"/tienda?coleccion=forum"}
+            />
+
+            <PromoImageGrid
+              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/12358e578ba6bb168c457f6fe266a51311986ef4-420x640.jpg"
+              titulo={""}
+              subtitulo={""}
+              url={"/tienda?coleccion=stansmith"}
+            />
+            <PromoImageGrid
+              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/bc16f1f1b866b4ba40b691fadf050396ff31edf1-420x640.jpg"
+              titulo={""}
+              subtitulo={""}
+              url={"/tienda?coleccion=gazelle"}
+            />
+            <PromoImageGrid
+              urlImg="https://cdn.sanity.io/images/ibvmpbc1/production/3e2ce05e043c21006791b518f7ea67f7ada6618c-420x640.jpg"
+              titulo={""}
+              subtitulo={""}
+              url={"/tienda?coleccion=campus"}
+            />
+          </CarouselProductSimilares>
+          <div className="grid grid-cols-2 justify-items-center gap-4 xl:grid-cols-6"></div>
         </div>
-
-        {/* <PromoImage bannerhome={bannerhome} bottom={false} /> */}
-
-        <div className="mt-10">
-          <div className="text-center text-xl uppercase xl:text-4xl">
-            Lo mejor en Chimpunes
-          </div>
-          <ContedorCarouselProduct
-            genero={"hombre"}
-            cantidad={"20"}
-            descuentos={descuentos}
-            tipoCategoria={`&& categories in ["chimpunes"] `}
-            outlet={true}
-          />
-        </div>
-        {/* <Carousel dataSlider={slider[0]} /> */}
-
-        <HombreMujer bannerGenero={bannerGenero[0]} />
         {/* nuevos ingresos */}
         <div className="mt-10">
           <div className="text-center text-xl uppercase xl:text-4xl">
@@ -362,16 +389,62 @@ export default async function Page({ searchParams }: Props) {
             descuentos={descuentos}
           />
         </div>
+        <PromoImage bannerhome={bannerhome} bottom={false} />
+
+        {/* <div className="mt-10">
+          <div className="text-center text-xl uppercase xl:text-4xl">
+            Lo mejor en Chimpunes
+          </div>
+          <ContedorCarouselProduct
+            genero={"hombre"}
+            cantidad={"20"}
+            descuentos={descuentos}
+            tipoCategoria={`&& categories in ["chimpunes"] `}
+            outlet={true}
+          />
+        </div> */}
+        {/* <Carousel dataSlider={slider[0]} /> */}
+
+        {/* <HombreMujer bannerGenero={bannerGenero[0]} /> */}
+        {/* nuevos ingresos */}
+        <div className="mt-10">
+          <div className="text-center text-xl uppercase xl:text-4xl">
+            New Arrivals
+          </div>
+          <CarouselProductRelacionados
+            generoSku={false}
+            nuevo={true}
+            products={newProducts}
+            descuentos={descuentos}
+          />
+        </div>
         {/* <MainFiltroGenero
           dataSemifiltroHome={categoriaSlider}
           descuentos={descuentos}
         /> */}
-        <div className="mt-20 ">
-          <VideoHome />
-        </div>
+
+        {/* <div className="grid w-full grid-cols-1 xl:grid-cols-2 xl:gap-x-10">
+          {promogrid.promogrid.map((el) => (
+            <PromoImage bannerhome={el} bottom={false} />
+          ))}
+        </div> */}
+        <main className=" xl:px-6">
+          <div className="text-center text-xl uppercase xl:text-4xl">Icons</div>
+          <MainTab
+            descuentos={descuentos}
+            dataCabeceraTab={dataCabeceraTab}
+            dataProductTab={dataProductTab}
+          />
+
+          {/* <div className="grid hidden h-full grid-cols-2  items-center justify-center xl:flex xl:justify-around ">
+            {benefits.map((el, i) => (
+              <Benefit key={i} benefits={el}></Benefit>
+            ))}
+          </div> */}
+        </main>
 
         {/* los mas vendidos */}
-        <div className="">
+        <div className="mt-20 ">
           <div className="text-center text-xl xl:text-4xl">
             LOS MAS VENDIDOS
           </div>

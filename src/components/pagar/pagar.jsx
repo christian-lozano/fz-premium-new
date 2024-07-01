@@ -150,7 +150,7 @@ export default function PaginaPagar() {
                       <br />
                       <span>
                         {" "}
-                        tienda Fritz Sport, Av. Miguel Grau 231, Lima 15001
+                        tienda Fz Premium, Av. Miguel Grau 231, Lima 15001
                       </span>
                     </h2>
                     <svg
@@ -186,7 +186,7 @@ export default function PaginaPagar() {
                         RECOJO EN TIENDA
                         <br />
                         <span>
-                          Recojo en tienda Fritz Sport, Av. Miguel Grau 231, Lima
+                          Recojo en tienda Fz Premium, Av. Miguel Grau 231, Lima
                           15001
                         </span>
                       </h2>

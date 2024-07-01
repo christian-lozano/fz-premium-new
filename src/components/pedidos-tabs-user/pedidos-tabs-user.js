@@ -68,7 +68,7 @@ export default function PedidosTabsUser() {
                       </div>
                       <div>
                         <span className="font-bold"> Dirección </span> : <br />{" "}
-                        Tienda Fritz Sport, Av. Miguel Grau 231, Lima 15001
+                        Tienda Fz Premium, Av. Miguel Grau 231, Lima 15001
                       </div>
                     </>
                   )}

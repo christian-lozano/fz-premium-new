@@ -1,4 +1,3 @@
-// test
 let options = [
   {
     id: 10,
@@ -15,21 +14,21 @@ let options = [
         children: [
           {
             id: 9,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre",
+            to: "/tienda?tipo=calzado&genero=hombre&tipo=calzado",
           },
           {
             id: 9,
             title: "Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre",
+            to: "/tienda?tipo=calzado&genero=hombre&tipo=calzado",
           },
           {
             id: 9,
             title: "Sandalias",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=hombre",
+            to: "/tienda?tipo=calzado&genero=hombre&category=sandalia",
           },
           // ,
           // {
@@ -44,12 +43,12 @@ let options = [
           //   icon: "",
           //   to: "/?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Chimpunes",
           // },
-          // {
-          //   id: 9,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20chimpunes"
-          // }
+          {
+            id: 9,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=hombre&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -62,7 +61,6 @@ let options = [
           //   icon: "",
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20basquet"
           // }
-          ,
         ],
       },
       {
@@ -72,21 +70,21 @@ let options = [
         children: [
           {
             id: 3,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer",
+            to: "/tienda?tipo=calzado&genero=mujer&tipo=calzado",
           },
           {
             id: 3,
             title: "Zapatillas",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer",
+            to: "/tienda?tipo=calzado&genero=mujer&tipo=calzado",
           },
           {
             id: 3,
             title: "Sandalias",
             icon: "",
-            to: "/tienda?tipo=calzado&genero=mujer",
+            to: "/tienda?tipo=calzado&genero=mujer&category=sandalia",
           },
           // ,
           // {
@@ -103,12 +101,12 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20chimpunes"
 
           // }
-          // {
-          //   id: 3,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"//mujer/calzado/origins?p=1"
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=mujer&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -129,7 +127,6 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20basquet"
 
           // }
-          ,
         ],
       },
       {
@@ -139,7 +136,7 @@ let options = [
         children: [
           {
             id: 1,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?tipo=calzado&genero=niños",
           },
@@ -175,7 +172,7 @@ let options = [
         children: [
           {
             id: 3,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?tipo=calzado&genero=mujer",
           },
@@ -206,13 +203,12 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20chimpunes"
 
           // }
-          // {
-          //   id: 3,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20comodo"
-
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=mujer&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -233,7 +229,6 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20basquet"
 
           // }
-          ,
           ,
         ],
       },
@@ -387,7 +382,7 @@ let options = [
         children: [
           {
             id: 9,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?tipo=calzado&genero=hombre",
           },
@@ -401,7 +396,7 @@ let options = [
             id: 3,
             title: "Sandalias",
             icon: "",
-            to: "/tienda?tipo=sandalias&genero=hombre",
+            to: "/tienda?tipo=sandalia&genero=hombre",
           },
           // ,
           // {
@@ -416,16 +411,16 @@ let options = [
           //   id: 9,
           //   title: "Chimpunes",
           //   icon: "",
-          //   url: "?tipo=calzado&genero=hombre",
+          //   to: "?tipo=calzado&genero=hombre",
 
           // },
           // ,
-          // {
-          //   id: 9,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20running"
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=niños&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -456,14 +451,14 @@ let options = [
             id: 3,
             title: "Polos",
             icon: "",
-            url: "/tienda?search=&tipo=ropa&genero=hombre&category=polos",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=polo",
           },
           ,
           {
             id: 3,
             title: "Poleras",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=poleras",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=polera",
           },
           // {
           //   id: 3,
@@ -475,31 +470,31 @@ let options = [
             id: 3,
             title: "Casacas",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=casacas",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=casaca",
           },
           {
             id: 3,
             title: "Pantalones",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=pantalones",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=pantalon",
           },
           {
             id: 3,
             title: "Camisetas de Futbol",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=camisetas",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=camiseta",
           },
           {
             id: 9,
             title: "Shorts",
             icon: "",
-            url: "tienda?search=&tipo=ropa&genero=hombre&category=shorts",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=shorts",
           },
           {
             id: 3,
             title: "Buzos",
             icon: "",
-            to: "tienda?search=&tipo=ropa&genero=hombre&category=buzos",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=buzo",
           },
         ],
       },
@@ -518,7 +513,7 @@ let options = [
             id: 1,
             title: "Mochilas",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=mochilas",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=mochila",
           },
           // {
           //   id: 1,
@@ -530,7 +525,7 @@ let options = [
             id: 1,
             title: "Gorras",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=gorras",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=gorra",
           },
           {
             id: 1,
@@ -548,7 +543,7 @@ let options = [
             id: 1,
             title: "Bolsos",
             icon: "",
-            to: "/tienda?search=&tipo=ropa&genero=hombre&category=bolsos",
+            to: "/tienda?search=&tipo=ropa&genero=hombre&category=bolso",
           },
         ],
       },
@@ -569,7 +564,7 @@ let options = [
         children: [
           {
             id: 3,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
@@ -602,13 +597,12 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20chimpunes"
 
           // }
-          // {
-          //   id: 3,
-          //   title: "Originals",
-          //   icon: "",
-          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20"
-
-          // }
+          {
+            id: 3,
+            title: "Originals",
+            icon: "",
+            to: "/tienda?tipo=calzado&genero=niños&category=originals",
+          },
           // {
           //   id: 9,
           //   title: "Calzado Comodo",
@@ -625,7 +619,6 @@ let options = [
           //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niño%20zapatillas%20comodo"
 
           // }
-          ,
           ,
         ],
       },
@@ -778,7 +771,7 @@ let options = [
         children: [
           {
             id: 9,
-            title: "Ver Todas las Zapatillas",
+            title: "Ver Todo Calzado",
             icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
           },
@@ -787,6 +780,347 @@ let options = [
             title: "Zapatillas",
             icon: "",
             to: "/tienda?search=&tipo=calzado&genero=niños",
+          },
+          // {
+          //   id: 9,
+          //   title: "Sandalias",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20sandalias"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Running",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20running"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Chimpunes",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20chimpunes"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Originals",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20"
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado Comodo",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20comodo"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado de Plataforma",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20plataforma"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Básquet",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20basquet"
+
+          // }
+        ],
+      },
+      // {
+      //   id: 37,
+      //   title: "Ropa",
+      //   icon: "",
+      //   children: [
+      //     {
+      //       id: 3,
+      //       title: "Ver Toda la Ropa",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20ropa"
+
+      //     },
+      //     {
+      //       id: 3,
+      //       title: "Polos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20polos"
+
+      //     },
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Poleras",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20poleras"
+
+      //     },
+      //     {
+      //       id: 3,
+      //       title: "Licras",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20licras"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Casacas",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20casacas"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Pantalones",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Camisetas de Futbol",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20camisetas%20futbol"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 9,
+      //       title: "Shorts",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
+
+      //     }
+      //     ,
+      //     {
+      //       id: 3,
+      //       title: "Buzos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20pantalones"
+
+      //     }
+      //   ]
+      // },
+      // {
+      //   id: 36,
+      //   title: "Accesorios",
+      //   icon: "",
+      //   children: [
+      //     {
+      //       id: 1,
+      //       title: "Bolsos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20accesorios"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Mochilas",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20mochilas"
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Guantes",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20guantes"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Gorras",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20gorras"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Medias",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20medias"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Tomatodos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20tomatodos"
+
+      //     },
+      //     {
+      //       id: 1,
+      //       title: "Bolsos",
+      //       icon: "",
+      //       to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20bolsos"
+
+      //     },
+      //   ]
+      // },
+    ],
+  },
+  {
+    id: 32,
+    title: "Colecciones",
+    icon: "",
+    hideBorder: true,
+    disabled: false,
+    to: "/shop",
+    children: [
+      {
+        id: 37,
+        title: "Adidas",
+        icon: "",
+        children: [
+          {
+            id: 9,
+            title: "Ver Todo",
+            icon: "",
+            to: "tienda?marca=adidas&category=originals",
+          },
+          {
+            id: 9,
+            title: "Superstar",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=superstar",
+          },
+          {
+            id: 9,
+            title: "Forum",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=forum",
+          },
+          {
+            id: 9,
+            title: "Stan Smith",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=stansmith",
+          },
+          {
+            id: 9,
+            title: "Samba",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=samba",
+          },
+          {
+            id: 9,
+            title: "Gazelle",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=gazelle",
+          },
+          {
+            id: 9,
+            title: "Campus",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=campus",
+          },
+          // {
+          //   id: 9,
+          //   title: "Sandalias",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20sandalias"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Running",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20running"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Chimpunes",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20chimpunes"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Originals",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20"
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado Comodo",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20comodo"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Calzado de Plataforma",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20plataforma"
+
+          // }
+          // ,
+          // {
+          //   id: 9,
+          //   title: "Básquet",
+          //   icon: "",
+          //   to:"/?pwa_ecom_ui_template_products%5Bquery%5D=niña%20zapatillas%20basquet"
+
+          // }
+        ],
+      },
+      {
+        id: 38,
+        title: "Nike",
+        icon: "",
+        children: [
+          {
+            id: 9,
+            title: "Ver Todo",
+            icon: "",
+            to: "/tienda?marca=nike&category=originals",
+          },
+          {
+            id: 9,
+            title: "Air Force 1",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airforce1",
+          },
+          {
+            id: 9,
+            title: "Air Max Excee",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airmaxexcee",
+          },
+          {
+            id: 9,
+            title: "Air Max 90",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airforcemax90",
+          },
+          {
+            id: 9,
+            title: "Air Jordan",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=airjordan",
+          },
+          {
+            id: 9,
+            title: "Dunk",
+            icon: "",
+            to: "/tienda?search=&tipo=calzado&coleccion=dunk",
           },
           // {
           //   id: 9,
@@ -1080,37 +1414,29 @@ let options = [
     disabled: false,
     to: "/tienda",
   },
-  {
-    id: 20,
-    title: "Emprende",
-    icon: "",
-    hideBorder: false,
-    disabled: false,
-    to: "/emprende",
-  },
-  {
-    id: 25,
-    title: "Nuestras Tiendas",
-    icon: "",
-    hideBorder: false,
-    disabled: false,
-    to: "nuestras-tiendas",
-  },
-  {
-    id: 25,
-    title: "SALE",
-    icon: "",
-    hideBorder: false,
-    disabled: false,
-    to: "https://www.fritzsportoutlet.pe",
-  },
   // {
-  //   id: 28,
-  //   title: "OUTLET",
+  //   id: 20,
+  //   title: "Emprende",
   //   icon: "",
   //   hideBorder: false,
   //   disabled: false,
-  //   to: "https://www.fritzsportoutlet.pe",
+  //   to: "/emprende",
+  // },
+  // {
+  //   id: 24,
+  //   title: "SALE",
+  //   icon: "",
+  //   hideBorder: false,
+  //   disabled: false,
+  //   to: "outlet",
+  // },
+  // {
+  //   id: 25,
+  //   title: "Ubicanos",
+  //   icon: "",
+  //   hideBorder: false,
+  //   disabled: false,
+  //   to: "#",
   // },
 ];
 

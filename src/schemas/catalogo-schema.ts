@@ -36,7 +36,7 @@ export const catalogo = defineType({
                   { title: "Puma", value: "puma" },
                   { title: "Reebok", value: "reebok" },
                   { title: "Cat", value: "cat" },
-                  { title: "Fritz Sport", value: "fritzsport" },
+                  { title: "Fz Premium", value: "fritzsport" },
                   { title: "joma", value: "joma" },
                 ], // <-- predefined values
               },
@@ -118,9 +118,9 @@ export const catalogo = defineType({
                           { title: "Sandalias", value: "sandalias" },
                           { title: "Running", value: "running" },
 
-          { title: "Tenis", value: "tenis" },
-          { title: "Básket", value: "basquet" },
-          { title: "Training ", value: "training" },
+                          { title: "Tenis", value: "tenis" },
+                          { title: "Básket", value: "basquet" },
+                          { title: "Training ", value: "training" },
                         ], // <-- predefined values
                       },
                     },

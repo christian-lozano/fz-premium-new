@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
 
@@ -18,11 +18,7 @@ export default function ProductRelacionados({
     <>
       <Link
         key={products.id}
-        href={`${
-          products.razonsocial === "fritzsport"
-            ? `/products/${products.slug}/${products.sku}`
-            : `https://www.fritzsportoutlet.pe/products/${products.slug}/${products.sku}`
-        } `}
+        href={`/products/${products.slug}/${products.sku} `}
         className="group z-10 text-sm  border-y-[1px] border-l-[1px]  p-3 border-blue-gray-300  dark:border-none"
       >
         <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-md    group-hover:opacity-75 ">
@@ -41,14 +37,14 @@ export default function ProductRelacionados({
           {outlet && (
             <>
               <div className="absolute right-0 top-4 z-10 ">
-                <div className=" mt-1 text-xs text-white ">
+                <div className=" xl:mt-1 text-xs text-white ">
                   <div className="flex flex-col">
                     <>
-                      <span className="flex justify-center bg-black px-3 py-1">
-                        {descuentos.descuentooutlet} %
+                      <span className="flex justify-center text-[8px] xl:text-xs bg-black xl:px-3 xl:py-1">
+                        -{descuentos.descuentooutlet}%
                       </span>
 
-                      <span className="mt-1 bg-red-500 px-3 py-1 uppercase">
+                      <span className="mt-1 bg-red-500 text-[8px] xl:text-xs xl:px-3 xl:py-1 uppercase px-1 flex justify-center">
                         oferta
                       </span>
                     </>

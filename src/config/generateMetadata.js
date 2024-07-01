@@ -22,7 +22,7 @@ export async function metadataPage({ params }) {
       title: `Producto: ${product.name}`,
       description: `${product.name}-${product.slug}-${product.sku}-${product.genero}-${product.tipo}`,
       url: `${process.env.URL_DOMINIO}/products/${product.slug}/${product.slug}`,
-      siteName: "Fritz Sport",
+      siteName: "Fz Premium",
       images: [
         {
           url: `${

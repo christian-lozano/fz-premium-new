@@ -104,7 +104,7 @@ export default function FormPagar() {
     adicional: `${dataUser.infadi}`,
     checkTerminos: false,
     estado: "pendiente",
-    razon: "Fritz Sport",
+    razon: "Fz Premium",
     userId: session?.user.id,
   });
 
@@ -141,7 +141,7 @@ export default function FormPagar() {
           adicional: el?.infadi ? el?.infadi : "",
           checkTerminos: false,
           estado: "pendiente",
-          razon: "Fritz Sport",
+          razon: "Fz Premium",
           userId: session?.user.id,
         });
       });

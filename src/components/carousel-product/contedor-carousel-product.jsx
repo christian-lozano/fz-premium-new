@@ -8,7 +8,6 @@ export default async function ContedorCarouselProduct({
   genero,
   cantidad = "80",
   descuentos,
-
   tipoCategoria,
   outlet,
 }) {

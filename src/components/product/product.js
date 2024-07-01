@@ -84,11 +84,7 @@ export default function Product({
         <div className="aspect-h-1 aspect-w-1  overflow-hidden  rounded-md    group-hover:opacity-75 ">
           <Link
             key={products.id}
-            href={`${
-              products.razonsocial === "fritzsport"
-                ? `/products/${products.slug}/${products.sku}`
-                : `https://www.fritzsportoutlet.pe/products/${products.slug}/${products.sku}`
-            } `}
+            href={`/products/${products.slug}/${products.sku}`}
             className="group z-10 text-sm"
           >
             {products?.images && (

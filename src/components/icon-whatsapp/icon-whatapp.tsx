@@ -23,7 +23,7 @@ export default function IconWhatapp({ urlWhatsApp }: Props) {
                 </div>
                 <p className="text-xs xl:text-base">
                   Contamos con 3 Tiendas y nuestro Canal Online
-                  www.futurevisions.pe. Flagship Acacias - Miraflores -
+                  www.fzpremium.pe. Flagship Acacias - Miraflores -
                   Dirección: Calle Las Acacias 310 Miraflores - Lima - Horarios
                   de Atención: Lunes a sábado de 11 am a 7 pm, Domingo de 12 am
                   a 7 pm FV Secret Store - San Isidro - Dirección: Calle Miguel
@@ -75,10 +75,10 @@ export default function IconWhatapp({ urlWhatsApp }: Props) {
                 </div>
                 <p className="text-xs xl:text-base">
                   La opción de recojo en tienda para una compra por
-                  www.futurevisions.pe, recibirás una llamada cuando tu pedido
-                  esté listo para que puedes pasar a recoger el producto. Aplica
-                  para el Flagship de Acacias y Secret Store Dasso. Cualquier
-                  detalle adicional por favor comunícate con
+                  www.fzpremium.pe, recibirás una llamada cuando tu pedido esté
+                  listo para que puedes pasar a recoger el producto. Aplica para
+                  el Flagship de Acacias y Secret Store Dasso. Cualquier detalle
+                  adicional por favor comunícate con
                   <a
                     href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
                     target="_blank"
@@ -151,7 +151,7 @@ export default function IconWhatapp({ urlWhatsApp }: Props) {
           </div>
         </>
       </ModalPreguntasFrecuentes>
-      <Link
+      {/* <Link
         href="/emprende"
         className="z-header  sticky-0 fixed bottom-20 right-5 z-[999] flex items-center justify-center xl:bottom-[100px] xl:right-16 "
         rel="noreferrer"
@@ -178,7 +178,7 @@ export default function IconWhatapp({ urlWhatsApp }: Props) {
             </span>
           </div>
         </div>
-      </Link>
+      </Link> */}
       <Link
         href={`https://api.whatsapp.com/send/?phone=51${urlWhatsApp.whatsapp}&text&type=phone_number&app_absent=0`}
         target="_blank"

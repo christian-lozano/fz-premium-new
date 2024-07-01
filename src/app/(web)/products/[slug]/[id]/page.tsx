@@ -13,7 +13,7 @@ import { groq } from "next-sanity";
 import { SanityProduct } from "@/config/inventory";
 import { precioProduct } from "@/config/precio-product";
 
-import CarouselProductRelacionados from "@/components/carousel-product/carousel-product-relacionados";
+
 
 import { ProductGalleryDesk } from "@/components/product-gallery-desk";
 import { ProductInfo } from "@/components/product-info";
@@ -28,6 +28,7 @@ import { AccordionDetails } from "@/components/acordion-details/acordion-details
 import { FiltroGlobal, FiltroViewProduct } from "@/utilits/filtro-products";
 import { notFound } from "next/navigation";
 import Descuentos from "@/config/descuentos";
+import ContedorCarouselProduct from "@/components/carousel-product/contedor-carousel-product";
 
 interface Props {
   params: {
@@ -197,15 +198,34 @@ export default async function Page({ params }: Props) {
       </main>
 
       {/* <RoomReview roomId={product._id}></RoomReview> */}
-      <div className="mt-10">
-        <h5 className="text-center text-2xl uppercase">
-          Productos Relacionados
-        </h5>
+      <div>
+        <div className="mt-10">
+          <h5 className="text-center text-2xl uppercase">
+            COMPLETA TU outfit{" "}
+          </h5>
 
-        <CarouselProductRelacionados
-          descuentos={descuentos}
-          products={products}
-        />
+          <ContedorCarouselProduct
+            genero={product.genero}
+            cantidad={"20"}
+            descuentos={descuentos}
+            tipoCategoria={`&& marca == "${product.marca}" && tipo == "ropa" && genero == "${product.genero}" `}
+            outlet={false}
+          />
+        </div>
+
+        <div className="mt-10">
+          <h5 className="text-center text-2xl uppercase">
+            QUIZÁ TAMBIÉN TE GUSTE..
+          </h5>
+
+          <ContedorCarouselProduct
+            genero={product.genero}
+            cantidad={"20"}
+            descuentos={descuentos}
+            tipoCategoria={`&& marca == "${product.marca}" && tipo == "calzado" && genero == "${product.genero}" && categories == "${product.categories}" `}
+            outlet={false}
+          />
+        </div>
       </div>
     </>
   );
